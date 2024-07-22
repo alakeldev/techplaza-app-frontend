@@ -6,6 +6,18 @@
 
 }
 
-.logo {
+.Logo {
     max-width: 135px;
+}
+
+.Nav_Anchor_Tag {
+    color: var(--main-blue-color);
+    letter-spacing: 0.4px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.Nav_Anchor_Tag a::after {
+    display: none;
 }

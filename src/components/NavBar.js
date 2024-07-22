@@ -4,34 +4,34 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from "../styles/NavBar.module.css";
-import logo from "../assets/logo.png";
+import Logo from "../assets/logo.png";
 
 const NavBar = () => {
   return (
-    <Navbar expand="lg" className={styles.Nav}>
+    <Navbar expand="lg" className={styles.Nav} fixed="top">
       <Container>
         <Navbar.Brand>
-          <img src={logo} alt="website logo" className={styles.logo}/>
+          <img src={Logo} alt="website logo" className={styles.Logo}/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <NavDropdown title="About" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">About Us</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.1">Our Story</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.1">Our Mission and Vision</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.1">Why Choose Us</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.1">FAQ's</NavDropdown.Item>
+          <Nav className="m-auto">
+            <Nav.Link href="#home" className={styles.Nav_Anchor_Tag}>Home</Nav.Link>
+            <NavDropdown title={<span className={styles.Nav_Anchor_Tag}>About</span>} id="basic-nav-dropdown" className={styles.Nav_Anchor_Tag}>
+              <NavDropdown.Item href="#action/3.1" className={styles.Nav_Anchor_Tag}>About Us</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1" className={styles.Nav_Anchor_Tag}>Our Story</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1" className={styles.Nav_Anchor_Tag}>Our Mission and Vision</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1" className={styles.Nav_Anchor_Tag}>Why Choose Us</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1" className={styles.Nav_Anchor_Tag}>FAQ's</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Services" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Our Applications</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.1">IT Support Service</NavDropdown.Item>
+            <NavDropdown title={<span className={styles.Nav_Anchor_Tag}>Services</span>} id="basic-nav-dropdown" className={styles.Nav_Anchor_Tag}>
+              <NavDropdown.Item href="#action/3.1" className={styles.Nav_Anchor_Tag}>Our Applications</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1" className={styles.Nav_Anchor_Tag}>IT Support Service</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#link">Contact us</Nav.Link>
+            <Nav.Link href="#link" className={styles.Nav_Anchor_Tag}>Contact us</Nav.Link>
             <Nav.Link href="#link">To Search</Nav.Link>
-            <Nav.Link href="#link">Sign in</Nav.Link>
-            <Nav.Link href="#link">Sign up</Nav.Link>
+            <Nav.Link href="#link" className={styles.Nav_Anchor_Tag}>Sign in</Nav.Link>
+            <Nav.Link href="#link" className={styles.Nav_Anchor_Tag}>Sign up</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
