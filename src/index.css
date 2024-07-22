@@ -16,7 +16,6 @@ body {
     font-family: 'Nunito Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #6a6a6a;
 }
 
 header, footer, section {
@@ -58,7 +57,7 @@ input {
 }
 
 button {
-    text-align: ceneter;
+    text-align: center;
     height: 40px;
     border-radius: 3px;
     border: 1px solid var(--main-blue-color);

@@ -3,7 +3,6 @@
     width: 100%;
     height: auto;
     border-radius: 0px;
-
 }
 
 .Logo {
@@ -38,7 +37,10 @@
     color: var(--main-blue-color);
 }
 
-
 .NavButton:hover {
     color: #000;
+}
+
+.MarginNavLinks {
+    margin-left: auto;
 }
