@@ -7,17 +7,38 @@
 }
 
 .Logo {
-    max-width: 135px;
+    max-width: 150px;
+    margin-top: -5px;
 }
 
 .Nav_Anchor_Tag {
-    color: var(--main-blue-color);
+    color: var(--main-black-color);
     letter-spacing: 0.4px;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 500;
     margin-right: 10px;
 }
 
-.Nav_Anchor_Tag a::after {
-    display: none;
+.Active {
+    color: var(--main-blue-color)
+}
+
+.NavButton {
+    background-color: var(--main-blue-color);
+    border: 1px solid var(--main-blue-color);
+    font-size: 12px;
+    width: 125px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: -5px;
+    letter-spacing: 0.4px;
+}
+
+.Nav_Anchor_Tag:hover {
+    color: var(--main-blue-color);
+}
+
+
+.NavButton:hover {
+    color: #000;
 }
