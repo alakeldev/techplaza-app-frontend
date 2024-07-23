@@ -21,7 +21,7 @@
     border-radius: 10px;
 }
 
-.HomeStaticPosts h6 {
+.HomeStaticPosts p {
     padding: 50px 0px;
     color: var(--main-blue-color);
     font-weight: 600;
