@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { ReactTyped } from "react-typed";
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 import styles from "../styles/Home.module.css";
 
 
@@ -23,6 +24,7 @@ const Home = () => {
                     </h2>
                 </div>
             </header>
+            <Footer />
         </Fragment>
     )
 }
