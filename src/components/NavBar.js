@@ -15,12 +15,12 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className={styles.MarginNavLinks}>
-            <Nav.Link href="#home" className={`${styles.Nav_Anchor_Tag} ${styles.Active}`}><i class="fa-solid fa-house"></i> Home</Nav.Link>
-            <Nav.Link href="#home" className={`${styles.Nav_Anchor_Tag}`}><i class="fa-solid fa-circle-info"></i> About</Nav.Link>
-            <Nav.Link href="#home" className={`${styles.Nav_Anchor_Tag}`}><i class="fa-solid fa-computer-mouse"></i> Services</Nav.Link>
-            <Nav.Link href="#link" className={styles.Nav_Anchor_Tag}><i class="fa-solid fa-paper-plane"></i> Contact</Nav.Link>
-            <Nav.Link href="#link" className={`${styles.Nav_Anchor_Tag}`}><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</Nav.Link>
-            <Nav.Link href="#link" className={`${styles.Nav_Anchor_Tag}`}><button className={styles.NavButton}><i class="fa-solid fa-user-plus"></i> Register</button></Nav.Link>
+            <Nav.Link href="#home" className={`${styles.Nav_Anchor_Tag} ${styles.Active}`}><i className="fa-solid fa-house"></i> Home</Nav.Link>
+            <Nav.Link href="#home" className={`${styles.Nav_Anchor_Tag}`}><i className="fa-solid fa-circle-info"></i> About</Nav.Link>
+            <Nav.Link href="#home" className={`${styles.Nav_Anchor_Tag}`}><i className="fa-solid fa-computer-mouse"></i> Services</Nav.Link>
+            <Nav.Link href="#link" className={styles.Nav_Anchor_Tag}><i className="fa-solid fa-paper-plane"></i> Contact</Nav.Link>
+            <Nav.Link href="#link" className={`${styles.Nav_Anchor_Tag}`}><i className="fa-solid fa-arrow-right-to-bracket"></i> Login</Nav.Link>
+            <Nav.Link href="#link" className={`${styles.Nav_Anchor_Tag}`}><button className={styles.NavButton}><i className="fa-solid fa-user-plus"></i> Register</button></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
