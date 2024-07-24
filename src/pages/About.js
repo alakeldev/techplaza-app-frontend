@@ -2,10 +2,13 @@ import React, { Fragment } from 'react'
 import styles from "../styles/About.module.css";
 import homeImageOne from "../assets/homeone.jpg"
 import homeImageTwo from "../assets/hometwo.jpg"
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 const About = () => {
     return (
         <Fragment>
+            < NavBar />
             <section className={styles.HomeStaticPosts}>
                 <h2>About Us</h2>
                 <div className='container'>
@@ -31,6 +34,7 @@ const About = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </Fragment>
     )
 }
