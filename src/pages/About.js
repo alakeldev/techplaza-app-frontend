@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
+import Carousel from 'react-bootstrap/Carousel';
 import styles from "../styles/About.module.css";
-import homeImageOne from "../assets/homeone.jpg"
-import homeImageTwo from "../assets/hometwo.jpg"
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 
@@ -9,31 +8,32 @@ const About = () => {
     return (
         <Fragment>
             < NavBar />
-            <section className={styles.HomeStaticPosts}>
-                <h2>About Us</h2>
-                <div className='container'>
-                    <div className='row justify-content-center align-items-center'>
-                        <div className='col-md-6 order-sm-1'>
-                            <img src={homeImageOne} alt='IT community' />
-                        </div>
-                        <div className='col-md-6 order-sm-2 d-flex justify-content-center align-items-center'>
-                            <p>- TechPlaza community is a vibrant and dynamic network of professionals, enthusiasts, and learners who are passionate about technology and its potential to transform our world. We are a diverse group of individuals from various backgrounds, experiences, and skill levels, united by our shared interest in information technology.</p>
-                        </div>
+            <Carousel>
+                <Carousel.Item>
+                    <div className={styles.ImgCarouselOne}>
                     </div>
-                </div>
-            </section>
-            <section className={styles.HomeStaticPosts}>
-                <div className='container'>
-                    <div className='row justify-content-center align-items-center'>
-                        <div className='col-md-6 order-md-2 col-12 order-1'>
-                            <img src={homeImageTwo} alt='Applications' />
-                        </div>
-                        <div className='col-md-6 order-md-1 col-12 order-2 d-flex justify-content-center align-items-center'>
-                            <p>- TechPlaza platform applications are designed with the user in mind. They are intuitive, reliable, and above all, useful.<br /> <br />- We believe that technology should be a tool that makes your life easier, not more complicated. That’s why we spend countless hours refining our applications to ensure they are as user-friendly as possible.</p>
-                        </div>
+                    <Carousel.Caption>
+                        <h3>Welcome to Our Community</h3>
+                        <p>We are a leading provider of cutting-edge applications and comprehensive IT support, dedicated to serving the needs of our diverse community. Our commitment to innovation and excellence sets us apart in the industry.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <div className={styles.ImgCarouselTwo}>
                     </div>
-                </div>
-            </section>
+                    <Carousel.Caption>
+                        <h3>Innovative Applications</h3>
+                        <p>Our team of skilled developers crafts applications that are not only functional and reliable but also intuitive and engaging. We believe in creating digital solutions that enhance productivity and drive growth for our community.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <div className={styles.ImgCarouselThree}>
+                    </div>
+                    <Carousel.Caption>
+                        <h3>Comprehensive IT Support</h3>
+                        <p>Our IT support team is dedicated to ensuring seamless operations for our community. We provide round-the-clock support, proactive monitoring, and swift problem resolution to keep the applications running smoothly and efficiently.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
             <Footer />
         </Fragment>
     )
