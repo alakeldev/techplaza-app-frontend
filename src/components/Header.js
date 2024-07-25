@@ -2,7 +2,6 @@ import React from 'react'
 import { ReactTyped } from "react-typed";
 import styles from "../styles/Header.module.css"
 
-
 function Header({ title, typedStrings }) {
     return (
         <header className={styles.Landing}>

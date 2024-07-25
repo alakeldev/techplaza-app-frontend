@@ -1,15 +1,24 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import Logo from "../assets/logo.png";
 import styles from "../styles/Footer.module.css";
 
 const Footer = () => {
     const year = new Date().getFullYear();
     return (
-        <footer className="py-5 mt-5">
-            <div className="container text-light text-center">
-                <div className="display-6 mb-3"><img src={Logo} alt="website logo" className={styles.Logo} /></div>
-                <h6 className='text-black'>IT Support & Innovative Applications</h6>
-                <div className="mb-2">
+        <Container className="py-5 mt-5 text-light text-center">
+            <Row>
+                <Col className="display-6 mb-3">
+                    <img src={Logo} alt="website logo" className={styles.Logo} />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h6 className='text-black'>IT Support & Innovative Applications</h6>
+                </Col>
+            </Row>
+            <Row className="mb-2">
+                <Col>
                     <span className="m-2 bg-dark btn btn-outline-black"><a href="https://twitter.com/" rel="noopener noreferrer"
                         target="_blank" aria-label="Twitter - Opens in a new tab"><i
                             className="fa-brands fa-x-twitter text-white fa-2x"></i></a></span>
@@ -22,10 +31,14 @@ const Footer = () => {
                     <span className="m-2 bg-dark btn btn-outline-black"><a href="https://github.com/" rel="noopener noreferrer"
                         target="_blank" aria-label="Github - Opens in a new tab"><i
                             className="fa-brands fa-github text-white fa-2x"></i></a></span>
-                </div>
-                <small className="text-black">TechPlaza Platform. All Rights Reserved © {year} </small>
-            </div>
-        </footer>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <small className="text-black">TechPlaza Platform. All Rights Reserved © {year} </small>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 
