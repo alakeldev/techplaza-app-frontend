@@ -8,25 +8,26 @@ const Contact = () => {
     return (
         <Fragment>
             <NavBar />
-            <Container className={styles.FormStyle}>
-                <Form>
+            <Container className={styles.FormContainer}>
+                <Form className={styles.TheForm}>
+                    <h2>Contact Form</h2>
                     <Form.Group className="mb-3">
-                        <Form.Label>Full Name</Form.Label>
-                        <Form.Control type="text" placeholder="Enter your name" />
+                        <Form.Label className={styles.FormLabel}>Full Name</Form.Label>
+                        <Form.Control className={styles.FormField} type="text" placeholder="Enter your name" required/>
                     </Form.Group>
 
                     <Form.Group className="mb-3">
-                        <Form.Label>Email Address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter your email" />
+                        <Form.Label className={styles.FormLabel}>Email Address</Form.Label>
+                        <Form.Control className={styles.FormField} type="email" placeholder="Enter your email" required/>
                     </Form.Group>
 
                     <Form.Group className="mb-3">
-                        <Form.Label>Message</Form.Label>
-                        <Form.Control as="textarea" rows={3} placeholder="Enter your message" />
+                        <Form.Label className={styles.FormLabel}>Message</Form.Label>
+                        <Form.Control className={`${styles.FormField} ${styles.TextAreaField}`} as="textarea" rows={3} placeholder="Enter your message" required/>
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">
-                        Submit
+                    <Button variant="primary" type="submit" className={styles.FormButton}>
+                        Send
                     </Button>
                 </Form>
             </Container>
