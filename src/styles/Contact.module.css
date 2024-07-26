@@ -25,7 +25,7 @@
 }
 
 .FormLabel {
-    margin-top: 20px;
+    margin-top: 7px;
 }
 
 .FormField {
@@ -42,7 +42,7 @@
 }
 
 .TextAreaField {
-    height: 200px;
+    height: 100px;
     resize: none;
 }
 
