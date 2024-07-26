@@ -29,7 +29,7 @@ const About = () => {
                     <div className={styles.ImgCarouselThree}>
                     </div>
                     <Carousel.Caption>
-                        <h3>Comprehensive IT Support</h3>
+                        <h3>IT Support</h3>
                         <p>Our IT support team is dedicated to ensuring seamless operations for our community. We provide round-the-clock support, proactive monitoring, and swift problem resolution to keep the applications running smoothly and efficiently.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
