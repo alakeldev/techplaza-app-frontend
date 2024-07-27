@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -10,20 +10,13 @@ function App() {
   return (
     <Fragment>
       <Router>
-        <Switch>
-          <Route exact path={["/home", "/"]}>
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/services">
-            <Services />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </Router>
     </Fragment>
   );
