@@ -13,25 +13,38 @@ const RegisterForm = () => {
     password2:"",
   })
 
+  const [error, setError] = useState("")
+
   const handleOnChange = (e) => {
     setRegisterData({...registerData, [e.target.name]:e.target.value})
   }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!registerData.full_name || !registerData.email || !registerData.password1 || !registerData.password2) {
+      setError("Please fill all the fields, they are all required")
+    }else {
+      console.log(registerData)
+    }
+  }
+  console.log(error)
 
   return (
     <Fragment>
       <NavBar />
       <Container className={styles.FormContainer}>
-        <Form className={styles.TheForm}>
+        <Form onSubmit={handleSubmit} className={styles.TheForm}>
           <h2>Register</h2>
+          <h6>{error ? error : ""}</h6>
           <Form.Group className="mb-3">
             <Form.Label className={styles.FormLabel}>Full Name</Form.Label>
             <Form.Control 
             className={styles.FormField} 
             type="text" 
+            name='full_name'
             placeholder="Enter your fullname / username" 
             value={registerData.full_name}
-            onChange={handleOnChange}
-            required />
+            onChange={handleOnChange}/>
             <Form.Text className="text-muted">
               Enter your full name so it will be your username on the platform.
             </Form.Text>
@@ -42,6 +55,7 @@ const RegisterForm = () => {
             className={styles.FormField} 
             type="email" 
             placeholder="Enter email" 
+            name='email'
             value={registerData.email} 
             onChange={handleOnChange}/>
             <Form.Text className="text-muted">
@@ -49,20 +63,23 @@ const RegisterForm = () => {
             </Form.Text>
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3" controlId="formBasicPassword1">
             <Form.Label>Password</Form.Label>
             <Form.Control 
             className={styles.FormField} 
-            type="password" placeholder="Enter password" 
+            type="password" 
+            placeholder="Enter password" 
+            name='password1'
             value={registerData.password1} 
             onChange={handleOnChange}/>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3" controlId="formBasicPassword2">
             <Form.Label>Password Confirm</Form.Label>
             <Form.Control 
             className={styles.FormField} 
             type="password" 
-            placeholder="Repeat the password" 
+            placeholder="Repeat the password"
+            name='password2' 
             value={registerData.password2} 
             onChange={handleOnChange}/>
           </Form.Group>
