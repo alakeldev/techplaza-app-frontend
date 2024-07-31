@@ -9,7 +9,7 @@ import LoginForm from './pages/auth/LoginForm';
 import RegisterForm from './pages/auth/RegisterForm';
 import EmailVerify from './pages/auth/EmailVerify';
 import ForgetPasswordForm from './pages/auth/ForgetPasswordForm';
-import Profile from './pages/profiles/Profile';
+import Dashboard from './pages/dashboards/Dashboard';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/otp/verify" element={<EmailVerify />} />
           <Route path="/forget_password" element={<ForgetPasswordForm />} />
-          <Route path="/dashboard" element={<Profile />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
     </Fragment>
