@@ -10,11 +10,14 @@ import RegisterForm from './pages/auth/RegisterForm';
 import EmailVerify from './pages/auth/EmailVerify';
 import ForgetPasswordForm from './pages/auth/ForgetPasswordForm';
 import Dashboard from './pages/dashboards/Dashboard';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <Fragment>
       <Router>
+        <ToastContainer />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
