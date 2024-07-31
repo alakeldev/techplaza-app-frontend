@@ -1,8 +1,10 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
 import styles from '../../styles/RegisterForm.module.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; 
 
 const RegisterForm = () => {
 
