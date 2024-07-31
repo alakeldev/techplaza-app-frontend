@@ -24,10 +24,9 @@ const RegisterForm = () => {
     if (!registerData.full_name || !registerData.email || !registerData.password1 || !registerData.password2) {
       setError("Please fill all the fields, they are all required")
     }else {
-      console.log(registerData)
+      
     }
   }
-  console.log(error)
 
   return (
     <Fragment>
