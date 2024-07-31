@@ -4,10 +4,10 @@ import styles from '../../styles/Dashboard.module.css';
 
 
 const Dashboard = () => {
+
   const navigate = useNavigate()
   const user = JSON.parse(localStorage.getItem('user'))
   const jwt_token = localStorage.getItem('access')
-
 
   useEffect(() => {
     if(jwt_token === null && !user) {
