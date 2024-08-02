@@ -20,18 +20,18 @@ const Dashboard = () => {
   return (
     <Fragment>
       <NavBar />
-      <div>
-        <h2>Hi {user && user.name}</h2>
+      <div className={styles.dashboardContainer}>
+        <h2>Hi {user && user.name.charAt(0).toLocaleUpperCase() + user.name.slice(1)}</h2>
         <h5>Welcome to Your Dashboard</h5>
         <button>Edit my information</button>
         <button>Logout</button>
         <button>Delete Account</button>
-        <div>
-          <div>
+        <div className={styles.cardContainer}>
+          <div className={styles.card}>
             <h3>Application 1</h3>
           </div>
           <div>
-            <h3>Application 2</h3>
+            <h3 className={styles.card}>Application 2</h3>
           </div>
         </div>
       </div>
