@@ -44,3 +44,28 @@
 .MarginNavLinks {
     margin-left: auto;
 }
+
+.modalDialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalHeader {
+    background-color: #007bff;
+    color: white;
+}
+
+.modalFooter .btnSecondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.modalFooter .btnPrimary {
+    background-color: var(--main-blue-color);
+    border-color: var(--main-blue-color);
+}
+
+.modalBody {
+    padding: 20px;
+}
