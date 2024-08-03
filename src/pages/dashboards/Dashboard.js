@@ -24,7 +24,6 @@ const Dashboard = () => {
         <h2>Hi {user && user.name.charAt(0).toLocaleUpperCase() + user.name.slice(1)}</h2>
         <h5>Welcome to Your Dashboard</h5>
         <button>Edit my information</button>
-        <button>Logout</button>
         <button>Delete Account</button>
         <div className={styles.cardContainer}>
           <div className={styles.card}>
