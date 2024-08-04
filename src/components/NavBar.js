@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,17 +7,27 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import styles from "../styles/NavBar.module.css";
 import Logo from "../assets/logo.png";
+import axiosInstance from '../utils/axiosInstance';
+import { toast } from "react-toastify";
 
 const NavBar = () => {
   const user = JSON.parse(localStorage.getItem('user'));
+  const refresh = JSON.parse(localStorage.getItem('refresh'));
+  const navigate = useNavigate()
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleLogout = () => {
-    localStorage.clear();
-    window.location.href = '/';
-  };
+  const handleLogout = async () => {
+    const res = await axiosInstance.post("/auth/logout/", { "refresh_token": refresh })
+    if (res.status === 200) {
+      localStorage.removeItem("user")
+      localStorage.removeItem("access")
+      localStorage.removeItem("refresh")
+      navigate("/")
+      toast.success("logout successful")
+    }
+  }
 
   return (
     <>
