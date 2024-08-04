@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 import styles from '../../styles/LoginForm.module.css';
 import axios from 'axios';
 import { toast } from "react-toastify";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const LoginForm = () => {
 
@@ -87,6 +87,7 @@ const LoginForm = () => {
           <Button variant="primary" type="submit" className={styles.FormButton}>
             {isLoading ? "Logging in..." : "Login"}
           </Button>
+          <Link to={"/forget_password"}>Forgot Password?</Link>
         </Form>
       </Container>
       <Footer />
