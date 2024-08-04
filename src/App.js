@@ -11,6 +11,7 @@ import EmailVerify from './pages/auth/EmailVerify';
 import ForgetPasswordForm from './pages/auth/ForgetPasswordForm';
 import Dashboard from './pages/dashboards/Dashboard';
 import ResetPassword from './pages/auth/ResetPassword';
+import WeatherApp from './pages/weatherapp/WeatherApp';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/forget_password" element={<ForgetPasswordForm />} />
           <Route path="/password_reset_confirm/:uid/:token" element={<ResetPassword />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/weather_app" element={<WeatherApp />} />
         </Routes>
       </Router>
     </Fragment>
