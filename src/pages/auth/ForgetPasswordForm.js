@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
-import styles from '../../styles/RegisterForm.module.css';
+import styles from '../../styles/ForgetPasswordForm.module.css';
 import axiosInstance from '../../utils/axiosInstance';
 import { toast } from 'react-toastify';
 
@@ -18,8 +18,8 @@ const ForgetPasswordForm = () => {
       if (res.status === 200) {
         toast.success("Check your Email please, reset link was sent to it")
       }
+      setEmail("")
     }
-    setEmail("")
   }
 
   return (
