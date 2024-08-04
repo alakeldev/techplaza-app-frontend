@@ -10,7 +10,7 @@ const WeatherApp = () => {
 
   const toGetWeather = (e) => {
     if (e.key === 'Enter') {
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=mertic`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
         .then(res => res.json())
         .then(result => {
           setWeather(result);
@@ -21,22 +21,36 @@ const WeatherApp = () => {
   return (
     <Fragment>
       <NavBar />
-      <div className={styles.main}>
-        <div className={styles.container}>
+      <div className={styles.Main}>
+        <div className={styles.Container}>
           <h2>Weather Application</h2>
           <input
             type='text'
             placeholder='Search by City...'
             value={city}
             onChange={(e) => setCity(e.target.value)}
+            onKeyDown={toGetWeather}
           />
           <button onClick={toGetWeather}>Search</button>
+          <div className={styles.WeatherDetails}>
+            <div className={styles.CityLocation}>
+              {weather.name} {weather.sys && weather.sys.country}
+            </div>
+            <div className={styles.Temp}>
+              {weather.main?.temp ? `${Math.round(weather.main.temp)}°C` : ''}
+            </div>
+            <div className={styles.Weather}>
+              {weather.weather && weather.weather[0] && weather.weather[0].main}
+            </div>
+            <div className={styles.Wind}>
+              {weather.wind?.speed ? `${weather.wind.speed} m/s` : ''}
+            </div>
+          </div>
         </div>
       </div>
       <Footer />
     </Fragment>
-
-  )
-}
+  );
+};
 
 export default WeatherApp

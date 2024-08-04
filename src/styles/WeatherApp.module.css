@@ -1,4 +1,4 @@
-.main {
+.Main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +8,7 @@
     background-color: #eeeeee;
 }
 
-.container {
+.Container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,12 +19,12 @@
     border-radius: 15px;
 }
 
-.container h2 {
+.Container h2 {
     margin: 25px;
     color: var(--main-blue-color);
 }
 
-.container input {
+.Container input {
     width: 100%;
     padding: 10px;
     border: 1px solid #eeeeee;
@@ -33,7 +33,7 @@
     font-size: 16px;
 }
 
-.container button {
+.Container button {
     background-color: var(--main-blue-color);
     border: 1px solid var(--main-blue-color);
     font-size: 12px;
@@ -43,4 +43,29 @@
     margin: 20px;
     letter-spacing: 0.4px;
     border-radius: 15px;
+}
+
+.WeatherDetails {
+    margin-top: 20px;
+}
+
+.CityLocation {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.Temp {
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+.Weather {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.Wind {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #555;
 }
