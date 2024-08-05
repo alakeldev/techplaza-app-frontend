@@ -1,12 +1,22 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
 import styles from '../../styles/WeatherApp.module.css';
 
 const WeatherApp = () => {
   const [city, setCity] = useState("");
-  const apiKey = '1fb0e0f6964d49c9eebe77c11137bb6c'
+  const apiKey = '1fb0e0f6964d49c9eebe77c11137bb6c';
   const [weather, setWeather] = useState({});
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem('user'));
+  const jwt_token = localStorage.getItem('access');
+
+  useEffect(() => {
+    if (jwt_token === null && !user) {
+      navigate("/login");
+    }
+  }, [jwt_token, user, navigate]);
 
   const toGetWeather = (e) => {
     if (e.key === 'Enter') {
