@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
@@ -17,6 +17,12 @@ const Dashboard = () => {
     }
   }, [jwt_token, user, navigate]);
 
+  const handleAppClick = (app) => {
+    if (app === 'World Weather Application') {
+      navigate('/dashboard/weather_app');
+    }
+  };
+
   return (
     <Fragment>
       <NavBar />
@@ -26,11 +32,11 @@ const Dashboard = () => {
         <button>Edit my information</button>
         <button>Delete Account</button>
         <div className={styles.cardContainer}>
-          <div className={styles.card}>
-            <h3>Application 1</h3>
+          <div className={styles.card} onClick={() => handleAppClick('World Weather Application')}>
+            <h3>World Weather Application</h3>
           </div>
-          <div>
-            <h3 className={styles.card}>Application 2</h3>
+          <div className={styles.card} onClick={() => handleAppClick('Application 2')}>
+            <h3>Application 2</h3>
           </div>
         </div>
       </div>
@@ -39,4 +45,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Dashboard;
