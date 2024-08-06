@@ -27,7 +27,7 @@ const WeatherApp = () => {
         return;
       }
 
-      fetch(`http://127.0.0.1:8000/api/weather?city=${city}`)
+      fetch(`http://127.0.0.1:8000/api/app1/weather?city=${city}`)
         .then(res => {
           if (!res.ok) {
             throw new Error('Invalid city name. Please enter a valid city.');
