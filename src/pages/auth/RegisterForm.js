@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
@@ -17,6 +17,14 @@ const RegisterForm = () => {
     password1: "",
     password2: "",
   })
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    const jwt_token = localStorage.getItem('access');
+    if (user && jwt_token) {
+      navigate("/dashboard");
+    }
+  }, [navigate]);
 
   const handleOnChange = (e) => {
     setRegisterData({ ...registerData, [e.target.name]: e.target.value })

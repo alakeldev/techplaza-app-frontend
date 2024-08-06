@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
@@ -14,6 +14,14 @@ const ResetPassword = () => {
         password: "",
         confirm_password: "",
     })
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        const jwt_token = localStorage.getItem('access');
+        if (user && jwt_token) {
+            navigate("/dashboard");
+        }
+    }, [navigate]);
 
     const handleChange = (e) => {
         setNewPasswords({ ...newPasswords, [e.target.name]: e.target.value })

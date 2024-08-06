@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
@@ -8,15 +8,21 @@ import { toast } from "react-toastify";
 import { useNavigate, Link } from 'react-router-dom';
 
 const LoginForm = () => {
-
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   })
-
   const navigate = useNavigate()
   const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    const jwt_token = localStorage.getItem('access');
+    if (user && jwt_token) {
+      navigate("/dashboard");
+    }
+  }, [navigate]);
 
   const handleOnChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value })
