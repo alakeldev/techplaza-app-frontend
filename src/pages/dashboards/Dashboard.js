@@ -20,6 +20,8 @@ const Dashboard = () => {
   const handleAppClick = (app) => {
     if (app === 'World Weather Application') {
       navigate('/dashboard/weather_app');
+    } else if (app === 'Tasks Manager Application') {
+      navigate('/dashboard/tasks_app');
     }
   };
 
@@ -35,8 +37,8 @@ const Dashboard = () => {
           <div className={styles.card} onClick={() => handleAppClick('World Weather Application')}>
             <h3>World Weather Application</h3>
           </div>
-          <div className={styles.card} onClick={() => handleAppClick('Application 2')}>
-            <h3>Application 2</h3>
+          <div className={styles.card} onClick={() => handleAppClick('Tasks Manager Application')}>
+            <h3>Tasks Manager Application</h3>
           </div>
         </div>
       </div>
