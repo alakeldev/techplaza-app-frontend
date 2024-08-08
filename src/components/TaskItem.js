@@ -9,9 +9,9 @@ const TaskItem = ({ item, editItem, handleDelete, viewDone }) => {
         >
             <span
                 className={`mr-2 ${viewDone ? "text-decoration-line-through" : ""}`}
-                title={item.description}
+                title={item.task_description}
             >
-                {item.title}
+                {item.task_title}
             </span>
             <span>
                 <Button

@@ -4,7 +4,7 @@ import { ListGroup } from 'react-bootstrap';
 
 const TaskList = ({ taskList, viewDone, editItem, handleDelete }) => {
     const newItems = taskList.filter(
-        item => item.done === viewDone
+        item => item.is_done === viewDone
     );
 
     return (

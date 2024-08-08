@@ -13,8 +13,8 @@ const TaskModal = ({ modal, toggle, activeItem, handleChange, handleSubmit }) =>
                         <FormLabel>Title</FormLabel>
                         <FormControl
                             type="text"
-                            name="title"
-                            value={activeItem.title}
+                            name="task_title"
+                            value={activeItem.task_title}
                             onChange={handleChange}
                             placeholder="Enter Task Title"
                         />
@@ -23,8 +23,8 @@ const TaskModal = ({ modal, toggle, activeItem, handleChange, handleSubmit }) =>
                         <FormLabel>Description</FormLabel>
                         <FormControl
                             type="text"
-                            name="description"
-                            value={activeItem.description}
+                            name="task_description"
+                            value={activeItem.task_description}
                             onChange={handleChange}
                             placeholder="Enter Task Description"
                         />
@@ -32,9 +32,9 @@ const TaskModal = ({ modal, toggle, activeItem, handleChange, handleSubmit }) =>
                     <FormGroup>
                         <Form.Check
                             type="checkbox"
-                            name="done"
+                            name="is_done"
                             label="Done"
-                            checked={activeItem.done}
+                            checked={activeItem.is_done}
                             onChange={handleChange}
                         />
                     </FormGroup>
