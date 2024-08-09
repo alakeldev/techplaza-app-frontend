@@ -22,6 +22,8 @@ const Dashboard = () => {
       navigate('/dashboard/weather_app');
     } else if (app === 'Tasks Manager Application') {
       navigate('/dashboard/tasks_app');
+    } else if (app === 'Snake Game') {
+      navigate('/dashboard/snake_game');
     }
   };
 
@@ -39,6 +41,9 @@ const Dashboard = () => {
           </div>
           <div className={styles.card} onClick={() => handleAppClick('Tasks Manager Application')}>
             <h3>Tasks Manager Application</h3>
+          </div>
+          <div className={styles.card} onClick={() => handleAppClick('Snake Game')}>
+            <h3>Snake Game</h3>
           </div>
         </div>
       </div>
