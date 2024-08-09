@@ -13,6 +13,7 @@ import Dashboard from './pages/dashboards/Dashboard';
 import ResetPassword from './pages/auth/ResetPassword';
 import WeatherApp from './pages/weatherapp/WeatherApp';
 import TasksApp from './pages/tasksapp/TasksApp';
+import SnakeGame from './pages/snakegame/SnakeGame';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/weather_app" element={<WeatherApp />} />
           <Route path="/dashboard/tasks_app" element={<TasksApp />} />
+          <Route path="/dashboard/snake_game" element={<SnakeGame />} />
         </Routes>
       </Router>
     </Fragment>
