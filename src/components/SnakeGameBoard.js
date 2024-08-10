@@ -36,6 +36,51 @@ const SnakeGameBoard = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  useEffect(() => {
+    const moveSnake = () => {
+      const newSnake = [...snake];
+      let head = { ...newSnake[0] };
+
+      switch (direction) {
+        case 'UP':
+          head.y -= 1;
+          break;
+        case 'DOWN':
+          head.y += 1;
+          break;
+        case 'LEFT':
+          head.x -= 1;
+          break;
+        case 'RIGHT':
+          head.x += 1;
+          break;
+        default:
+          break;
+      }
+
+      if (head.x < 0 || head.x >= 20 || head.y < 0 || head.y >= 20 || newSnake.some(segment => segment.x === head.x && segment.y === head.y)) {
+        setGameOver(true);
+        return;
+      }
+
+      newSnake.unshift(head);
+      if (head.x === food.x && head.y === food.y) {
+        setFood({ x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20) });
+        setScore(score + 1);
+      } else {
+        newSnake.pop();
+      }
+
+      setSnake(newSnake);
+    };
+
+    if (!gameOver) {
+      const interval = setInterval(moveSnake, 200);
+      return () => clearInterval(interval);
+    }
+  }, [snake, direction, food, score, gameOver]);
+
+
   return (
     <div>SnakeGameBoard</div>
   )
