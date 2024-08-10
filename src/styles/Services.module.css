@@ -6,11 +6,10 @@
     text-align: center;
     overflow: hidden;
     margin-top: 50px;
-
 }
 
 .ServicesAccordion {
-    min-width: 100%;
+    width: 100%;
     padding: 20px;
 }
 
@@ -18,4 +17,90 @@
     padding: 20px;
     max-width: 100%;
     border-radius: 30px;
+}
+
+.accordion-button {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-weight: bold;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-body {
+    background-color: #f8f9fa;
+    color: #000000;
+}
+
+button {
+    margin: 0 !important;
+    color: var(--main-blue-color);
+    box-shadow: none !important;
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--main-blue-color);
+    outline: 0;
+}
+
+@media screen and (max-width: 550px) {
+    .ServicesContainer {
+        padding: 30px 0px;
+        margin-top: 30px;
+    }
+
+    .ServicesAccordion {
+        padding: 10px;
+    }
+
+    .ServicesImage {
+        padding: 10px;
+        max-width: 90%;
+        border-radius: 20px;
+    }
+}
+
+@media screen and (min-width: 551px) and (max-width: 887px) {
+    .ServicesContainer {
+        padding: 40px 0px;
+        margin-top: 40px;
+    }
+
+    .ServicesAccordion {
+        padding: 25px;
+    }
+
+    .ServicesImage {
+        padding: 15px;
+        max-width: 95%;
+        border-radius: 25px;
+    }
+}
+
+@media screen and (min-width: 888px) {
+    .ServicesContainer {
+        padding: 50px 0px;
+        margin-top: 50px;
+    }
+
+    .ServicesAccordion {
+        padding: 25px;
+    }
+
+    .ServicesImage {
+        padding: 20px;
+        max-width: 100%;
+        border-radius: 30px;
+    }
 }
