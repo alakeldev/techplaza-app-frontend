@@ -11,6 +11,7 @@ const SnakeGameBoard = () => {
   const [score, setScore] = useState(0);
   const [highScores, setHighScores] = useState([]);
   const [gameOver, setGameOver] = useState(false);
+  const [gameStarted, setGameStarted] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -74,14 +75,14 @@ const SnakeGameBoard = () => {
       setSnake(newSnake);
     };
 
-    if (!gameOver) {
+    if (!gameOver && gameStarted) {
       const interval = setInterval(moveSnake, 200);
       return () => clearInterval(interval);
     }
-  }, [snake, direction, food, score, gameOver]);
+  }, [snake, direction, food, score, gameOver, gameStarted]);
 
   useEffect(() => {
-    axiosInstance.get('/game/high-scores/')
+    axiosInstance.get('game1/high_scores/')
       .then(response => {
         const sortedScores = response.data.sort((a, b) => b.score - a.score);
         setHighScores(sortedScores.slice(0, 5));
@@ -93,7 +94,13 @@ const SnakeGameBoard = () => {
     if (gameOver && score > 0) {
       const lowestHighScore = highScores[highScores.length - 1]?.score || 0;
       if (score > lowestHighScore) {
-        axiosInstance.post('/game1/high_scores/', { user: user.id, score })
+        axiosInstance.post('game1/high_scores/', {
+          user: {
+            email: user.email,
+            full_name: user.full_name
+          },
+          score
+        })
           .then(response => {
             const sortedScores = [...highScores, response.data].sort((a, b) => b.score - a.score);
             setHighScores(sortedScores.slice(0, 5));
@@ -101,26 +108,43 @@ const SnakeGameBoard = () => {
           .catch(error => console.error('Error saving score:', error));
       }
     }
-  }, [gameOver, score, highScores, user.id]);
+  }, [gameOver, score, highScores, user]);
 
-  const restartGame = () => {
+  const startGame = () => {
+    setGameStarted(true);
+    setGameOver(false);
     setSnake([{ x: 10, y: 10 }]);
     setFood({ x: 15, y: 15 });
     setDirection('RIGHT');
     setScore(0);
+  };
+
+  const restartGame = () => {
+    setGameStarted(false);
     setGameOver(false);
+    setSnake([{ x: 10, y: 10 }]);
+    setFood({ x: 15, y: 15 });
+    setDirection('RIGHT');
+    setScore(0);
   };
 
   return (
-    <div className={styles.gameBoard}>
-      {snake.map((segment, index) => (
-        <div key={index} className={styles.snakeSegment} style={{ left: `${segment.x * 20}px`, top: `${segment.y * 20}px` }}></div>
-      ))}
-      <div className={styles.food} style={{ left: `${food.x * 20}px`, top: `${food.y * 20}px` }}></div>
-      <SnakeGameHighScores highScores={highScores} />
-      {gameOver && <button onClick={restartGame}>Restart</button>}
+    <div className={styles.container}>
+      <div className={styles.gameBoard}>
+        {snake.map((segment, index) => (
+          <div key={index} className={styles.snakeSegment} style={{ left: `${segment.x * 20}px`, top: `${segment.y * 20}px` }}></div>
+        ))}
+        <div className={styles.food} style={{ left: `${food.x * 20}px`, top: `${food.y * 20}px` }}></div>
+      </div>
+      <div className={styles.highScoresContainer}>
+        <SnakeGameHighScores highScores={highScores} />
+      </div>
+      <div className={styles.buttons}>
+        <button onClick={startGame}>Start</button>
+        <button onClick={restartGame}>Restart</button>
+      </div>
     </div>
   )
 }
 
-export default SnakeGameBoard
+export default SnakeGameBoard;
