@@ -19,16 +19,16 @@ const Footer = () => {
             </Row>
             <Row className="mb-2">
                 <Col>
-                    <span className="m-2 bg-dark btn btn-outline-black"><a href="https://twitter.com/" rel="noopener noreferrer"
+                    <span className={`m-2 bg-dark btn btn-outline-black ${styles.icon}`}><a href="https://twitter.com/" rel="noopener noreferrer"
                         target="_blank" aria-label="Twitter - Opens in a new tab"><i
                             className="fa-brands fa-x-twitter text-white fa-2x"></i></a></span>
-                    <span className="m-2 bg-dark btn btn-outline-black"><a href="https://hashnode.com/" rel="noopener noreferrer"
+                    <span className={`m-2 bg-dark btn btn-outline-black ${styles.icon}`}><a href="https://hashnode.com/" rel="noopener noreferrer"
                         target="_blank" aria-label="Hashnode - Opens in a new tab"><i
                             className="fa-brands fa-hashnode text-white fa-2x"></i></a></span>
-                    <span className="m-2 bg-dark btn btn-outline-black"><a href="https://www.reddit.com/" rel="noopener noreferrer"
+                    <span className={`m-2 bg-dark btn btn-outline-black ${styles.icon}`}><a href="https://www.reddit.com/" rel="noopener noreferrer"
                         target="_blank" aria-label="Instagram - Opens in a new tab"><i
                             className="fa-brands fa-reddit text-white fa-2x"></i></a></span>
-                    <span className="m-2 bg-dark btn btn-outline-black"><a href="https://github.com/" rel="noopener noreferrer"
+                    <span className={`m-2 bg-dark btn btn-outline-black ${styles.icon}`}><a href="https://github.com/" rel="noopener noreferrer"
                         target="_blank" aria-label="Github - Opens in a new tab"><i
                             className="fa-brands fa-github text-white fa-2x"></i></a></span>
                 </Col>

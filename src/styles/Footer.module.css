@@ -2,3 +2,66 @@
     max-width: 250px;
     margin-top: -5px;
 }
+
+.icon a:hover i {
+    color: var(--main-blue-color) !important;
+}
+
+h6,
+small {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 550px) {
+    .Logo {
+        max-width: 100px;
+    }
+
+    .icon i {
+        font-size: 1.5rem;
+    }
+
+    h6 {
+        font-size: 0.8rem;
+    }
+
+    small {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (min-width: 551px) and (max-width: 887px) {
+    .Logo {
+        max-width: 150px;
+    }
+
+    .icon i {
+        font-size: 2rem;
+    }
+
+    h6 {
+        font-size: 0.9rem;
+    }
+
+    small {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 888px) {
+    .Logo {
+        max-width: 200px;
+    }
+
+    .icon i {
+        font-size: 2.5rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    small {
+        font-size: 0.9rem;
+    }
+}
