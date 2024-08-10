@@ -80,9 +80,46 @@ const SnakeGameBoard = () => {
     }
   }, [snake, direction, food, score, gameOver]);
 
+  useEffect(() => {
+    axiosInstance.get('/game/high-scores/')
+      .then(response => {
+        const sortedScores = response.data.sort((a, b) => b.score - a.score);
+        setHighScores(sortedScores.slice(0, 5));
+      })
+      .catch(error => console.error('Error fetching high scores:', error));
+  }, []);
+
+  useEffect(() => {
+    if (gameOver && score > 0) {
+      const lowestHighScore = highScores[highScores.length - 1]?.score || 0;
+      if (score > lowestHighScore) {
+        axiosInstance.post('/game1/high_scores/', { user: user.id, score })
+          .then(response => {
+            const sortedScores = [...highScores, response.data].sort((a, b) => b.score - a.score);
+            setHighScores(sortedScores.slice(0, 5));
+          })
+          .catch(error => console.error('Error saving score:', error));
+      }
+    }
+  }, [gameOver, score, highScores, user.id]);
+
+  const restartGame = () => {
+    setSnake([{ x: 10, y: 10 }]);
+    setFood({ x: 15, y: 15 });
+    setDirection('RIGHT');
+    setScore(0);
+    setGameOver(false);
+  };
 
   return (
-    <div>SnakeGameBoard</div>
+    <div className={styles.gameBoard}>
+      {snake.map((segment, index) => (
+        <div key={index} className={styles.snakeSegment} style={{ left: `${segment.x * 20}px`, top: `${segment.y * 20}px` }}></div>
+      ))}
+      <div className={styles.food} style={{ left: `${food.x * 20}px`, top: `${food.y * 20}px` }}></div>
+      <SnakeGameHighScores highScores={highScores} />
+      {gameOver && <button onClick={restartGame}>Restart</button>}
+    </div>
   )
 }
 
