@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import styles from "../styles/About.module.css";
 import NavBar from '../components/NavBar';
@@ -36,7 +36,7 @@ const About = () => {
             </Carousel>
             <Footer />
         </Fragment>
-    )
-}
+    );
+};
 
-export default About
+export default About;

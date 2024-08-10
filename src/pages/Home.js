@@ -13,7 +13,7 @@ const Home = () => {
             />
             <Footer />
         </Fragment>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;
