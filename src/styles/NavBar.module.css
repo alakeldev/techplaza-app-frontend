@@ -19,7 +19,7 @@
 }
 
 .Active {
-    color: var(--main-blue-color)
+    color: var(--main-blue-color);
 }
 
 .NavButton {
@@ -68,4 +68,64 @@
 
 .modalBody {
     padding: 20px;
+}
+
+@media screen and (max-width: 550px) {
+    .Logo {
+        max-width: 100px;
+    }
+
+    .Nav_Anchor_Tag {
+        font-size: 14px;
+        margin-right: 5px;
+    }
+
+    .NavButton {
+        font-size: 10px;
+        width: 100px;
+    }
+
+    .modalBody {
+        padding: 15px;
+    }
+}
+
+@media screen and (min-width: 551px) and (max-width: 887px) {
+    .Logo {
+        max-width: 120px;
+    }
+
+    .Nav_Anchor_Tag {
+        font-size: 15px;
+        margin-right: 8px;
+    }
+
+    .NavButton {
+        font-size: 11px;
+        width: 110px;
+    }
+
+    .modalBody {
+        padding: 18px;
+    }
+}
+
+@media screen and (min-width: 888px) {
+    .Logo {
+        max-width: 150px;
+    }
+
+    .Nav_Anchor_Tag {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .NavButton {
+        font-size: 12px;
+        width: 125px;
+    }
+
+    .modalBody {
+        padding: 20px;
+    }
 }
