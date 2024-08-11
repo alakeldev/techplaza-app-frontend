@@ -3,11 +3,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
-import styles from '../../styles/ResetPassword.module.css';
+import styles from '../../styles/ResetPasswordForm.module.css';
 import axiosInstance from '../../utils/axiosInstance';
 import { toast } from 'react-toastify';
 
-const ResetPassword = () => {
+const ResetPasswordForm = () => {
     const navigate = useNavigate();
     const { uid, token } = useParams();
     const [newPasswords, setNewPasswords] = useState({
@@ -91,4 +91,4 @@ const ResetPassword = () => {
     );
 };
 
-export default ResetPassword;
+export default ResetPasswordForm;
