@@ -93,12 +93,12 @@ const LoginForm = () => {
           <Button variant="primary" type="submit" className={styles.FormButton}>
             {isLoading ? "Logging in..." : "Login"}
           </Button>
-          <Link to={"/forget_password"}>Forgot Password?</Link>
+          <Link to={"/forget_password"} className={styles.ForgetPasswordLink}>Forgot Password?</Link>
         </Form>
       </Container>
       <Footer />
     </Fragment>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default LoginForm;
