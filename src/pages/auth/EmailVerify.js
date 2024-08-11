@@ -1,9 +1,9 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { Fragment, useState, useEffect } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
 import styles from '../../styles/EmailVerify.module.css';
-import axios from 'axios';
+import axiosInstance from '../../utils/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -25,13 +25,12 @@ const EmailVerify = () => {
     e.preventDefault();
     if (otp && email) {
       try {
-        const response = await axios.post("http://127.0.0.1:8000/api/auth/email-verify/", { 'otp': otp, 'email': email });
+        const response = await axiosInstance.post("/auth/email-verify/", { 'otp': otp, 'email': email });
         if (response.status === 200) {
           navigate("/login");
           toast.success(response.data.message);
         }
       } catch (error) {
-        console.error("There was an error verifying the OTP:", error);
         toast.error("Failed to verify OTP. Please try again.");
       }
     } else {
@@ -71,7 +70,7 @@ const EmailVerify = () => {
       </Container>
       <Footer />
     </Fragment>
-  )
-}
+  );
+};
 
-export default EmailVerify
+export default EmailVerify;
