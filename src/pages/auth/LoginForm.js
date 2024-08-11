@@ -3,7 +3,7 @@ import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
 import styles from '../../styles/LoginForm.module.css';
-import axios from 'axios';
+import axiosInstance from '../../utils/axiosInstance';
 import { toast } from "react-toastify";
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -38,9 +38,8 @@ const LoginForm = () => {
     } else {
       setIsLoading(true)
       try {
-        const res = await axios.post("http://127.0.0.1:8000/api/auth/login/", loginData)
+        const res = await axiosInstance.post("/auth/login/", loginData)
         const response = res.data
-        console.log(response)
         setIsLoading(false)
         const user = {
           "email": response.email,
@@ -55,7 +54,13 @@ const LoginForm = () => {
         }
       } catch (error) {
         setIsLoading(false)
-        setError("Login failed. Please check your credentials and try again.")
+        if (error.response && error.response.status === 401) {
+          setError("Invalid credentials. Please check your email and password and try again.")
+        } else if (error.response && error.response.status === 400) {
+          setError("Validation error. Please check your input and try again.")
+        } else {
+          setError("Login failed. Please check your credentials and try again.")
+        }
       }
     }
   }
