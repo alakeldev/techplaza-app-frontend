@@ -1,5 +1,5 @@
-import React, { useState, Fragment, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { Fragment, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
@@ -8,12 +8,9 @@ import axiosInstance from '../../utils/axiosInstance';
 import { toast } from 'react-toastify';
 
 const ResetPassword = () => {
-    const navigate = useNavigate()
-    const { uid, token } = useParams()
-    const [newPasswords, setNewPasswords] = useState({
-        password: "",
-        confirm_password: "",
-    })
+    const [email, setEmail] = useState("")
+    const [error, setError] = useState("")
+    const navigate = useNavigate();
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'));
@@ -23,24 +20,20 @@ const ResetPassword = () => {
         }
     }, [navigate]);
 
-    const handleChange = (e) => {
-        setNewPasswords({ ...newPasswords, [e.target.name]: e.target.value })
-    }
-
-    const data = {
-        "password": newPasswords.password,
-        "confirm_password": newPasswords.confirm_password,
-        "uidb64": uid,
-        "token": token,
-    }
-
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        const response = await axiosInstance.patch("/auth/new-password/", data)
-        const result = response.data
-        if (response.status === 200) {
-            navigate('/login')
-            toast.success(result.message)
+        e.preventDefault();
+        if (email) {
+            try {
+                const res = await axiosInstance.post("/auth/password-reset/", { "email": email });
+                if (res.status === 200) {
+                    toast.success("Check your Email please, reset link was sent to it");
+                    setEmail("");
+                }
+            } catch (error) {
+                setError("Failed to send reset link. Please try again.");
+            }
+        } else {
+            setError("Please enter your registered email.");
         }
     }
 
@@ -49,35 +42,27 @@ const ResetPassword = () => {
             <NavBar />
             <Container className={styles.FormContainer}>
                 <Form onSubmit={handleSubmit} className={styles.TheForm}>
-                    <h2>Enter Your New Password</h2>
-                    <Form.Group className="mb-3" controlId="formBasicPassword1">
-                        <Form.Label>Password</Form.Label>
+                    <h2>Reset Your Password</h2>
+                    {error && <p className={styles.ErrorMessage}>{error}</p>}
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label className={styles.FormLabel}>Enter Your Registered Email:</Form.Label>
                         <Form.Control
                             className={styles.FormField}
-                            type="password"
-                            placeholder="Enter password"
-                            name='password'
-                            value={newPasswords.password}
-                            onChange={handleChange} />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicPassword2">
-                        <Form.Label>Password Confirm</Form.Label>
-                        <Form.Control
-                            className={styles.FormField}
-                            type="password"
-                            placeholder="Repeat the password"
-                            name='confirm_password'
-                            value={newPasswords.confirm_password}
-                            onChange={handleChange} />
+                            type="email"
+                            placeholder="Enter email"
+                            name='email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
                     </Form.Group>
                     <Button variant="primary" type="submit" className={styles.FormButton}>
-                        Submit
+                        Send
                     </Button>
                 </Form>
             </Container>
             <Footer />
         </Fragment>
-    )
-}
+    );
+};
 
-export default ResetPassword
+export default ResetPassword;
