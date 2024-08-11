@@ -34,18 +34,22 @@ const RegisterForm = () => {
     e.preventDefault();
     if (!registerData.full_name || !registerData.email || !registerData.password1 || !registerData.password2) {
       setError("Please fill all the fields, they are all required");
+    } else if (registerData.password1 !== registerData.password2) {
+      setError("The password fields do not match. Please try again.");
     } else {
       try {
         const re = await axios.post("http://127.0.0.1:8000/api/auth/register/", registerData);
         const response = re.data;
-        console.log(response);
         if (re.status === 201) {
           navigate("/otp/verify");
           toast.success(response.message);
         }
       } catch (error) {
-        console.error("There was an error registering:", error);
-        setError("Registration failed. Please try again.");
+        if (error.response && error.response.data && error.response.data.email) {
+          setError("The email is already registered/used.");
+        } else {
+          setError("Registration failed. Please try again.");
+        }
       }
     }
   };
@@ -56,7 +60,7 @@ const RegisterForm = () => {
       <Container className={styles.FormContainer}>
         <Form onSubmit={handleSubmit} className={styles.TheForm}>
           <h2>Register</h2>
-          <h6>{error ? error : ""}</h6>
+          {error && <p className={styles.ErrorMessage}>{error}</p>}
           <Form.Group className="mb-3">
             <Form.Label className={styles.FormLabel}>Full Name</Form.Label>
             <Form.Control
@@ -111,7 +115,7 @@ const RegisterForm = () => {
       </Container>
       <Footer />
     </Fragment>
-  )
-}
+  );
+};
 
-export default RegisterForm
+export default RegisterForm;
