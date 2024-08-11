@@ -9,10 +9,10 @@ import { toast } from 'react-toastify';
 
 const ForgetPasswordForm = () => {
 
-  const [email, setEmail] = useState(" ")
+  const [email, setEmail] = useState("")
   const [error, setError] = useState("")
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     const jwt_token = localStorage.getItem('access');
@@ -22,13 +22,19 @@ const ForgetPasswordForm = () => {
   }, [navigate]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (email) {
-      const res = await axiosInstance.post("/auth/password-reset/", {"email":email})
-      if (res.status === 200) {
-        toast.success("Check your Email please, reset link was sent to it")
+      try {
+        const res = await axiosInstance.post("/auth/password-reset/", { "email": email });
+        if (res.status === 200) {
+          toast.success("Check your Email please, reset link was sent to it");
+          setEmail("");
+        }
+      } catch (error) {
+        setError("Failed to send reset link. Please try again.");
       }
-      setEmail("")
+    } else {
+      setError("Please enter your registered email.");
     }
   }
 
@@ -38,7 +44,7 @@ const ForgetPasswordForm = () => {
       <Container className={styles.FormContainer}>
         <Form onSubmit={handleSubmit} className={styles.TheForm}>
           <h2>Reset Your Password</h2>
-          <h6>{error ? error : ""}</h6>
+          {error && <p className={styles.ErrorMessage}>{error}</p>}
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className={styles.FormLabel}>Enter Your Registered Email:</Form.Label>
             <Form.Control
@@ -48,7 +54,7 @@ const ForgetPasswordForm = () => {
               name='email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              />
+            />
           </Form.Group>
           <Button variant="primary" type="submit" className={styles.FormButton}>
             Send
@@ -57,7 +63,7 @@ const ForgetPasswordForm = () => {
       </Container>
       <Footer />
     </Fragment>
-  )
-}
+  );
+};
 
-export default ForgetPasswordForm
+export default ForgetPasswordForm;
