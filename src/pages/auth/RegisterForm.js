@@ -71,7 +71,7 @@ const RegisterForm = () => {
               value={registerData.full_name}
               onChange={handleOnChange} />
             <Form.Text className="text-muted">
-              Enter your full name so it will be your username on the platform.
+              Please enter your full name to use as your username within the community.
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -84,10 +84,9 @@ const RegisterForm = () => {
               value={registerData.email}
               onChange={handleOnChange} />
             <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
+              Please register with an email address that can be contacted within our community.
             </Form.Text>
           </Form.Group>
-
           <Form.Group className="mb-3" controlId="formBasicPassword1">
             <Form.Label>Password</Form.Label>
             <Form.Control
