@@ -8,12 +8,12 @@ import axiosInstance from '../../utils/axiosInstance';
 import { toast } from 'react-toastify';
 
 const ResetPassword = () => {
-    const navigate = useNavigate()
-    const { uid, token } = useParams()
+    const navigate = useNavigate();
+    const { uid, token } = useParams();
     const [newPasswords, setNewPasswords] = useState({
         password: "",
         confirm_password: "",
-    })
+    });
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'));
@@ -24,25 +24,36 @@ const ResetPassword = () => {
     }, [navigate]);
 
     const handleChange = (e) => {
-        setNewPasswords({ ...newPasswords, [e.target.name]: e.target.value })
-    }
-
-    const data = {
-        "password": newPasswords.password,
-        "confirm_password": newPasswords.confirm_password,
-        "uidb64": uid,
-        "token": token,
-    }
+        setNewPasswords({ ...newPasswords, [e.target.name]: e.target.value });
+    };
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        const response = await axiosInstance.patch("/auth/new-password/", data)
-        const result = response.data
-        if (response.status === 200) {
-            navigate('/login')
-            toast.success(result.message)
+        e.preventDefault();
+        if (newPasswords.password === "" || newPasswords.confirm_password === "") {
+            toast.error("Password fields cannot be empty.");
+            return;
         }
-    }
+        if (newPasswords.password !== newPasswords.confirm_password) {
+            toast.error("Passwords do not match.");
+            return;
+        }
+        const data = {
+            "password": newPasswords.password,
+            "password_confirm": newPasswords.confirm_password,
+            "uidb64": uid,
+            "token": token,
+        };
+        try {
+            const response = await axiosInstance.patch("/auth/new-password/", data);
+            const result = response.data;
+            if (response.status === 200) {
+                navigate('/login');
+                toast.success(result.message);
+            }
+        } catch (error) {
+            toast.error("Failed to reset password invalid link.");
+        }
+    };
 
     return (
         <Fragment>
@@ -77,7 +88,7 @@ const ResetPassword = () => {
             </Container>
             <Footer />
         </Fragment>
-    )
-}
+    );
+};
 
-export default ResetPassword
+export default ResetPassword;
