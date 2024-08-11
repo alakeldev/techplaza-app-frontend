@@ -3,7 +3,7 @@ import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
 import styles from '../../styles/RegisterForm.module.css';
-import axios from 'axios';
+import axiosInstance from '../../utils/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -38,7 +38,7 @@ const RegisterForm = () => {
       setError("The password fields do not match. Please try again.");
     } else {
       try {
-        const re = await axios.post("http://127.0.0.1:8000/api/auth/register/", registerData);
+        const re = await axiosInstance.post("/auth/register/", registerData);
         const response = re.data;
         if (re.status === 201) {
           navigate("/otp/verify");
