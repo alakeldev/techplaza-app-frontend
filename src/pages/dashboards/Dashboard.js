@@ -17,6 +17,7 @@ const Dashboard = () => {
   const jwt_token = localStorage.getItem('access');
   const [showEdit, setShowEdit] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
+  const [fullName, setFullName] = useState(user ? user.full_name : '');
 
   useEffect(() => {
     if (jwt_token === null && !user) {
@@ -34,12 +35,18 @@ const Dashboard = () => {
     }
   };
 
+  const updateFullName = (newFullName) => {
+    setFullName(newFullName);
+    const updatedUser = { ...user, full_name: newFullName };
+    localStorage.setItem('user', JSON.stringify(updatedUser));
+  };
+
   return (
     <Fragment>
       <NavBar />
       <div className={styles.dashboardContainer}>
         <div className={styles.welcomeContainer}>
-          <h2>Hi {user && user.name.split(' ').map(word => word.charAt(0).toLocaleUpperCase() + word.slice(1)).join(' ')}</h2>
+          <h2>Hi {(fullName || user.name) && (fullName || user.name).split(' ').map(word => word.charAt(0).toLocaleUpperCase() + word.slice(1)).join(' ')}</h2>
           <div className={styles.buttonContainer}>
             <button className={styles.editButton} onClick={() => setShowEdit(true)}>Edit my Information</button>
             <button className={styles.deleteButton} onClick={() => setShowDelete(true)}>Delete my Account</button>
@@ -69,7 +76,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <EditInformation show={showEdit} handleClose={() => setShowEdit(false)} user={user} />
+      <EditInformation show={showEdit} handleClose={() => setShowEdit(false)} user={user} updateFullName={updateFullName} />
       <DeleteAccount show={showDelete} handleClose={() => setShowDelete(false)} />
       <Footer />
     </Fragment>

@@ -1,0 +1,89 @@
+.modalDialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalHeader {
+    background-color: #007bff;
+    color: white;
+}
+
+.modalBody {
+    padding: 20px;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: center;
+}
+
+.modalFooter .btnSecondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    margin: 5px !important;
+}
+
+.modalFooter .btnPrimary {
+    background-color: var(--main-blue-color);
+    border-color: var(--main-blue-color);
+    margin: 5px !important;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.note {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 12px;
+}
+
+.emailLabel, .nameLabel {
+    margin: 10px 0px;
+}
+
+@media screen and (max-width: 550px) {
+    .modalBody {
+        padding: 15px;
+    }
+
+    .formGroup input {
+        padding: 8px;
+    }
+
+    .modalFooter .btnSecondary,
+    .modalFooter .btnPrimary {
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (min-width: 551px) and (max-width: 887px) {
+    .modalBody {
+        padding: 18px;
+    }
+
+    .formGroup input {
+        padding: 9px;
+    }
+
+    .modalFooter .btnSecondary,
+    .modalFooter .btnPrimary {
+        padding: 9px 18px;
+    }
+}
