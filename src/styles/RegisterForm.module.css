@@ -5,7 +5,7 @@
     align-items: center;
     height: auto;
     max-width: 100%;
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 .TheForm {
@@ -75,7 +75,7 @@
 
     .TheForm {
         padding: 15px;
-        margin: 40px 5px;
+        margin: 30px;
     }
 
     .TheForm h2 {
@@ -98,7 +98,7 @@
 
     .TheForm {
         padding: 20px;
-        margin: 50px 10px;
+        margin: 40px;
     }
 
     .TheForm h2 {
@@ -121,7 +121,7 @@
 
     .TheForm {
         padding: 25px;
-        margin: 70px;
+        margin: 50px;
     }
 
     .TheForm h2 {
