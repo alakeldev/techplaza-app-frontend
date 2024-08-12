@@ -3,25 +3,174 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
+    background: url('../assets/dashboard.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 100px;
+}
+.welcomeContainer {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.editButton,
+.deleteButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.editButton {
     background-color: var(--main-blue-color);
+    color: #fff;
+}
+
+.editButton:hover {
+    background-color: #0056b3;
+}
+
+.deleteButton {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+.deleteButton:hover {
+    background-color: #cc0000;
 }
 
 .cardContainer {
     display: flex;
     gap: 20px;
     margin: 20px 0;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .card {
-    background-color: #eeeeee;
+    background-color: #fff;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     transition: transform 0.2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
 }
 
 .card:hover {
     transform: scale(1.05);
+}
+
+.cardImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.disabledCard {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.disabledCard h3,
+.disabledCard p {
+    color: #999;
+}
+
+@media screen and (max-width: 550px) {
+    .dashboardContainer {
+        padding-top: 80px;
+    }
+
+    .welcomeContainer {
+        width: 90%;
+    }
+
+    .card {
+        width: 150px;
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 551px) and (max-width: 887px) {
+    .dashboardContainer {
+        padding-top: 90px;
+    }
+
+    .welcomeContainer {
+        width: 85%;
+    }
+
+    .card {
+        width: 180px;
+        padding: 18px;
+    }
+
+    .card h3 {
+        font-size: 17px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 888px) {
+    .dashboardContainer {
+        padding-top: 100px;
+    }
+
+    .welcomeContainer {
+        width: 80%;
+    }
+
+    .card {
+        width: 200px;
+        padding: 20px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
 }

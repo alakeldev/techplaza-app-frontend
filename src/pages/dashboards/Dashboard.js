@@ -2,18 +2,21 @@ import React, { Fragment, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
+import weatherImage from '../../assets/weather.jpg';
+import tasksImage from '../../assets/tasks.jpg';
+import snakeImage from '../../assets/snake.jpg';
+import chatImage from '../../assets/chat.jpg';
 import styles from '../../styles/Dashboard.module.css';
 
 
 const Dashboard = () => {
-
-  const navigate = useNavigate()
-  const user = JSON.parse(localStorage.getItem('user'))
-  const jwt_token = localStorage.getItem('access')
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem('user'));
+  const jwt_token = localStorage.getItem('access');
 
   useEffect(() => {
-    if(jwt_token === null && !user) {
-      navigate("/login")
+    if (jwt_token === null && !user) {
+      navigate("/login");
     }
   }, [jwt_token, user, navigate]);
 
@@ -31,25 +34,40 @@ const Dashboard = () => {
     <Fragment>
       <NavBar />
       <div className={styles.dashboardContainer}>
-        <h2>Hi {user && user.name.charAt(0).toLocaleUpperCase() + user.name.slice(1)}</h2>
-        <h5>Welcome to Your Dashboard</h5>
-        <button>Edit my information</button>
-        <button>Delete Account</button>
+        <div className={styles.welcomeContainer}>
+          <h2>Hi {user && user.name.charAt(0).toLocaleUpperCase() + user.name.slice(1)}</h2>
+          <h5>Welcome to Your Dashboard</h5>
+          <div className={styles.buttonContainer}>
+            <button className={styles.editButton}>Edit my Information</button>
+            <button className={styles.deleteButton}>Delete my Account</button>
+          </div>
+        </div>
         <div className={styles.cardContainer}>
           <div className={styles.card} onClick={() => handleAppClick('World Weather Application')}>
-            <h3>World Weather Application</h3>
+            <img src={weatherImage} alt="World Weather Application" className={styles.cardImage} />
+            <h3>World Weather</h3>
+            <p>Get the latest weather updates from around the world.</p>
           </div>
           <div className={styles.card} onClick={() => handleAppClick('Tasks Manager Application')}>
-            <h3>Tasks Manager Application</h3>
+            <img src={tasksImage} alt="Tasks Manager Application" className={styles.cardImage} />
+            <h3>Tasks Manager</h3>
+            <p>Manage your tasks efficiently and stay organized.</p>
           </div>
           <div className={styles.card} onClick={() => handleAppClick('Snake Game')}>
+            <img src={snakeImage} alt="Snake Game" className={styles.cardImage} />
             <h3>Snake Game</h3>
+            <p>Enjoy a classic game of Snake.</p>
+          </div>
+          <div className={`${styles.card} ${styles.disabledCard}`}>
+            <img src={chatImage} alt="Chat Application" className={styles.cardImage} />
+            <h3>Community Chat</h3>
+            <p>Coming in December 2024</p>
           </div>
         </div>
       </div>
       <Footer />
     </Fragment>
-  )
-}
+  );
+};
 
 export default Dashboard;
