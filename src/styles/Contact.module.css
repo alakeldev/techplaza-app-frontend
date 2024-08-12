@@ -16,7 +16,7 @@
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(238, 238, 238, .1);
     color: var(--main-blue-color);
-    margin: 25px;
+    margin: 50px 20px;
 }
 
 .TheForm h2 {
@@ -68,6 +68,33 @@
 @media screen and (max-width: 550px) {
     .TheForm {
         padding: 15px;
+        margin: 30px;
+    }
+
+    .TheForm h2 {
+        font-size: 20px;
+    }
+
+    .FormField {
+        height: 35px;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .TextAreaField {
+        height: 80px;
+    }
+
+    .FormButton {
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 551px) and (max-width: 887px) {
+    .TheForm {
+        padding: 20px;
+        margin: 40px;
     }
 
     .TheForm h2 {
@@ -76,11 +103,12 @@
 
     .FormField {
         height: 40px;
+        padding: 12px;
         font-size: 14px;
     }
 
     .TextAreaField {
-        height: 80px;
+        height: 90px;
     }
 
     .FormButton {
@@ -89,33 +117,10 @@
     }
 }
 
-@media screen and (min-width: 551px) and (max-width: 887px) {
-    .TheForm {
-        padding: 20px;
-    }
-
-    .TheForm h2 {
-        font-size: 26px;
-    }
-
-    .FormField {
-        height: 42px;
-        font-size: 14.5px;
-    }
-
-    .TextAreaField {
-        height: 90px;
-    }
-
-    .FormButton {
-        height: 48px;
-        font-size: 19px;
-    }
-}
-
 @media screen and (min-width: 888px) {
     .TheForm {
         padding: 25px;
+        margin: 50px;
     }
 
     .TheForm h2 {
@@ -124,6 +129,7 @@
 
     .FormField {
         height: 45px;
+        padding: 14px;
         font-size: 15px;
     }
 

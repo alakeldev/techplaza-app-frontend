@@ -65,11 +65,18 @@
     background-color: var(--main-blue-color);
 }
 
-.ForgetPasswordLink {
-    display: block;
+.ForgetPasswordContainer {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5px;
+}
+
+.ForgetPasswordLink {
+    display: inline-block;
     color: var(--main-blue-color);
+}
+
+.ForgetPasswordLink:hover {
+    text-decoration: underline !important;
 }
 
 .ErrorMessage {

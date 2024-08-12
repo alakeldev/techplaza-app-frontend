@@ -98,7 +98,9 @@ const LoginForm = () => {
           <Button variant="primary" type="submit" className={styles.FormButton}>
             {isLoading ? "Logging in..." : "Login"}
           </Button>
-          <Link to={"/forget_password"} className={styles.ForgetPasswordLink}>Forgot Password?</Link>
+          <div className={styles.ForgetPasswordContainer}>
+            <Link to={"/forget_password"} className={styles.ForgetPasswordLink}>Forgot Password?</Link>
+          </div>
         </Form>
       </Container>
       <Footer />
