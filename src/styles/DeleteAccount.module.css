@@ -1,0 +1,53 @@
+.modalDialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalHeader {
+    background-color: #007bff;
+    color: white;
+}
+
+.modalBody {
+    padding: 20px;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: center;
+}
+
+.modalFooter .btnSecondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    margin: 5px !important;
+}
+
+.modalFooter .btnPrimary {
+    background-color: #ff4d4d;
+    border-color: #ff4d4d;
+    margin: 5px !important;
+}
+
+@media screen and (max-width: 550px) {
+    .modalBody {
+        padding: 15px;
+    }
+
+    .modalFooter .btnSecondary,
+    .modalFooter .btnPrimary {
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (min-width: 551px) and (max-width: 887px) {
+    .modalBody {
+        padding: 18px;
+    }
+
+    .modalFooter .btnSecondary,
+    .modalFooter .btnPrimary {
+        padding: 9px 18px;
+    }
+}
