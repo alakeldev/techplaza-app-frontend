@@ -65,7 +65,7 @@ const NavBar = () => {
           <Modal.Title>Logout Confirmation</Modal.Title>
         </Modal.Header>
         <Modal.Body className={styles.modalBody}>Are you sure you want to logout?</Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className={styles.modalFooter}>
           <Button variant="secondary" onClick={handleClose} className={styles.btnSecondary}>
             No
           </Button>
@@ -76,6 +76,6 @@ const NavBar = () => {
       </Modal>
     </>
   );
-}
+};
 
 export default NavBar;
