@@ -39,12 +39,12 @@ const Dashboard = () => {
       <NavBar />
       <div className={styles.dashboardContainer}>
         <div className={styles.welcomeContainer}>
-          <h2>Hi {user && user.name.charAt(0).toLocaleUpperCase() + user.name.slice(1)}</h2>
-          <h5>Welcome to Your Dashboard</h5>
+          <h2>Hi {user && user.name.split(' ').map(word => word.charAt(0).toLocaleUpperCase() + word.slice(1)).join(' ')}</h2>
           <div className={styles.buttonContainer}>
             <button className={styles.editButton} onClick={() => setShowEdit(true)}>Edit my Information</button>
             <button className={styles.deleteButton} onClick={() => setShowDelete(true)}>Delete my Account</button>
           </div>
+          <h5>Welcome to Your Dashboard</h5>
         </div>
         <div className={styles.cardContainer}>
           <div className={styles.card} onClick={() => handleAppClick('World Weather Application')}>
