@@ -1,7 +1,9 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
+import EditInformation from '../../components/EditInformation';
+import DeleteAccount from '../../components/DeleteAccount';
 import weatherImage from '../../assets/weather.jpg';
 import tasksImage from '../../assets/tasks.jpg';
 import snakeImage from '../../assets/snake.jpg';
@@ -13,6 +15,8 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem('user'));
   const jwt_token = localStorage.getItem('access');
+  const [showEdit, setShowEdit] = useState(false);
+  const [showDelete, setShowDelete] = useState(false);
 
   useEffect(() => {
     if (jwt_token === null && !user) {
@@ -38,8 +42,8 @@ const Dashboard = () => {
           <h2>Hi {user && user.name.charAt(0).toLocaleUpperCase() + user.name.slice(1)}</h2>
           <h5>Welcome to Your Dashboard</h5>
           <div className={styles.buttonContainer}>
-            <button className={styles.editButton}>Edit my Information</button>
-            <button className={styles.deleteButton}>Delete my Account</button>
+            <button className={styles.editButton} onClick={() => setShowEdit(true)}>Edit my Information</button>
+            <button className={styles.deleteButton} onClick={() => setShowDelete(true)}>Delete my Account</button>
           </div>
         </div>
         <div className={styles.cardContainer}>
@@ -65,6 +69,8 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      <EditInformation show={showEdit} handleClose={() => setShowEdit(false)} user={user} />
+      <DeleteAccount show={showDelete} handleClose={() => setShowDelete(false)} />
       <Footer />
     </Fragment>
   );
