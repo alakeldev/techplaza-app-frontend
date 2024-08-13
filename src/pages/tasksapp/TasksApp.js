@@ -93,15 +93,22 @@ const TasksApp = () => {
         setModal(!modal);
     };
 
+    const goToDashboard = () => {
+        navigate("/dashboard");
+    };
+
     return (
         <Fragment>
             <NavBar />
-            <Container className="content">
-                <h1 className="text-black text-uppercase text-center my-4">Task Manager</h1>
-                <Row className="justify-content-center">
+            <Container className={styles.content}>
+                <h1 className={styles.title}>Task Manager</h1>
+                <Button onClick={goToDashboard} variant="secondary" className={styles.dashboardButton}>
+                    Dashboard
+                </Button>
+                <Row className={styles.row}>
                     <Col md={6} sm={10}>
-                        <Card className="p-3">
-                            <Button onClick={createItem} variant="primary" className="mb-3">
+                        <Card className={styles.card}>
+                            <Button onClick={createItem} variant="primary" className={styles.addButton}>
                                 Add task
                             </Button>
                             <TabList viewDone={viewDone} displayDone={displayDone} />
@@ -124,7 +131,7 @@ const TasksApp = () => {
             </Container>
             <Footer />
         </Fragment>
-    )
-}
+    );
+};
 
-export default TasksApp
+export default TasksApp;

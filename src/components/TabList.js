@@ -1,9 +1,10 @@
 import React from 'react';
 import { ButtonGroup, Button } from 'react-bootstrap';
+import styles from '../styles/TasksApp.module.css';
 
 const TabList = ({ viewDone, displayDone }) => {
     return (
-        <ButtonGroup className="my-5">
+        <ButtonGroup className={`my-5 ${styles.buttonGroup}`}>
             <Button
                 onClick={() => displayDone(true)}
                 variant={viewDone ? "primary" : "outline-primary"}

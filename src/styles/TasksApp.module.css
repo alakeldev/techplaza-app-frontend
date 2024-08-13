@@ -1,0 +1,133 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    margin-top: 65px;
+    background-image: url('../assets/tasks_app.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-width: 100%;
+}
+
+.title {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 20px 0;
+    text-align: center;
+}
+
+.dashboardButton {
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.row {
+    justify-content: center;
+    width: 100%;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    min-width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+.addButton {
+    margin-bottom: 20px;
+}
+
+.modal {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.listGroupItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+.listGroupItem span {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.listGroupItem .text-decoration-line-through {
+    text-decoration: line-through;
+}
+
+.buttonGroup {
+    margin-top: 20px;
+}
+
+.editButton,
+.deleteButton {
+    width: 80px;
+    margin: 0px 5px !important;
+}
+
+.doneTask span {
+    text-decoration: line-through;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 15px;
+        max-width: 500px;
+    }
+
+    .title {
+        font-size: 1.5em;
+    }
+
+    .listGroupItem {
+        padding: 15px;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 1.2em;
+    }
+
+    .listGroupItem {
+        padding: 10px;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+    }
+}
