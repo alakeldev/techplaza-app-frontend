@@ -3,20 +3,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 50px;
-    background-color: #eeeeee;
+    background-image: url('../assets/weather_app.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .Container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     width: 100%;
     max-width: 500px;
     box-shadow: 0 10px 40px rgb(0, 0, 0);
     border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 20px;
 }
 
 .Container h2 {
@@ -31,6 +35,7 @@
     border-radius: 10px;
     outline: none;
     font-size: 16px;
+    margin-bottom: 10px;
 }
 
 .Container button {
@@ -40,32 +45,137 @@
     width: 125px;
     color: #fff;
     text-transform: uppercase;
-    margin: 20px;
+    margin: 20px 0 !important;
     letter-spacing: 0.4px;
     border-radius: 15px;
 }
 
-.WeatherDetails {
-    margin-top: 20px;
+.DashboardButton {
+    background-color: var(--main-blue-color);
+    border: 1px solid var(--main-blue-color);
+    font-size: 12px;
+    width: 125px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 40px;
+    letter-spacing: 0.4px;
+    border-radius: 15px;
+    align-self: center;
 }
 
-.CityLocation {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.Temp {
-    font-size: 2em;
+.Error {
+    color: red;
     margin-top: 10px;
 }
 
-.Weather {
+.WeatherDetails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.CityLocation,
+.Temp,
+.Weather,
+.Wind {
+    display: flex;
+    align-items: center;
     font-size: 1.2em;
     margin-top: 10px;
+    flex: 1 1 45%;
 }
 
-.Wind {
-    font-size: 1em;
-    margin-top: 10px;
-    color: #555;
+.CityLocation i,
+.Temp i,
+.Weather i,
+.Wind i {
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .Main {
+        padding: 20px;
+    }
+
+    .Container {
+        padding: 15px;
+    }
+
+    .Container h2 {
+        font-size: 1.5em;
+    }
+
+    .Container input {
+        font-size: 14px;
+    }
+
+    .Container button {
+        font-size: 10px;
+        width: 100px;
+    }
+
+    .DashboardButton {
+        font-size: 10px;
+        width: 100px;
+        margin-top: 30px;
+    }
+
+    .WeatherDetails {
+        padding: 15px;
+    }
+
+    .CityLocation,
+    .Temp,
+    .Weather,
+    .Wind {
+        font-size: 1em;
+        flex: 1 1 100%;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Main {
+        padding: 10px;
+    }
+
+    .Container {
+        padding: 10px;
+    }
+
+    .Container h2 {
+        font-size: 1.2em;
+    }
+
+    .Container input {
+        font-size: 12px;
+    }
+
+    .Container button {
+        font-size: 8px;
+    }
+
+    .DashboardButton {
+        font-size: 8px;
+        width: 80px;
+        margin-top: 20px;
+    }
+
+    .WeatherDetails {
+        padding: 10px;
+    }
+
+    .CityLocation,
+    .Temp,
+    .Weather,
+    .Wind {
+        font-size: 0.8em;
+        flex: 1 1 100%;
+        margin-top: 10px;
+    }
 }
