@@ -22,16 +22,18 @@ const SnakeGame = () => {
   return (
     <Fragment>
       <NavBar />
-      <Container className="content">
-        <h1 className="text-black text-uppercase text-center my-4">Welcome To Snake Game</h1>
-        <Row className="justify-content-center">
-          <Col md={6} sm={10}>
-            <Card className="p-3">
-              <SnakeGameBoard />
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+      <div className={styles.mainContainer}>
+        <Container className="content">
+          <h1 className="text-black text-uppercase text-center my-4">Welcome To Snake Game</h1>
+          <Row className="justify-content-center">
+            <Col md={6} sm={10}>
+              <Card className="p-3">
+                <SnakeGameBoard />
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </div>
       <Footer />
     </Fragment>
   );

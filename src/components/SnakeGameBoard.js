@@ -15,6 +15,7 @@ const SnakeGameBoard = () => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
+      e.preventDefault();
       switch (e.key) {
         case 'ArrowUp':
           setDirection('UP');
