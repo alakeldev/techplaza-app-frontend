@@ -1,17 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import axiosInstance from '../utils/axiosInstance';
-import SnakeGameHighScores from './SnakeGameHighScores';
 import styles from '../styles/SnakeGameBoard.module.css';
 
-const SnakeGameBoard = () => {
-  const user = JSON.parse(localStorage.getItem('user'));
+const SnakeGameBoard = ({ highScores, setHighScores }) => {
   const [snake, setSnake] = useState([{ x: 10, y: 10 }]);
   const [food, setFood] = useState({ x: 15, y: 15 });
   const [direction, setDirection] = useState('RIGHT');
   const [score, setScore] = useState(0);
-  const [highScores, setHighScores] = useState([]);
   const [gameOver, setGameOver] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
+  const [boardSize, setBoardSize] = useState(20);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 576) {
+        setBoardSize(10);
+      } else if (window.innerWidth <= 768) {
+        setBoardSize(15);
+      } else {
+        setBoardSize(20);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -38,6 +53,14 @@ const SnakeGameBoard = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  const generateFood = () => {
+    let newFood;
+    do {
+      newFood = { x: Math.floor(Math.random() * boardSize), y: Math.floor(Math.random() * boardSize) };
+    } while (snake.some(segment => segment.x === newFood.x && segment.y === newFood.y));
+    return newFood;
+  };
+
   useEffect(() => {
     const moveSnake = () => {
       const newSnake = [...snake];
@@ -60,14 +83,14 @@ const SnakeGameBoard = () => {
           break;
       }
 
-      if (head.x < 0 || head.x >= 20 || head.y < 0 || head.y >= 20 || newSnake.some(segment => segment.x === head.x && segment.y === head.y)) {
+      if (head.x < 0 || head.x >= boardSize || head.y < 0 || head.y >= boardSize || newSnake.some(segment => segment.x === head.x && segment.y === head.y)) {
         setGameOver(true);
         return;
       }
 
       newSnake.unshift(head);
       if (head.x === food.x && head.y === food.y) {
-        setFood({ x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20) });
+        setFood(generateFood());
         setScore(score + 1);
       } else {
         newSnake.pop();
@@ -80,42 +103,29 @@ const SnakeGameBoard = () => {
       const interval = setInterval(moveSnake, 200);
       return () => clearInterval(interval);
     }
-  }, [snake, direction, food, score, gameOver, gameStarted]);
-
-  useEffect(() => {
-    axiosInstance.get('game1/high_scores/')
-      .then(response => {
-        const sortedScores = response.data.sort((a, b) => b.score - a.score);
-        setHighScores(sortedScores.slice(0, 5));
-      })
-      .catch(error => console.error('Error fetching high scores:', error));
-  }, []);
+  }, [snake, direction, food, score, gameOver, gameStarted, boardSize]);
 
   useEffect(() => {
     if (gameOver && score > 0) {
       const lowestHighScore = highScores[highScores.length - 1]?.score || 0;
       if (score > lowestHighScore) {
         axiosInstance.post('game1/high_scores/', {
-          user: {
-            email: user.email,
-            full_name: user.full_name
-          },
           score
         })
           .then(response => {
             const sortedScores = [...highScores, response.data].sort((a, b) => b.score - a.score);
-            setHighScores(sortedScores.slice(0, 5));
+            setHighScores(sortedScores.slice(0, 3));
           })
           .catch(error => console.error('Error saving score:', error));
       }
     }
-  }, [gameOver, score, highScores, user]);
+  }, [gameOver, score, highScores, setHighScores]);
 
   const startGame = () => {
     setGameStarted(true);
     setGameOver(false);
     setSnake([{ x: 10, y: 10 }]);
-    setFood({ x: 15, y: 15 });
+    setFood(generateFood());
     setDirection('RIGHT');
     setScore(0);
   };
@@ -124,7 +134,7 @@ const SnakeGameBoard = () => {
     setGameStarted(false);
     setGameOver(false);
     setSnake([{ x: 10, y: 10 }]);
-    setFood({ x: 15, y: 15 });
+    setFood(generateFood());
     setDirection('RIGHT');
     setScore(0);
   };
@@ -133,19 +143,16 @@ const SnakeGameBoard = () => {
     <div className={styles.container}>
       <div className={styles.gameBoard}>
         {snake.map((segment, index) => (
-          <div key={index} className={styles.snakeSegment} style={{ left: `${segment.x * 20}px`, top: `${segment.y * 20}px` }}></div>
+          <div key={index} className={styles.snakeSegment} style={{ left: `${segment.x * (400 / boardSize)}px`, top: `${segment.y * (400 / boardSize)}px` }}></div>
         ))}
-        <div className={styles.food} style={{ left: `${food.x * 20}px`, top: `${food.y * 20}px` }}></div>
-      </div>
-      <div className={styles.highScoresContainer}>
-        <SnakeGameHighScores highScores={highScores} />
+        <div className={styles.food} style={{ left: `${food.x * (400 / boardSize)}px`, top: `${food.y * (400 / boardSize)}px` }}></div>
       </div>
       <div className={styles.buttons}>
-        <button onClick={startGame}>Start</button>
-        <button onClick={restartGame}>Restart</button>
+        <button className={styles.button} onClick={startGame}>Start</button>
+        <button className={styles.button} onClick={restartGame}>Restart</button>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default SnakeGameBoard;

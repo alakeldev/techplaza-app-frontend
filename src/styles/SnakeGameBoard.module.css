@@ -14,20 +14,12 @@
 
 .snakeSegment {
     position: absolute;
-    width: 20px;
-    height: 20px;
     background-color: var(--main-blue-color);
 }
 
 .food {
     position: absolute;
-    width: 20px;
-    height: 20px;
     background-color: rgb(0, 255, 106);
-}
-
-.highScoresContainer {
-    margin-left: 20px;
 }
 
 .buttons {
@@ -35,9 +27,70 @@
     margin-top: 20px;
 }
 
-button {
-    margin: 0 10px;
+.button {
+    margin: 0 15px !important;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 576px) {
+    .gameBoard {
+        width: 200px;
+        height: 200px;
+    }
+
+    .snakeSegment {
+        width: 10px;
+        height: 10px;
+    }
+
+    .food {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .gameBoard {
+        width: 300px;
+        height: 300px;
+    }
+
+    .snakeSegment {
+        width: 15px;
+        height: 15px;
+    }
+
+    .food {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media (min-width: 769px) {
+    .gameBoard {
+        width: 400px;
+        height: 400px;
+    }
+
+    .snakeSegment {
+        width: 20px;
+        height: 20px;
+    }
+
+    .food {
+        width: 20px;
+        height: 20px;
+    }
 }
