@@ -1,3 +1,124 @@
 .mainContainer {
     background-color: #eeeeee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.content {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.highScoresContainer {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.dashboardButton {
+    display: block;
+    margin: 0 auto 20px auto !important;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dashboardButton:hover {
+    background-color: #0056b3;
+}
+
+.gameCard {
+    background-color: #eeeeee;
+    border: 5px solid #eeeeee;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.smallScreenMessage {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+@media (max-width: 576px) {
+    .content {
+        padding: 10px;
+    }
+
+    .highScoresContainer {
+        margin-bottom: 10px;
+    }
+
+    .dashboardButton {
+        margin-bottom: 10px;
+    }
+
+    .gameCard {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .content {
+        padding: 20px;
+    }
+
+    .highScoresContainer {
+        margin-bottom: 15px;
+    }
+
+    .dashboardButton {
+        margin-bottom: 15px;
+    }
+
+    .gameCard {
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .content {
+        padding: 30px;
+    }
+
+    .highScoresContainer {
+        margin-bottom: 20px;
+    }
+
+    .dashboardButton {
+        margin-bottom: 20px;
+    }
+
+    .gameCard {
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
 }
