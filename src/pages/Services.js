@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Helmet } from 'react-helmet';
 import { Container, Row, Col, Image, Accordion } from 'react-bootstrap';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -8,6 +9,9 @@ import ServicesImage from '../assets/services.jpg';
 const Services = () => {
     return (
         <Fragment>
+            <Helmet>
+                <title>Services - TechPlaza Platform</title>
+            </Helmet>
             <NavBar />
             <Container className={styles.ServicesContainer}>
                 <Row className="justify-content-md-center align-items-md-center">

@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import { Button, Card, Container, Row, Col } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
@@ -99,6 +100,9 @@ const TasksApp = () => {
 
     return (
         <Fragment>
+            <Helmet>
+                <title>Tasks Manager - TechPlaza Platform</title>
+            </Helmet>
             <NavBar />
             <Container className={styles.content}>
                 <h1 className={styles.title}>Task Manager</h1>

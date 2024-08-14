@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
@@ -56,6 +57,9 @@ const RegisterForm = () => {
 
   return (
     <Fragment>
+      <Helmet>
+        <title>Register - TechPlaza Platform</title>
+      </Helmet>
       <NavBar />
       <Container className={styles.FormContainer}>
         <Form onSubmit={handleSubmit} className={styles.TheForm}>

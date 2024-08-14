@@ -1,4 +1,5 @@
 import React, { useState, Fragment, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
@@ -59,6 +60,9 @@ const WeatherApp = () => {
 
   return (
     <Fragment>
+      <Helmet>
+        <title>Weather App - TechPlaza Platform</title>
+      </Helmet>
       <NavBar />
       <div className={styles.Main}>
         <div className={styles.Container}>

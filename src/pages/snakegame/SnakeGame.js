@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import { Card, Container, Row, Col, Button } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
@@ -45,6 +46,9 @@ const SnakeGame = () => {
 
   return (
     <Fragment>
+      <Helmet>
+        <title>Snake Game - TechPlaza Platform</title>
+      </Helmet>
       <NavBar />
       <div className={styles.mainContainer}>
         <Container className="content">

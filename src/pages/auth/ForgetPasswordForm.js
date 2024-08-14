@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
@@ -40,6 +41,9 @@ const ForgetPasswordForm = () => {
 
   return (
     <Fragment>
+      <Helmet>
+        <title>Forget Password - TechPlaza Platform</title>
+      </Helmet>
       <NavBar />
       <Container className={styles.FormContainer}>
         <Form onSubmit={handleSubmit} className={styles.TheForm}>

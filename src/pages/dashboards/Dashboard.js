@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
@@ -43,6 +44,9 @@ const Dashboard = () => {
 
   return (
     <Fragment>
+      <Helmet>
+        <title>Dashboard - TechPlaza Platform</title>
+      </Helmet>
       <NavBar />
       <div className={styles.dashboardContainer}>
         <div className={styles.welcomeContainer}>

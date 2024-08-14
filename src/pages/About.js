@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Helmet } from 'react-helmet';
 import Carousel from 'react-bootstrap/Carousel';
 import styles from "../styles/About.module.css";
 import NavBar from '../components/NavBar';
@@ -7,6 +8,9 @@ import Footer from '../components/Footer';
 const About = () => {
     return (
         <Fragment>
+            <Helmet>
+                <title>About Us - TechPlaza Platform</title>
+            </Helmet>
             < NavBar />
             <Carousel>
                 <Carousel.Item>
