@@ -1,0 +1,9 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    text-align: center;
+    background-color: #eeeeee;
+}

@@ -15,6 +15,7 @@ import Dashboard from './pages/dashboards/Dashboard';
 import WeatherApp from './pages/weatherapp/WeatherApp';
 import TasksApp from './pages/tasksapp/TasksApp';
 import SnakeGame from './pages/snakegame/SnakeGame';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/dashboard/weather_app" element={<WeatherApp />} />
           <Route path="/dashboard/tasks_app" element={<TasksApp />} />
           <Route path="/dashboard/snake_game" element={<SnakeGame />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </Fragment>
