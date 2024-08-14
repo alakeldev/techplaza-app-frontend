@@ -109,7 +109,7 @@ const SnakeGameBoard = ({ highScores, setHighScores }) => {
     if (gameOver && score > 0) {
       const lowestHighScore = highScores[highScores.length - 1]?.score || 0;
       if (score > lowestHighScore) {
-        axiosInstance.post('game1/high_scores/', {
+        axiosInstance.post('/game1/high_scores/', {
           score
         })
           .then(response => {
