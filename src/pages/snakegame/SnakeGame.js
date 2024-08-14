@@ -25,7 +25,7 @@ const SnakeGame = () => {
     axiosInstance.get('/game1/high_scores/')
       .then(response => {
         const sortedScores = response.data.sort((a, b) => b.score - a.score);
-        setHighScores(sortedScores.slice(0, 3));
+        setHighScores(sortedScores.slice(0, 1));
       })
       .catch(error => console.error('Error fetching high scores:', error));
   }, []);
