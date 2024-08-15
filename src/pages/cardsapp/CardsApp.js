@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
+import MembersCardsList from '../../components/MembersCardsList';
+import styles from '../../styles/CardsApp.module.css'
 
 const CardsApp = () => {
 
@@ -24,7 +26,10 @@ const CardsApp = () => {
         <title>Cards Members - TechPlaza Platform</title>
       </Helmet>
       <NavBar />
-
+      <div className={styles.mainContainer}>
+        <h2>Our Community Members Cards</h2>
+        <MembersCardsList />
+      </div>
       <Footer />
     </Fragment>
   )
