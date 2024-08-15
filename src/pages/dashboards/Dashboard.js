@@ -8,6 +8,7 @@ import DeleteAccount from '../../components/DeleteAccount';
 import weatherImage from '../../assets/weather.jpg';
 import tasksImage from '../../assets/tasks.jpg';
 import snakeImage from '../../assets/snake.jpg';
+import cardsImage from '../../assets/cards.jpg';
 import chatImage from '../../assets/chat.jpg';
 import styles from '../../styles/Dashboard.module.css';
 
@@ -33,6 +34,8 @@ const Dashboard = () => {
       navigate('/dashboard/tasks_app');
     } else if (app === 'Snake Game') {
       navigate('/dashboard/snake_game');
+    } else if (app === 'Member Cards Application') {
+      navigate('/dashboard/cards_app');
     }
   };
 
@@ -72,6 +75,11 @@ const Dashboard = () => {
             <img src={snakeImage} alt="Snake Game" className={styles.cardImage} />
             <h3>Snake Game</h3>
             <p>Enjoy a classic game of Snake.</p>
+          </div>
+          <div className={styles.card} onClick={() => handleAppClick('Member Cards Application')}>
+            <img src={cardsImage} alt="Member Cards Application" className={styles.cardImage} />
+            <h3>Members Card</h3>
+            <p>Explore the details and cards of our community members, and create your own.</p>
           </div>
           <div className={`${styles.card} ${styles.disabledCard}`}>
             <img src={chatImage} alt="Chat Application" className={styles.cardImage} />
