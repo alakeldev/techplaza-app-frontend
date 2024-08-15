@@ -5,6 +5,7 @@ import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
 import MembersCardsList from '../../components/MembersCardsList';
 import styles from '../../styles/CardsApp.module.css'
+import { Button } from 'react-bootstrap';
 
 const CardsApp = () => {
 
@@ -18,7 +19,9 @@ const CardsApp = () => {
     }
   }, [jwt_token, user, navigate]);
 
-
+  const handleDashboardClick = () => {
+    navigate("/dashboard");
+  };
 
   return (
     <Fragment>
@@ -28,11 +31,12 @@ const CardsApp = () => {
       <NavBar />
       <div className={styles.mainContainer}>
         <h2>Our Community Members Cards</h2>
+        <Button className={styles.dashboardButton} onClick={handleDashboardClick}>Dashboard</Button>
         <MembersCardsList />
       </div>
       <Footer />
     </Fragment>
-  )
-}
+  );
+};
 
-export default CardsApp
+export default CardsApp;
