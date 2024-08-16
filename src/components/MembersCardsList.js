@@ -33,6 +33,14 @@ const MembersCardsList = () => {
     }
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, photo: e.target.files[0] });
+  };
 
   return (
     <div className={styles.membersCardsList}>
