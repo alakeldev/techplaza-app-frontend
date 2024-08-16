@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import { ReactTyped } from "react-typed";
-import styles from "../styles/Header.module.css"
+import styles from "../styles/Header.module.css";
 
 function Header({ title, typedStrings }) {
+    useEffect(() => {
+    }, []);
+
     return (
         <header className={styles.Landing}>
             <div className={styles.HeaderTypography}>
@@ -20,6 +23,6 @@ function Header({ title, typedStrings }) {
             </div>
         </header>
     );
-}
+};
 
-export default Header
+export default Header;
