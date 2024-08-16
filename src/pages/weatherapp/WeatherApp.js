@@ -30,7 +30,11 @@ const WeatherApp = () => {
         return;
       }
 
-      fetch(`https://backend-techplaza-1b0c24eaa252.herokuapp.com/api/app1/weather?city=${city}`)
+      fetch(`https://backend-techplaza-1b0c24eaa252.herokuapp.com/api/app1/weather?city=${city}`, {
+        headers: {
+          'Authorization': `Bearer ${jwt_token}`
+        }
+      })
         .then(res => {
           if (!res.ok) {
             throw new Error('Invalid city name. Please enter a valid city.');
