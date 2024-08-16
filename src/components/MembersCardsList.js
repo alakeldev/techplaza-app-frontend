@@ -20,7 +20,18 @@ const MembersCardsList = () => {
     photo: null,
   });
 
+  useEffect(() => {
+    fetchMembers();
+  }, []);
 
+  const fetchMembers = async () => {
+    try {
+      const response = await axiosInstance.get('/app3/cards/');
+      setMembers(response.data);
+    } catch (error) {
+      console.error('Error fetching members:', error);
+    }
+  };
 
 
   return (
