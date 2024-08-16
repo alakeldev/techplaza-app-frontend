@@ -3,6 +3,7 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import axiosInstance from '../utils/axiosInstance';
 import MemberCard from './MemberCard';
 import styles from '../styles/MembersCardsList.module.css';
+import defaultProfileImage from '../assets/default_profile.jpg'
 
 
 const MembersCardsList = () => {
@@ -41,6 +42,50 @@ const MembersCardsList = () => {
   const handleFileChange = (e) => {
     setFormData({ ...formData, photo: e.target.files[0] });
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formDataToSend = new FormData();
+    Object.keys(formData).forEach((key) => {
+      formDataToSend.append(key, formData[key]);
+    });
+
+    if (!formData.photo) {
+      formDataToSend.append('photo', defaultProfileImage);
+    }
+
+    try {
+      await axiosInstance.post('/app3/cards/', formDataToSend);
+      fetchMembers();
+      setShowModal(false);
+    } catch (error) {
+      console.error('Error creating card:', error);
+    }
+  };
+
+  const handleEdit = (member) => {
+    setFormData({
+      email: member.email,
+      name: member.name,
+      phone_number: member.phone_number,
+      profession: member.profession,
+      description: member.description,
+      country: member.country,
+      photo: null,
+    });
+    setShowModal(true);
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await axiosInstance.delete(`/app3/cards/${id}/`);
+      fetchMembers();
+    } catch (error) {
+      console.error('Error deleting card:', error);
+    }
+  };
+
+  const userCard = members.find((member) => member.email === user.email);
 
   return (
     <div className={styles.membersCardsList}>
@@ -141,7 +186,7 @@ const MembersCardsList = () => {
         </Modal.Body>
       </Modal>
     </div>
-  )
-}
+  );
+};
 
-export default MembersCardsList
+export default MembersCardsList;
