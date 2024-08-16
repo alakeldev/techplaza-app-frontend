@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Logo from "../assets/logo.png";
 import styles from "../styles/Footer.module.css";
 
 const Footer = () => {
     const year = new Date().getFullYear();
-    
-    useEffect(() => {
-    }, []);
 
     return (
         <Container className="py-5 mt-5 text-light text-center">

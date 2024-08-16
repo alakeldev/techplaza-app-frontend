@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ReactTyped } from "react-typed";
 import styles from "../styles/Header.module.css";
 
 function Header({ title, typedStrings }) {
-    useEffect(() => {
-    }, []);
-
     return (
         <header className={styles.Landing}>
             <div className={styles.HeaderTypography}>
