@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
@@ -40,40 +40,42 @@ const EmailVerifyForm = () => {
   }
 
   return (
-    <Fragment>
-      <Helmet>
-        <title>Email Verification - TechPlaza Platform</title>
-      </Helmet>
-      <NavBar />
-      <Container className={styles.FormContainer}>
-        <Form onSubmit={handleSubmit} className={styles.TheForm}>
-          <Form.Group className="mb-3">
-            <Form.Label className={styles.FormLabel}>Enter your email:</Form.Label>
-            <Form.Control
-              className={styles.FormField}
-              type="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label className={styles.FormLabel}>Enter your OTP code:</Form.Label>
-            <Form.Control
-              className={styles.FormField}
-              type="text"
-              name="otp"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit" className={styles.FormButton}>
-            Send
-          </Button>
-        </Form>
-      </Container>
-      <Footer />
-    </Fragment>
+    <HelmetProvider>
+      <Fragment>
+        <Helmet>
+          <title>Email Verification - TechPlaza Platform</title>
+        </Helmet>
+        <NavBar />
+        <Container className={styles.FormContainer}>
+          <Form onSubmit={handleSubmit} className={styles.TheForm}>
+            <Form.Group className="mb-3">
+              <Form.Label className={styles.FormLabel}>Enter your email:</Form.Label>
+              <Form.Control
+                className={styles.FormField}
+                type="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label className={styles.FormLabel}>Enter your OTP code:</Form.Label>
+              <Form.Control
+                className={styles.FormField}
+                type="text"
+                name="otp"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" className={styles.FormButton}>
+              Send
+            </Button>
+          </Form>
+        </Container>
+        <Footer />
+      </Fragment>
+    </HelmetProvider>
   );
 };
 

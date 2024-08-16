@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
@@ -46,52 +46,54 @@ const Dashboard = () => {
   };
 
   return (
-    <Fragment>
-      <Helmet>
-        <title>Dashboard - TechPlaza Platform</title>
-      </Helmet>
-      <NavBar />
-      <div className={styles.dashboardContainer}>
-        <div className={styles.welcomeContainer}>
-          <h2>Hi {(fullName || user.name) && (fullName || user.name).split(' ').map(word => word.charAt(0).toLocaleUpperCase() + word.slice(1)).join(' ')}</h2>
-          <div className={styles.buttonContainer}>
-            <button className={styles.editButton} onClick={() => setShowEdit(true)}>Edit my Information</button>
-            <button className={styles.deleteButton} onClick={() => setShowDelete(true)}>Delete my Account</button>
+    <HelmetProvider>
+      <Fragment>
+        <Helmet>
+          <title>Dashboard - TechPlaza Platform</title>
+        </Helmet>
+        <NavBar />
+        <div className={styles.dashboardContainer}>
+          <div className={styles.welcomeContainer}>
+            <h2>Hi {(fullName || user.name) && (fullName || user.name).split(' ').map(word => word.charAt(0).toLocaleUpperCase() + word.slice(1)).join(' ')}</h2>
+            <div className={styles.buttonContainer}>
+              <button className={styles.editButton} onClick={() => setShowEdit(true)}>Edit my Information</button>
+              <button className={styles.deleteButton} onClick={() => setShowDelete(true)}>Delete my Account</button>
+            </div>
+            <h5>Welcome to Your Dashboard</h5>
           </div>
-          <h5>Welcome to Your Dashboard</h5>
+          <div className={styles.cardContainer}>
+            <div className={styles.card} onClick={() => handleAppClick('World Weather Application')}>
+              <img src={weatherImage} alt="World Weather Application" className={styles.cardImage} />
+              <h3>World Weather</h3>
+              <p>Get the latest weather updates from around the world.</p>
+            </div>
+            <div className={styles.card} onClick={() => handleAppClick('Tasks Manager Application')}>
+              <img src={tasksImage} alt="Tasks Manager Application" className={styles.cardImage} />
+              <h3>Tasks Manager</h3>
+              <p>Manage your tasks efficiently and stay organized.</p>
+            </div>
+            <div className={styles.card} onClick={() => handleAppClick('Snake Game')}>
+              <img src={snakeImage} alt="Snake Game" className={styles.cardImage} />
+              <h3>Snake Game</h3>
+              <p>Enjoy a classic game of Snake.</p>
+            </div>
+            <div className={styles.card} onClick={() => handleAppClick('Member Cards Application')}>
+              <img src={cardsImage} alt="Member Cards Application" className={styles.cardImage} />
+              <h3>Members Card</h3>
+              <p>Explore the details and cards of our community members, and create your own.</p>
+            </div>
+            <div className={`${styles.card} ${styles.disabledCard}`}>
+              <img src={chatImage} alt="Chat Application" className={styles.cardImage} />
+              <h3>Community Chat</h3>
+              <p>Coming in December 2024</p>
+            </div>
+          </div>
         </div>
-        <div className={styles.cardContainer}>
-          <div className={styles.card} onClick={() => handleAppClick('World Weather Application')}>
-            <img src={weatherImage} alt="World Weather Application" className={styles.cardImage} />
-            <h3>World Weather</h3>
-            <p>Get the latest weather updates from around the world.</p>
-          </div>
-          <div className={styles.card} onClick={() => handleAppClick('Tasks Manager Application')}>
-            <img src={tasksImage} alt="Tasks Manager Application" className={styles.cardImage} />
-            <h3>Tasks Manager</h3>
-            <p>Manage your tasks efficiently and stay organized.</p>
-          </div>
-          <div className={styles.card} onClick={() => handleAppClick('Snake Game')}>
-            <img src={snakeImage} alt="Snake Game" className={styles.cardImage} />
-            <h3>Snake Game</h3>
-            <p>Enjoy a classic game of Snake.</p>
-          </div>
-          <div className={styles.card} onClick={() => handleAppClick('Member Cards Application')}>
-            <img src={cardsImage} alt="Member Cards Application" className={styles.cardImage} />
-            <h3>Members Card</h3>
-            <p>Explore the details and cards of our community members, and create your own.</p>
-          </div>
-          <div className={`${styles.card} ${styles.disabledCard}`}>
-            <img src={chatImage} alt="Chat Application" className={styles.cardImage} />
-            <h3>Community Chat</h3>
-            <p>Coming in December 2024</p>
-          </div>
-        </div>
-      </div>
-      <EditInformation show={showEdit} handleClose={() => setShowEdit(false)} user={user} updateFullName={updateFullName} />
-      <DeleteAccount show={showDelete} handleClose={() => setShowDelete(false)} />
-      <Footer />
-    </Fragment>
+        <EditInformation show={showEdit} handleClose={() => setShowEdit(false)} user={user} updateFullName={updateFullName} />
+        <DeleteAccount show={showDelete} handleClose={() => setShowDelete(false)} />
+        <Footer />
+      </Fragment>
+    </HelmetProvider>
   );
 };
 

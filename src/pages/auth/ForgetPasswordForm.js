@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
@@ -40,33 +40,35 @@ const ForgetPasswordForm = () => {
   }
 
   return (
-    <Fragment>
-      <Helmet>
-        <title>Forget Password - TechPlaza Platform</title>
-      </Helmet>
-      <NavBar />
-      <Container className={styles.FormContainer}>
-        <Form onSubmit={handleSubmit} className={styles.TheForm}>
-          <h2>Reset Your Password</h2>
-          {error && <p className={styles.ErrorMessage}>{error}</p>}
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label className={styles.FormLabel}>Enter Your Registered Email:</Form.Label>
-            <Form.Control
-              className={styles.FormField}
-              type="email"
-              placeholder="Enter email"
-              name='email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit" className={styles.FormButton}>
-            Send
-          </Button>
-        </Form>
-      </Container>
-      <Footer />
-    </Fragment>
+    <HelmetProvider>
+      <Fragment>
+        <Helmet>
+          <title>Forget Password - TechPlaza Platform</title>
+        </Helmet>
+        <NavBar />
+        <Container className={styles.FormContainer}>
+          <Form onSubmit={handleSubmit} className={styles.TheForm}>
+            <h2>Reset Your Password</h2>
+            {error && <p className={styles.ErrorMessage}>{error}</p>}
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className={styles.FormLabel}>Enter Your Registered Email:</Form.Label>
+              <Form.Control
+                className={styles.FormField}
+                type="email"
+                placeholder="Enter email"
+                name='email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" className={styles.FormButton}>
+              Send
+            </Button>
+          </Form>
+        </Container>
+        <Footer />
+      </Fragment>
+    </HelmetProvider>
   );
 };
 

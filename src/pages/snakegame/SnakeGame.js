@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { Card, Container, Row, Col, Button } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
@@ -45,38 +45,40 @@ const SnakeGame = () => {
   };
 
   return (
-    <Fragment>
-      <Helmet>
-        <title>Snake Game - TechPlaza Platform</title>
-      </Helmet>
-      <NavBar />
-      <div className={styles.mainContainer}>
-        <Container className="content">
-          <h1 className="text-black text-uppercase text-center my-4">Welcome To Snake Game</h1>
-          {isScreenLarge ? (
-            <>
-              <div className={styles.highScoresContainer}>
-                <SnakeGameHighScores highScores={highScores} />
+    <HelmetProvider>
+      <Fragment>
+        <Helmet>
+          <title>Snake Game - TechPlaza Platform</title>
+        </Helmet>
+        <NavBar />
+        <div className={styles.mainContainer}>
+          <Container className="content">
+            <h1 className="text-black text-uppercase text-center my-4">Welcome To Snake Game</h1>
+            {isScreenLarge ? (
+              <>
+                <div className={styles.highScoresContainer}>
+                  <SnakeGameHighScores highScores={highScores} />
+                </div>
+                <Button className={styles.dashboardButton} onClick={handleDashboardClick}>Dashboard</Button>
+                <Row className="justify-content-center">
+                  <Col md={8} sm={10}>
+                    <Card className={styles.gameCard}>
+                      <SnakeGameBoard highScores={highScores} setHighScores={setHighScores} />
+                    </Card>
+                  </Col>
+                </Row>
+              </>
+            ) : (
+              <div className={styles.smallScreenMessage}>
+                <p>Your screen device is too small to run the game. We are currently working on a version of the Snake Game for small and medium screens. Please check back later!</p>
+                <Button className={styles.dashboardButton} onClick={handleDashboardClick}>Dashboard</Button>
               </div>
-              <Button className={styles.dashboardButton} onClick={handleDashboardClick}>Dashboard</Button>
-              <Row className="justify-content-center">
-                <Col md={8} sm={10}>
-                  <Card className={styles.gameCard}>
-                    <SnakeGameBoard highScores={highScores} setHighScores={setHighScores} />
-                  </Card>
-                </Col>
-              </Row>
-            </>
-          ) : (
-            <div className={styles.smallScreenMessage}>
-              <p>Your screen device is too small to run the game. We are currently working on a version of the Snake Game for small and medium screens. Please check back later!</p>
-              <Button className={styles.dashboardButton} onClick={handleDashboardClick}>Dashboard</Button>
-            </div>
-          )}
-        </Container>
-      </div>
-      <Footer />
-    </Fragment>
+            )}
+          </Container>
+        </div>
+        <Footer />
+      </Fragment>
+    </HelmetProvider>
   );
 };
 

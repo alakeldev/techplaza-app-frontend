@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -44,61 +44,63 @@ const Contact = () => {
     };
 
     return (
-        <Fragment>
-            <Helmet>
-                <title>Contact Us - TechPlaza Platform</title>
-            </Helmet>
-            <NavBar />
-            <Container className={styles.FormContainer}>
-                <Form className={styles.TheForm} onSubmit={handleSubmit}>
-                    <h2>Contact Form</h2>
-                    <Form.Group className="mb-3">
-                        <Form.Label className={styles.FormLabel}>Full Name</Form.Label>
-                        <Form.Control
-                            className={styles.FormField}
-                            type="text"
-                            placeholder="Enter your name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                        />
-                    </Form.Group>
+        <HelmetProvider>
+            <Fragment>
+                <Helmet>
+                    <title>Contact Us - TechPlaza Platform</title>
+                </Helmet>
+                <NavBar />
+                <Container className={styles.FormContainer}>
+                    <Form className={styles.TheForm} onSubmit={handleSubmit}>
+                        <h2>Contact Form</h2>
+                        <Form.Group className="mb-3">
+                            <Form.Label className={styles.FormLabel}>Full Name</Form.Label>
+                            <Form.Control
+                                className={styles.FormField}
+                                type="text"
+                                placeholder="Enter your name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label className={styles.FormLabel}>Email Address</Form.Label>
-                        <Form.Control
-                            className={styles.FormField}
-                            type="email"
-                            placeholder="Enter your email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                        />
-                    </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label className={styles.FormLabel}>Email Address</Form.Label>
+                            <Form.Control
+                                className={styles.FormField}
+                                type="email"
+                                placeholder="Enter your email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label className={styles.FormLabel}>Message</Form.Label>
-                        <Form.Control
-                            className={`${styles.FormField} ${styles.TextAreaField}`}
-                            as="textarea"
-                            rows={3}
-                            placeholder="Enter your message"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            required
-                        />
-                    </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label className={styles.FormLabel}>Message</Form.Label>
+                            <Form.Control
+                                className={`${styles.FormField} ${styles.TextAreaField}`}
+                                as="textarea"
+                                rows={3}
+                                placeholder="Enter your message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
+                            />
+                        </Form.Group>
 
-                    <Button variant="primary" type="submit" className={styles.FormButton}>
-                        Send
-                    </Button>
-                </Form>
-            </Container>
-            <Footer />
-        </Fragment>
+                        <Button variant="primary" type="submit" className={styles.FormButton}>
+                            Send
+                        </Button>
+                    </Form>
+                </Container>
+                <Footer />
+            </Fragment>
+        </HelmetProvider>
     );
 };
 

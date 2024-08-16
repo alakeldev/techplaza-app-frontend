@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
@@ -57,41 +57,43 @@ const ResetPasswordForm = () => {
     };
 
     return (
-        <Fragment>
-            <Helmet>
-                <title>Reset Password - TechPlaza Platform</title>
-            </Helmet>
-            <NavBar />
-            <Container className={styles.FormContainer}>
-                <Form onSubmit={handleSubmit} className={styles.TheForm}>
-                    <h2>Enter Your New Password</h2>
-                    <Form.Group className="mb-3" controlId="formBasicPassword1">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control
-                            className={styles.FormField}
-                            type="password"
-                            placeholder="Enter password"
-                            name='password'
-                            value={newPasswords.password}
-                            onChange={handleChange} />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicPassword2">
-                        <Form.Label>Password Confirm</Form.Label>
-                        <Form.Control
-                            className={styles.FormField}
-                            type="password"
-                            placeholder="Repeat the password"
-                            name='confirm_password'
-                            value={newPasswords.confirm_password}
-                            onChange={handleChange} />
-                    </Form.Group>
-                    <Button variant="primary" type="submit" className={styles.FormButton}>
-                        Submit
-                    </Button>
-                </Form>
-            </Container>
-            <Footer />
-        </Fragment>
+        <HelmetProvider>
+            <Fragment>
+                <Helmet>
+                    <title>Reset Password - TechPlaza Platform</title>
+                </Helmet>
+                <NavBar />
+                <Container className={styles.FormContainer}>
+                    <Form onSubmit={handleSubmit} className={styles.TheForm}>
+                        <h2>Enter Your New Password</h2>
+                        <Form.Group className="mb-3" controlId="formBasicPassword1">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control
+                                className={styles.FormField}
+                                type="password"
+                                placeholder="Enter password"
+                                name='password'
+                                value={newPasswords.password}
+                                onChange={handleChange} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicPassword2">
+                            <Form.Label>Password Confirm</Form.Label>
+                            <Form.Control
+                                className={styles.FormField}
+                                type="password"
+                                placeholder="Repeat the password"
+                                name='confirm_password'
+                                value={newPasswords.confirm_password}
+                                onChange={handleChange} />
+                        </Form.Group>
+                        <Button variant="primary" type="submit" className={styles.FormButton}>
+                            Submit
+                        </Button>
+                    </Form>
+                </Container>
+                <Footer />
+            </Fragment>
+        </HelmetProvider>
     );
 };
 

@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
@@ -67,48 +67,50 @@ const LoginForm = () => {
   }
 
   return (
-    <Fragment>
-      <Helmet>
-        <title>Login - TechPlaza Platform</title>
-      </Helmet>
-      <NavBar />
-      <Container className={styles.FormContainer}>
-        <Form onSubmit={handleSubmit} className={styles.TheForm}>
-          {isLoading && (<h6>Loading.....</h6>)}
-          <h2>Login</h2>
-          {error && <p className={styles.ErrorMessage}>{error}</p>}
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label className={styles.FormLabel}>Enter Your Email Address</Form.Label>
-            <Form.Control
-              className={styles.FormField}
-              type="email"
-              placeholder="Enter your registered email"
-              name="email"
-              value={loginData.email}
-              onChange={handleOnChange}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Enter Your Password</Form.Label>
-            <Form.Control
-              className={styles.FormField}
-              type="password"
-              placeholder="Enter your password"
-              name="password"
-              value={loginData.password}
-              onChange={handleOnChange}
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit" className={styles.FormButton}>
-            {isLoading ? "Logging in..." : "Login"}
-          </Button>
-          <div className={styles.ForgetPasswordContainer}>
-            <Link to={"/forget_password"} className={styles.ForgetPasswordLink}>Forgot Password?</Link>
-          </div>
-        </Form>
-      </Container>
-      <Footer />
-    </Fragment>
+    <HelmetProvider>
+      <Fragment>
+        <Helmet>
+          <title>Login - TechPlaza Platform</title>
+        </Helmet>
+        <NavBar />
+        <Container className={styles.FormContainer}>
+          <Form onSubmit={handleSubmit} className={styles.TheForm}>
+            {isLoading && (<h6>Loading.....</h6>)}
+            <h2>Login</h2>
+            {error && <p className={styles.ErrorMessage}>{error}</p>}
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className={styles.FormLabel}>Enter Your Email Address</Form.Label>
+              <Form.Control
+                className={styles.FormField}
+                type="email"
+                placeholder="Enter your registered email"
+                name="email"
+                value={loginData.email}
+                onChange={handleOnChange}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Enter Your Password</Form.Label>
+              <Form.Control
+                className={styles.FormField}
+                type="password"
+                placeholder="Enter your password"
+                name="password"
+                value={loginData.password}
+                onChange={handleOnChange}
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" className={styles.FormButton}>
+              {isLoading ? "Logging in..." : "Login"}
+            </Button>
+            <div className={styles.ForgetPasswordContainer}>
+              <Link to={"/forget_password"} className={styles.ForgetPasswordLink}>Forgot Password?</Link>
+            </div>
+          </Form>
+        </Container>
+        <Footer />
+      </Fragment>
+    </HelmetProvider>
   );
 };
 

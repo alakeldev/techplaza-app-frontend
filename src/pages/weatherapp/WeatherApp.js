@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
@@ -59,46 +59,48 @@ const WeatherApp = () => {
   }
 
   return (
-    <Fragment>
-      <Helmet>
-        <title>Weather App - TechPlaza Platform</title>
-      </Helmet>
-      <NavBar />
-      <div className={styles.Main}>
-        <div className={styles.Container}>
-          <h2>Weather Application</h2>
-          <input
-            type='text'
-            placeholder='Search by City or Country...'
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            onKeyDown={toGetWeather}
-          />
-          <button onClick={toGetWeather}>Search</button>
-          {error && <div className={styles.Error}>{error}</div>}
-          {weather.name && (
-            <div className={styles.WeatherDetails}>
-              <div className={styles.CityLocation}>
-                <i className="fas fa-city"></i> {weather.name} {weather.sys && weather.sys.country}
+    <HelmetProvider>
+      <Fragment>
+        <Helmet>
+          <title>Weather App - TechPlaza Platform</title>
+        </Helmet>
+        <NavBar />
+        <div className={styles.Main}>
+          <div className={styles.Container}>
+            <h2>Weather Application</h2>
+            <input
+              type='text'
+              placeholder='Search by City or Country...'
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              onKeyDown={toGetWeather}
+            />
+            <button onClick={toGetWeather}>Search</button>
+            {error && <div className={styles.Error}>{error}</div>}
+            {weather.name && (
+              <div className={styles.WeatherDetails}>
+                <div className={styles.CityLocation}>
+                  <i className="fas fa-city"></i> {weather.name} {weather.sys && weather.sys.country}
+                </div>
+                <div className={styles.Temp}>
+                  <i className="fas fa-thermometer-half"></i> {weather.main?.temp ? `${Math.round(weather.main.temp)}°C` : ''}
+                </div>
+                <div className={styles.Weather}>
+                  <i className="fas fa-cloud"></i> {weather.weather && weather.weather[0] && weather.weather[0].main}
+                </div>
+                <div className={styles.Wind}>
+                  <i className="fas fa-wind"></i> {weather.wind?.speed ? `${weather.wind.speed} m/s` : ''}
+                </div>
               </div>
-              <div className={styles.Temp}>
-                <i className="fas fa-thermometer-half"></i> {weather.main?.temp ? `${Math.round(weather.main.temp)}°C` : ''}
-              </div>
-              <div className={styles.Weather}>
-                <i className="fas fa-cloud"></i> {weather.weather && weather.weather[0] && weather.weather[0].main}
-              </div>
-              <div className={styles.Wind}>
-                <i className="fas fa-wind"></i> {weather.wind?.speed ? `${weather.wind.speed} m/s` : ''}
-              </div>
-            </div>
-          )}
-          {showDashboardButton && (
-            <button className={styles.DashboardButton} onClick={goToDashboard}>Dashboard</button>
-          )}
+            )}
+            {showDashboardButton && (
+              <button className={styles.DashboardButton} onClick={goToDashboard}>Dashboard</button>
+            )}
+          </div>
         </div>
-      </div>
-      <Footer />
-    </Fragment>
+        <Footer />
+      </Fragment>
+    </HelmetProvider>
   );
 };
 

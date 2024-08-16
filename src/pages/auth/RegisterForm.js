@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
@@ -56,68 +56,70 @@ const RegisterForm = () => {
   };
 
   return (
-    <Fragment>
-      <Helmet>
-        <title>Register - TechPlaza Platform</title>
-      </Helmet>
-      <NavBar />
-      <Container className={styles.FormContainer}>
-        <Form onSubmit={handleSubmit} className={styles.TheForm}>
-          <h2>Register</h2>
-          {error && <p className={styles.ErrorMessage}>{error}</p>}
-          <Form.Group className="mb-3">
-            <Form.Label className={styles.FormLabel}>Full Name</Form.Label>
-            <Form.Control
-              className={styles.FormField}
-              type="text"
-              name='full_name'
-              placeholder="Enter your fullname / username"
-              value={registerData.full_name}
-              onChange={handleOnChange} />
-            <Form.Text className="text-muted">
-              Please enter your full name to use as your username within the community.
-            </Form.Text>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label className={styles.FormLabel}>Email address</Form.Label>
-            <Form.Control
-              className={styles.FormField}
-              type="email"
-              placeholder="Enter email"
-              name='email'
-              value={registerData.email}
-              onChange={handleOnChange} />
-            <Form.Text className="text-muted">
-              Please register with an email address that can be contacted within our community.
-            </Form.Text>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword1">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              className={styles.FormField}
-              type="password"
-              placeholder="Enter password"
-              name='password1'
-              value={registerData.password1}
-              onChange={handleOnChange} />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword2">
-            <Form.Label>Password Confirm</Form.Label>
-            <Form.Control
-              className={styles.FormField}
-              type="password"
-              placeholder="Repeat the password"
-              name='password2'
-              value={registerData.password2}
-              onChange={handleOnChange} />
-          </Form.Group>
-          <Button variant="primary" type="submit" className={styles.FormButton}>
-            Register
-          </Button>
-        </Form>
-      </Container>
-      <Footer />
-    </Fragment>
+    <HelmetProvider>
+      <Fragment>
+        <Helmet>
+          <title>Register - TechPlaza Platform</title>
+        </Helmet>
+        <NavBar />
+        <Container className={styles.FormContainer}>
+          <Form onSubmit={handleSubmit} className={styles.TheForm}>
+            <h2>Register</h2>
+            {error && <p className={styles.ErrorMessage}>{error}</p>}
+            <Form.Group className="mb-3">
+              <Form.Label className={styles.FormLabel}>Full Name</Form.Label>
+              <Form.Control
+                className={styles.FormField}
+                type="text"
+                name='full_name'
+                placeholder="Enter your fullname / username"
+                value={registerData.full_name}
+                onChange={handleOnChange} />
+              <Form.Text className="text-muted">
+                Please enter your full name to use as your username within the community.
+              </Form.Text>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className={styles.FormLabel}>Email address</Form.Label>
+              <Form.Control
+                className={styles.FormField}
+                type="email"
+                placeholder="Enter email"
+                name='email'
+                value={registerData.email}
+                onChange={handleOnChange} />
+              <Form.Text className="text-muted">
+                Please register with an email address that can be contacted within our community.
+              </Form.Text>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword1">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                className={styles.FormField}
+                type="password"
+                placeholder="Enter password"
+                name='password1'
+                value={registerData.password1}
+                onChange={handleOnChange} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword2">
+              <Form.Label>Password Confirm</Form.Label>
+              <Form.Control
+                className={styles.FormField}
+                type="password"
+                placeholder="Repeat the password"
+                name='password2'
+                value={registerData.password2}
+                onChange={handleOnChange} />
+            </Form.Group>
+            <Button variant="primary" type="submit" className={styles.FormButton}>
+              Register
+            </Button>
+          </Form>
+        </Container>
+        <Footer />
+      </Fragment>
+    </HelmetProvider>
   );
 };
 
