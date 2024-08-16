@@ -13,6 +13,7 @@ const WeatherApp = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem('user'));
   const jwt_token = localStorage.getItem('access');
+  const api_key = process.env.REACT_APP_WEATHER_API_KEY;
 
   useEffect(() => {
     if (jwt_token === null && !user) {
@@ -30,11 +31,7 @@ const WeatherApp = () => {
         return;
       }
 
-      fetch(`https://backend-techplaza-1b0c24eaa252.herokuapp.com/api/app1/weather?city=${city}`, {
-        headers: {
-          'Authorization': `Bearer ${jwt_token}`
-        }
-      })
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`)
         .then(res => {
           if (!res.ok) {
             throw new Error('Invalid city name. Please enter a valid city.');
