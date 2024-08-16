@@ -116,20 +116,28 @@ const MembersCardsList = () => {
               <Form.Control
                 type="email"
                 name="email"
-                value={formData.email}
+                value={user.email}
                 onChange={handleInputChange}
                 readOnly
+                disabled
               />
+              <Form.Text className="text-muted">
+                This is your identifier and cannot be changed.
+              </Form.Text>
             </Form.Group>
             <Form.Group controlId="formName">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
                 name="name"
-                value={formData.name}
+                value={user.name}
                 onChange={handleInputChange}
                 readOnly
+                disabled
               />
+              <Form.Text className="text-muted">
+                You can change your name from your dashboard page.
+              </Form.Text>
             </Form.Group>
             <Form.Group controlId="formPhoneNumber">
               <Form.Label>Phone Number</Form.Label>
