@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, React } from 'react';
 import axiosInstance from '../utils/axiosInstance';
 import { toast } from 'react-toastify';
 import { Button, Modal, Form, FormGroup, FormControl, FormLabel, ModalHeader, ModalBody, ModalFooter } from "react-bootstrap";
@@ -6,22 +6,6 @@ import styles from '../styles/EditInformation.module.css';
 
 const EditInformation = ({ show, handleClose, user, updateFullName }) => {
   const [fullName, setFullName] = useState('');
-
-  useEffect(() => {
-    const fetchUserInfo = async () => {
-      try {
-        const response = await axiosInstance.get('/auth/dashboard-user/');
-        if (response.status === 200) {
-          setFullName(response.data.full_name);
-        }
-      } catch (error) {
-        toast.error('Failed to fetch user information');
-      }
-    };
-
-    fetchUserInfo();
-  }, []);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
