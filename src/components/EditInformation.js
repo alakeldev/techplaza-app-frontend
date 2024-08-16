@@ -8,21 +8,19 @@ const EditInformation = ({ show, handleClose, user, updateFullName }) => {
   const [fullName, setFullName] = useState('');
 
   useEffect(() => {
-    if (show) {
-      const fetchUserInfo = async () => {
-        try {
-          const response = await axiosInstance.get('/auth/dashboard-user/');
-          if (response.status === 200) {
-            setFullName(response.data.full_name);
-          }
-        } catch (error) {
-          toast.error('Failed to fetch user information');
+    const fetchUserInfo = async () => {
+      try {
+        const response = await axiosInstance.get('/auth/dashboard-user/');
+        if (response.status === 200) {
+          setFullName(response.data.full_name);
         }
-      };
+      } catch (error) {
+        toast.error('Failed to fetch user information');
+      }
+    };
 
-      fetchUserInfo();
-    }
-  }, [show]);
+    fetchUserInfo();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
