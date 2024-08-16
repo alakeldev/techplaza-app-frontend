@@ -62,7 +62,6 @@ const TasksApp = () => {
     const handleSubmit = item => {
         toggle();
         item.user = user.id;
-        console.log("Submitting item:", item);
         if (item.id) {
             axiosInstance
                 .put(`/app2/tasks_manager/${item.id}/`, item)
