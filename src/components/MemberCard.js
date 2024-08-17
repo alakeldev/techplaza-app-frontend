@@ -5,7 +5,6 @@ import styles from '../styles/MemberCard.module.css';
 const MemberCard = ({ member, isOwner, onEdit, onDelete }) => {
   return (
     <Card className={styles.memberCard}>
-      <Card.Img variant="top" src={member.photo} alt="Member Photo" />
       <Card.Body>
         <Card.Title>{member.name}</Card.Title>
         <Card.Text>

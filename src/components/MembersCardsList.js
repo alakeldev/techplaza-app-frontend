@@ -3,23 +3,21 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import axiosInstance from '../utils/axiosInstance';
 import MemberCard from './MemberCard';
 import styles from '../styles/MembersCardsList.module.css';
-import defaultProfileImage from '../assets/default_profile.jpg'
-
 
 const MembersCardsList = () => {
-
   const user = JSON.parse(localStorage.getItem('user'));
   const [members, setMembers] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
-    email: '',
-    name: '',
+    email: user.email,
+    name: user.name,
     phone_number: '',
     profession: '',
     description: '',
     country: '',
-    photo: null,
   });
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingMemberId, setEditingMemberId] = useState(null);
 
   useEffect(() => {
     fetchMembers();
@@ -30,7 +28,11 @@ const MembersCardsList = () => {
       const response = await axiosInstance.get('/app3/cards/');
       setMembers(response.data);
     } catch (error) {
-      console.error('Error fetching members:', error);
+      if (error.response && error.response.status === 401) {
+        alert('Unauthorized: Please log in again.');
+      } else {
+        alert('Error fetching members. Please try again later.');
+      }
     }
   };
 
@@ -39,27 +41,31 @@ const MembersCardsList = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, photo: e.target.files[0] });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formDataToSend = new FormData();
     Object.keys(formData).forEach((key) => {
-      formDataToSend.append(key, formData[key]);
+      if (key !== 'email' && key !== 'name') {
+        formDataToSend.append(key, formData[key]);
+      }
     });
 
-    if (!formData.photo) {
-      formDataToSend.append('photo', defaultProfileImage);
-    }
-
     try {
-      await axiosInstance.post('/app3/cards/', formDataToSend);
+      if (isEditing) {
+        await axiosInstance.put(`/app3/cards/${editingMemberId}/`, formDataToSend);
+      } else {
+        await axiosInstance.post('/app3/cards/', formDataToSend);
+      }
       fetchMembers();
       setShowModal(false);
+      setIsEditing(false);
+      setEditingMemberId(null);
     } catch (error) {
-      console.error('Error creating card:', error);
+      if (error.response && error.response.status === 401) {
+        alert('Unauthorized: Please log in again.');
+      } else {
+        alert('Error creating/updating card. Please try again later.');
+      }
     }
   };
 
@@ -71,17 +77,26 @@ const MembersCardsList = () => {
       profession: member.profession,
       description: member.description,
       country: member.country,
-      photo: null,
     });
+    setIsEditing(true);
+    setEditingMemberId(member.id);
     setShowModal(true);
   };
 
   const handleDelete = async (id) => {
     try {
       await axiosInstance.delete(`/app3/cards/${id}/`);
-      fetchMembers();
+      setMembers(members.filter((member) => member.id !== id));
+      setFormData({
+        email: user.email,
+        name: user.name,
+        phone_number: '',
+        profession: '',
+        description: '',
+        country: '',
+      });
     } catch (error) {
-      console.error('Error deleting card:', error);
+      alert('Error deleting card. Please try again later.');
     }
   };
 
@@ -107,7 +122,7 @@ const MembersCardsList = () => {
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>{userCard ? 'Edit Card' : 'Create Card'}</Modal.Title>
+          <Modal.Title>{isEditing ? 'Edit Card' : 'Create Card'}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -116,7 +131,7 @@ const MembersCardsList = () => {
               <Form.Control
                 type="email"
                 name="email"
-                value={user.email}
+                value={formData.email}
                 onChange={handleInputChange}
                 readOnly
                 disabled
@@ -130,7 +145,7 @@ const MembersCardsList = () => {
               <Form.Control
                 type="text"
                 name="name"
-                value={user.name}
+                value={formData.name}
                 onChange={handleInputChange}
                 readOnly
                 disabled
@@ -179,16 +194,8 @@ const MembersCardsList = () => {
                 required
               />
             </Form.Group>
-            <Form.Group controlId="formPhoto">
-              <Form.Label>Photo</Form.Label>
-              <Form.Control
-                type="file"
-                name="photo"
-                onChange={handleFileChange}
-              />
-            </Form.Group>
             <Button variant="primary" type="submit">
-              {userCard ? 'Update Card' : 'Create Card'}
+              {isEditing ? 'Update Card' : 'Create Card'}
             </Button>
           </Form>
         </Modal.Body>
