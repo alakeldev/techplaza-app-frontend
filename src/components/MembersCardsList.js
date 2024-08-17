@@ -113,7 +113,9 @@ const MembersCardsList = () => {
           onDelete={() => handleDelete(userCard.id)}
         />
       ) : (
-        <Button onClick={() => setShowModal(true)}>Create Card</Button>
+        <div className={styles.createCardButton}>
+          <Button onClick={() => setShowModal(true)}>Create Card</Button>
+        </div>
       )}
       {members
         .filter((member) => member.email !== user.email)
@@ -195,7 +197,7 @@ const MembersCardsList = () => {
                 required
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" className={styles.submitButton}>
               {isEditing ? 'Update Card' : 'Create Card'}
             </Button>
           </Form>
