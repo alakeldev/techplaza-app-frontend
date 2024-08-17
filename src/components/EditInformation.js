@@ -5,7 +5,7 @@ import { Button, Modal, Form, FormGroup, FormControl, FormLabel, ModalHeader, Mo
 import styles from '../styles/EditInformation.module.css';
 
 const EditInformation = ({ show, handleClose, user, updateFullName }) => {
-  const [fullName, setFullName] = useState('');
+  const [fullName, setFullName] = useState(user.name);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -15,6 +15,10 @@ const EditInformation = ({ show, handleClose, user, updateFullName }) => {
       if (response.status === 200) {
         toast.success('Information updated successfully');
         updateFullName(fullName);
+
+        const updatedUser = { ...user, name: fullName };
+        localStorage.setItem('user', JSON.stringify(updatedUser));
+
         handleClose();
       }
     } catch (error) {
