@@ -114,7 +114,7 @@ const SnakeGameBoard = ({ highScores, setHighScores }) => {
         })
           .then(response => {
             const sortedScores = [...highScores, response.data].sort((a, b) => b.score - a.score);
-            setHighScores(sortedScores.slice(0, 3));
+            setHighScores(sortedScores.slice(0, 1));
           })
           .catch(error => console.error('Error saving score:', error));
       }
