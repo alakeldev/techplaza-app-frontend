@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import axiosInstance from '../utils/axiosInstance';
 import styles from '../styles/SnakeGameBoard.module.css';
 
@@ -32,16 +32,16 @@ const SnakeGameBoard = ({ highScores, setHighScores }) => {
     const handleKeyDown = (e) => {
       e.preventDefault();
       switch (e.key) {
-        case 'ArrowUp':
+        case 'w':
           setDirection('UP');
           break;
-        case 'ArrowDown':
+        case 's':
           setDirection('DOWN');
           break;
-        case 'ArrowLeft':
+        case 'a':
           setDirection('LEFT');
           break;
-        case 'ArrowRight':
+        case 'd':
           setDirection('RIGHT');
           break;
         default:

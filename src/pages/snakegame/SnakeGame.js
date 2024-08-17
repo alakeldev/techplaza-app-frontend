@@ -56,6 +56,15 @@ const SnakeGame = () => {
             <h1 className="text-black text-uppercase text-center my-4">Welcome To Snake Game</h1>
             {isScreenLarge ? (
               <>
+                <div className={styles.instructions}>
+                  <h3>How to Play</h3>
+                  <ul>
+                    <li>W: Move Up</li>
+                    <li>S: Move Down</li>
+                    <li>A: Move Left</li>
+                    <li>D: Move Right</li>
+                  </ul>
+                </div>
                 <div className={styles.highScoresContainer}>
                   <SnakeGameHighScores highScores={highScores} />
                 </div>
