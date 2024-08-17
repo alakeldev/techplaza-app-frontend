@@ -8,6 +8,7 @@ import TaskList from '../../components/TaskList';
 import TaskModal from '../../components/TaskModal';
 import TabList from '../../components/TabList';
 import axiosInstance from '../../utils/axiosInstance';
+import { toast } from 'react-toastify';
 import styles from '../../styles/TasksApp.module.css';
 
 const TasksApp = () => {
@@ -40,7 +41,7 @@ const TasksApp = () => {
         axiosInstance
             .get("/app2/tasks_manager/")
             .then(res => setTaskList(res.data))
-            .catch(err => console.log(err));
+            .catch(err => toast.error('Error fetching tasks. Please try again later.'));
     };
 
     const displayDone = status => {
@@ -66,20 +67,20 @@ const TasksApp = () => {
             axiosInstance
                 .put(`/app2/tasks_manager/${item.id}/`, item)
                 .then(res => refreshList())
-                .catch(err => console.log(err.response));
+                .catch(err => toast.error('Error updating task. Please try again later.'));
             return;
         }
         axiosInstance
             .post("/app2/tasks_manager/", item)
             .then(res => refreshList())
-            .catch(err => console.log(err.response));
+            .catch(err => toast.error('Error creating task. Please try again later.'));
     };
 
     const handleDelete = item => {
         axiosInstance
             .delete(`/app2/tasks_manager/${item.id}/`)
             .then(res => refreshList())
-            .catch(err => console.log(err.response));
+            .catch(err => toast.error('Error deleting task. Please try again later.'));
     };
 
     const createItem = () => {
