@@ -31,7 +31,7 @@ const CardsApp = () => {
         </Helmet>
         <NavBar />
         <div className={styles.mainContainer}>
-          <h2>Our Community Members Cards</h2>
+          <h2>Community Members Cards</h2>
           <Button className={styles.dashboardButton} onClick={handleDashboardClick}>Dashboard</Button>
           <MembersCardsList />
         </div>

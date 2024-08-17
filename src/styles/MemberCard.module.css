@@ -3,9 +3,98 @@
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+    background-color: #fff;
+    padding: 20px;
+    min-width: 500px;
+}
+
+.memberCard:hover {
+    transform: scale(1.05);
+}
+
+.cardTitle {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+
+.cardTitle::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #ddd;
+    margin: 10px auto 20px;
+}
+
+.cardText {
+    font-size: 1em;
+    color: #555;
+    text-align: left;
+    text-align: center;
+    line-height: 1.6;
 }
 
 .buttonGroup {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button {
+    width: 48%;
+}
+
+@media (max-width: 1200px) {
+
+    .cardTitle {
+        font-size: 1.4em;
+    }
+
+    .cardText {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .cardTitle {
+        font-size: 1.3em;
+    }
+
+    .cardText {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    .memberCard {
+        min-width: 250px;
+    }
+
+    .cardTitle {
+        font-size: 1.2em;
+    }
+
+    .cardText {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 576px) {
+    .memberCard {
+        max-width: 150px;
+    }
+
+    .cardTitle {
+        font-size: 1.1em;
+    }
+
+    .cardText {
+        font-size: 0.8em;
+    }
 }
