@@ -7,6 +7,7 @@ import Footer from '../../components/Footer';
 import SnakeGameBoard from '../../components/SnakeGameBoard';
 import SnakeGameHighScores from '../../components/SnakeGameHighScores';
 import axiosInstance from '../../utils/axiosInstance';
+import { toast } from 'react-toastify';
 import styles from '../../styles/SnakeGame.module.css';
 
 const SnakeGame = () => {
@@ -28,7 +29,7 @@ const SnakeGame = () => {
         const sortedScores = response.data.sort((a, b) => b.score - a.score);
         setHighScores(sortedScores.slice(0, 1));
       })
-      .catch(error => console.error('Error fetching high scores:', error));
+      .catch(error => toast.error('Error fetching high scores. Please try again later.'));
   }, []);
 
   useEffect(() => {

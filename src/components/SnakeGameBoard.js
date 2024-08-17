@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import axiosInstance from '../utils/axiosInstance';
+import { toast } from 'react-toastify';
 import styles from '../styles/SnakeGameBoard.module.css';
 
 const SnakeGameBoard = ({ highScores, setHighScores }) => {
@@ -116,7 +117,7 @@ const SnakeGameBoard = ({ highScores, setHighScores }) => {
             const sortedScores = [...highScores, response.data].sort((a, b) => b.score - a.score);
             setHighScores(sortedScores.slice(0, 1));
           })
-          .catch(error => console.error('Error saving score:', error));
+          .catch(error => toast.error('Error saving score. Please try again later.'));
       }
     }
   }, [gameOver, score, highScores, setHighScores]);

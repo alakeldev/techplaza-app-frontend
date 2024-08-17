@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import axiosInstance from '../utils/axiosInstance';
 import MemberCard from './MemberCard';
+import { toast } from 'react-toastify';
 import styles from '../styles/MembersCardsList.module.css';
 
 const MembersCardsList = () => {
@@ -29,9 +30,9 @@ const MembersCardsList = () => {
       setMembers(response.data);
     } catch (error) {
       if (error.response && error.response.status === 401) {
-        alert('Unauthorized: Please log in again.');
+        toast.error('Unauthorized: Please log in again.');
       } else {
-        alert('Error fetching members. Please try again later.');
+        toast.error('Error fetching members. Please try again later.');
       }
     }
   };
@@ -62,9 +63,9 @@ const MembersCardsList = () => {
       setEditingMemberId(null);
     } catch (error) {
       if (error.response && error.response.status === 401) {
-        alert('Unauthorized: Please log in again.');
+        toast.error('Unauthorized: Please log in again.');
       } else {
-        alert('Error creating/updating card. Please try again later.');
+        toast.error('Error creating/updating card. Please try again later.');
       }
     }
   };
@@ -96,7 +97,7 @@ const MembersCardsList = () => {
         country: '',
       });
     } catch (error) {
-      alert('Error deleting card. Please try again later.');
+      toast.error('Error deleting card. Please try again later.');
     }
   };
 
