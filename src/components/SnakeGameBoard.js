@@ -141,6 +141,7 @@ const SnakeGameBoard = ({ highScores, setHighScores }) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.score}>Score: {score}</div>
       <div className={styles.gameBoard}>
         {snake.map((segment, index) => (
           <div key={index} className={styles.snakeSegment} style={{ left: `${segment.x * (400 / boardSize)}px`, top: `${segment.y * (400 / boardSize)}px` }}></div>

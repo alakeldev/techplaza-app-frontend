@@ -44,6 +44,12 @@
     background-color: #0056b3;
 }
 
+.score {
+    font-size: 1.5rem;
+    color: var(--main-blue-color);
+    margin-bottom: 10px;
+}
+
 @media (max-width: 576px) {
     .gameBoard {
         width: 200px;
