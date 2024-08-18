@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
 import MembersCardsList from '../../components/MembersCardsList';
-import styles from '../../styles/CardsApp.module.css'
+import styles from '../../styles/CardsApp.module.css';
 import { Button } from 'react-bootstrap';
 
 const CardsApp = () => {
@@ -14,7 +14,7 @@ const CardsApp = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (jwt_token === null && !user) {
+    if (jwt_token === null || !user) {
       navigate("/login");
     }
   }, [jwt_token, user, navigate]);
@@ -22,6 +22,10 @@ const CardsApp = () => {
   const handleDashboardClick = () => {
     navigate("/dashboard");
   };
+
+  if (!user) {
+    return null;
+  }
 
   return (
     <HelmetProvider>
