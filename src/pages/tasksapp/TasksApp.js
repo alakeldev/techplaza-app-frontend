@@ -14,7 +14,7 @@ import styles from '../../styles/TasksApp.module.css';
 const TasksApp = () => {
 
     const user = JSON.parse(localStorage.getItem('user'));
-    const jwt_token = localStorage.getItem('access');
+    const jwt_token = localStorage.getItem('refresh');
     const navigate = useNavigate();
 
     useEffect(() => {

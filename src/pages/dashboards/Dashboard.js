@@ -16,7 +16,7 @@ import styles from '../../styles/Dashboard.module.css';
 const Dashboard = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem('user'));
-  const jwt_token = localStorage.getItem('access');
+  const jwt_token = localStorage.getItem('refresh');
   const [showEdit, setShowEdit] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [fullName, setFullName] = useState(user ? user.full_name : '');

@@ -12,7 +12,7 @@ const WeatherApp = () => {
   const [showDashboardButton, setShowDashboardButton] = useState(false);
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem('user'));
-  const jwt_token = localStorage.getItem('access');
+  const jwt_token = localStorage.getItem('refresh');
   const api_key = process.env.REACT_APP_WEATHER_API_KEY;
 
   useEffect(() => {

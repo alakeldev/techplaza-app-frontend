@@ -12,7 +12,7 @@ import styles from '../../styles/SnakeGame.module.css';
 
 const SnakeGame = () => {
   const user = JSON.parse(localStorage.getItem('user'));
-  const jwt_token = localStorage.getItem('access');
+  const jwt_token = localStorage.getItem('refresh');
   const navigate = useNavigate();
   const [highScores, setHighScores] = useState([]);
   const [isScreenLarge, setIsScreenLarge] = useState(window.innerWidth >= 768);
