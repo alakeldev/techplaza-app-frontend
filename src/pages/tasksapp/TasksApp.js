@@ -18,7 +18,7 @@ const TasksApp = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!jwt_token || !user) {
+        if (jwt_token === null || !user) {
             navigate("/login");
         }
     }, [jwt_token, user, navigate]);
@@ -40,7 +40,6 @@ const TasksApp = () => {
                 setTaskList(res.data);
             })
             .catch(err => {
-                console.error('Error fetching tasks:', err);
                 if (err.response && err.response.status === 401) {
                     toast.error('Unauthorized. Please log in again.');
                     navigate("/login");
