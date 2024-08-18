@@ -45,6 +45,10 @@ const Dashboard = () => {
     localStorage.setItem('user', JSON.stringify(updatedUser));
   };
 
+  if (!user) {
+    return null;
+  }
+
   return (
     <HelmetProvider>
       <Fragment>
