@@ -22,7 +22,7 @@ const Dashboard = () => {
   const [fullName, setFullName] = useState(user ? user.full_name : '');
 
   useEffect(() => {
-    if (jwt_token === null && !user) {
+    if (jwt_token === null || !user) {
       navigate("/login");
     }
   }, [jwt_token, user, navigate]);
