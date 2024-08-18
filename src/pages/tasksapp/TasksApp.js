@@ -18,7 +18,7 @@ const TasksApp = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (jwt_token === null || !user) {
+        if (!jwt_token || !user) {
             navigate("/login");
         }
     }, [jwt_token, user, navigate]);
