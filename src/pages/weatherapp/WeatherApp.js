@@ -16,7 +16,7 @@ const WeatherApp = () => {
   const api_key = process.env.REACT_APP_WEATHER_API_KEY;
 
   useEffect(() => {
-    if (jwt_token === null && !user) {
+    if (jwt_token === null || !user) {
       navigate("/login");
     }
   }, [jwt_token, user, navigate]);
@@ -57,6 +57,10 @@ const WeatherApp = () => {
 
   const goToDashboard = () => {
     navigate("/dashboard");
+  };
+
+  if (!user) {
+    return null;
   }
 
   return (
