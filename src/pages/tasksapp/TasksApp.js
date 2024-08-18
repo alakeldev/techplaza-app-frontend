@@ -40,6 +40,7 @@ const TasksApp = () => {
                 setTaskList(res.data);
             })
             .catch(err => {
+                console.error('Error fetching tasks:', err);
                 if (err.response && err.response.status === 401) {
                     toast.error('Unauthorized. Please log in again.');
                     navigate("/login");
