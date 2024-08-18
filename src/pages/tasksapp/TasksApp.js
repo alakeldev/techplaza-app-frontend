@@ -18,7 +18,7 @@ const TasksApp = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (jwt_token === null && !user) {
+        if (jwt_token === null || !user) {
             navigate("/login");
         }
     }, [jwt_token, user, navigate]);
@@ -28,7 +28,7 @@ const TasksApp = () => {
         task_title: "",
         task_description: "",
         is_done: false,
-        user: user.id
+        user: user ? user.id : null
     });
     const [taskList, setTaskList] = useState([]);
     const [modal, setModal] = useState(false);
@@ -50,8 +50,10 @@ const TasksApp = () => {
     }, [navigate]);
 
     useEffect(() => {
-        refreshList();
-    }, [refreshList]);
+        if (user) {
+            refreshList();
+        }
+    }, [refreshList, user]);
 
     const displayDone = status => {
         setViewDone(status);
@@ -140,6 +142,10 @@ const TasksApp = () => {
     const goToDashboard = () => {
         navigate("/dashboard");
     };
+
+    if (!user) {
+        return null;
+    }
 
     return (
         <HelmetProvider>
