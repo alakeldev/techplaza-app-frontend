@@ -1,34 +1,18 @@
-import { React , useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { React, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import styles from "../styles/NavBar.module.css";
+import styles from "../styles/NavBarLogout.module.css";
 import Logo from "../assets/logo.png";
-import axiosInstance from '../utils/axiosInstance';
-import { toast } from "react-toastify";
+import LogoutAccount from './Logout';
 
 const NavBar = () => {
   const user = JSON.parse(localStorage.getItem('user'));
-  const refresh = JSON.parse(localStorage.getItem('refresh'));
-  const navigate = useNavigate();
   const location = useLocation();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const handleLogout = async () => {
-    const res = await axiosInstance.post("/auth/logout/", { "refresh_token": refresh });
-    if (res.status === 200) {
-      localStorage.removeItem("user");
-      localStorage.removeItem("access");
-      localStorage.removeItem("refresh");
-      navigate("/");
-      toast.success("logout successful");
-    }
-  };
 
   return (
     <>
@@ -61,21 +45,7 @@ const NavBar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
-      <Modal show={show} onHide={handleClose} centered className={styles.modalDialog}>
-        <Modal.Header closeButton className={styles.modalHeader}>
-          <Modal.Title>Logout Confirmation</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className={styles.modalBody}>Are you sure you want to logout?</Modal.Body>
-        <Modal.Footer className={styles.modalFooter}>
-          <Button variant="secondary" onClick={handleClose} className={styles.btnSecondary}>
-            No
-          </Button>
-          <Button variant="primary" onClick={handleLogout} className={styles.btnPrimary}>
-            Yes
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <LogoutAccount show={show} handleClose={handleClose} />
     </>
   );
 };
