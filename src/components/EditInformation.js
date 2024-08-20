@@ -6,8 +6,19 @@ import styles from '../styles/EditInformation.module.css';
 
 const EditInformation = ({ show, handleClose, user, updateFullName }) => {
   const [fullName, setFullName] = useState(user.name);
+
+  const validateFullName = (fullName) => {
+    const fullNameTrimmed = fullName.trim();
+    const fullNameRegex = /^[A-Za-z\s]{4,70}$/;
+    return fullNameTrimmed.length >= 4 && fullNameTrimmed.length <= 70 && fullNameRegex.test(fullNameTrimmed);
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateFullName(fullName)) {
+      toast.error("Full name must be between 4 and 70 characters and can only contain letters and spaces.");
+      return;
+    }
     try {
       const response = await axiosInstance.patch('/auth/update-information/', {
         full_name: fullName,

@@ -32,8 +32,9 @@ const RegisterForm = () => {
   }
 
   const validateFullName = (fullName) => {
+    const fullNameTrimmed = fullName.trim();
     const fullNameRegex = /^[A-Za-z\s]{4,70}$/;
-    return fullNameRegex.test(fullName);
+    return fullNameTrimmed.length >= 4 && fullNameTrimmed.length <= 70 && fullNameRegex.test(fullNameTrimmed);
   }
 
   const validatePassword = (password) => {
