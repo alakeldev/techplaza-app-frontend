@@ -42,8 +42,35 @@ const MembersCardsList = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const validateFields = () => {
+    const phoneRegex = /^[0-9+]{1,20}$/;
+    const textRegex = /^[A-Za-z\s-]+$/;
+
+    if (!formData.phone_number.trim() || !phoneRegex.test(formData.phone_number)) {
+      toast.error("Phone number must be less than 20 characters and can only contain numbers and '+'.");
+      return false;
+    }
+    if (!formData.profession.trim() || !textRegex.test(formData.profession) || formData.profession.length > 50) {
+      toast.error("Profession must be less than 50 characters and can only contain letters and spaces.");
+      return false;
+    }
+    if (!formData.description.trim() || formData.description.length > 100) {
+      toast.error("Description must be less than 100 characters.");
+      return false;
+    }
+    if (!formData.country.trim() || !textRegex.test(formData.country) || formData.country.length > 30) {
+      toast.error("Country must be less than 30 characters and can only contain letters, spaces, and '-'.");
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateFields()) {
+      return;
+    }
+
     const formDataToSend = new FormData();
     Object.keys(formData).forEach((key) => {
       if (key !== 'email' && key !== 'name') {
