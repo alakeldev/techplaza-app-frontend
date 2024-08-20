@@ -41,7 +41,7 @@ const TasksApp = () => {
         axiosInstance
             .get("/app2/tasks_manager/")
             .then(res => setTaskList(res.data))
-            .catch(err => toast.error('Error fetching tasks. Please try again later.'));
+            .catch(err => {});
     };
 
     const displayDone = status => {
