@@ -9,6 +9,7 @@
     background-size: cover;
     padding-top: 100px;
 }
+
 .welcomeContainer {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -16,6 +17,12 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     width: 80%;
+    word-wrap: break-word;
+}
+
+.welcomeContainer h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
 .buttonContainer {
@@ -115,6 +122,10 @@
         width: 90%;
     }
 
+    .welcomeContainer h2 {
+        font-size: 1.5em;
+    }
+
     .card {
         width: 150px;
         padding: 15px;
@@ -138,6 +149,10 @@
         width: 85%;
     }
 
+    .welcomeContainer h2 {
+        font-size: 1.75em;
+    }
+
     .card {
         width: 180px;
         padding: 18px;
@@ -159,6 +174,10 @@
 
     .welcomeContainer {
         width: 80%;
+    }
+
+    .welcomeContainer h2 {
+        font-size: 2em;
     }
 
     .card {
