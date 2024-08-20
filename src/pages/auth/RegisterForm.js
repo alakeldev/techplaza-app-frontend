@@ -31,10 +31,23 @@ const RegisterForm = () => {
     setRegisterData({ ...registerData, [e.target.name]: e.target.value })
   }
 
+  const validateFullName = (fullName) => {
+    const fullNameRegex = /^[A-Za-z\s]{4,70}$/;
+    return fullNameRegex.test(fullName);
+  }
+
+  const validatePassword = (password) => {
+    return password.length >= 4 && password.length <= 40;
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!registerData.full_name || !registerData.email || !registerData.password1 || !registerData.password2) {
       setError("Please fill all the fields, they are all required");
+    } else if (!validateFullName(registerData.full_name)) {
+      setError("Full name must be between 4 and 70 characters and can only contain letters and spaces.");
+    } else if (!validatePassword(registerData.password1)) {
+      setError("Password must be between 5 and 40 characters.");
     } else if (registerData.password1 !== registerData.password2) {
       setError("The password fields do not match. Please try again.");
     } else {
