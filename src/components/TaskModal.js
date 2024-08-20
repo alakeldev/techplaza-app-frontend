@@ -1,7 +1,31 @@
 import React from 'react';
 import { Button, Modal, Form, FormGroup, FormControl, FormLabel, ModalHeader, ModalBody, ModalFooter } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 const TaskModal = ({ modal, toggle, activeItem, handleChange, handleSubmit }) => {
+
+    const validateFields = () => {
+        if (!activeItem.task_title.trim() || !activeItem.task_description.trim()) {
+            toast.error("Cannot submit empty task without title or description.");
+            return false;
+        }
+        if (activeItem.task_title.length > 100) {
+            toast.error("Title must be less than 100 characters.");
+            return false;
+        }
+        if (activeItem.task_description.length > 250) {
+            toast.error("Description must be less than 250 characters.");
+            return false;
+        }
+        return true;
+    };
+
+    const handleSave = () => {
+        if (validateFields()) {
+            handleSubmit(activeItem);
+        }
+    };
+
     return (
         <Modal show={modal} onHide={toggle}>
             <ModalHeader closeButton>
@@ -41,7 +65,7 @@ const TaskModal = ({ modal, toggle, activeItem, handleChange, handleSubmit }) =>
                 </Form>
             </ModalBody>
             <ModalFooter>
-                <Button variant="success" onClick={() => handleSubmit(activeItem)}>
+                <Button variant="success" onClick={handleSave}>
                     Save
                 </Button>
             </ModalFooter>
