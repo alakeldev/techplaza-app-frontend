@@ -30,12 +30,16 @@ const LoginForm = () => {
     setError("");
   }
 
+  const validatePassword = (password) => {
+    return password.length >= 4 && password.length <= 40;
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!loginData.email || !loginData.password) {
-      setError("Email and Password fields are required!")
-    } else if (!/\S+@\S+\.\S+/.test(loginData.email)) {
-      setError("Please enter a valid email address!")
+      setError("To Login Email and Password fields are required!")
+    } else if (!validatePassword(loginData.password)) {
+      setError("Password must be between 4 and 40 characters.")
     } else {
       setIsLoading(true)
       try {
