@@ -38,6 +38,10 @@ const ResetPasswordForm = () => {
             toast.error("Passwords do not match.");
             return;
         }
+        if (newPasswords.password.length < 5 || newPasswords.password.length > 40) {
+            toast.error("Password must be between 5 and 40 characters.");
+            return;
+        }
         const data = {
             "password": newPasswords.password,
             "password_confirm": newPasswords.confirm_password,
