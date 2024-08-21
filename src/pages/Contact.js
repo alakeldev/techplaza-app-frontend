@@ -23,8 +23,20 @@ const Contact = () => {
         });
     };
 
+    const validateName = (name) => {
+        const nameRegex = /^[A-Za-z\s]{4,50}$/;
+        if (!nameRegex.test(name)) {
+            return false;
+        }
+        return true;
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!validateName(formData.name)) {
+            toast.error('Name must be between 4 and 50 characters and contain only letters.');
+            return;
+        }
         emailjs.sendForm(
             process.env.REACT_APP_EMAILJS_SERVICE_ID,
             process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
