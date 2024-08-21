@@ -28,7 +28,7 @@ const TasksApp = () => {
         task_title: "",
         task_description: "",
         is_done: false,
-        user: user.id
+        user: user ? user.id : null
     });
     const [taskList, setTaskList] = useState([]);
     const [modal, setModal] = useState(false);
@@ -41,7 +41,7 @@ const TasksApp = () => {
         axiosInstance
             .get("/app2/tasks_manager/")
             .then(res => setTaskList(res.data))
-            .catch(err => {});
+            .catch(err => { });
     };
 
     const displayDone = status => {
@@ -97,6 +97,10 @@ const TasksApp = () => {
     const goToDashboard = () => {
         navigate("/dashboard");
     };
+
+    if (!user) {
+        return null;
+    }
 
     return (
         <HelmetProvider>
