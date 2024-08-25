@@ -216,6 +216,8 @@ Not all stories have been implemented. Some have been left for future implementa
 - Admin:
   - As an admin, I can an easy-to-navigate panel to manage the registered users and delete the not verified  ones.
 
+![Admin Panel](src/assets/readme/admin.png)
+
 - Visitors and Registered Users:
   - As a website user (Registered / Not Registered), I want to access the home page so that I can understand what the platform offers.
   - As a website user (Registered / Not Registered), I want to access the about page so that I can learn more about the platform.
@@ -401,6 +403,12 @@ You can navigate to the ‘Password Reset’ page by forgot password link locate
 
 ![404! page](src/assets/readme/404.png)
 
+### Verify Email OTP
+
+- On this page, you will be prompted to enter your email address and the One-Time Password (OTP) that you received via email. This verification step ensures the security of your account. Upon successful verification, you will be redirected to the login page, where you can enter your credentials to access your dashboard.
+
+![Verify Page](src/assets/readme/verify.png)
+
 ## Additional Features
 
 ### Dashboard CRUD Account Features
@@ -447,7 +455,53 @@ Techplaza aims to continuously evolve and enhance the user experience. Some of t
 
 These future features aim to make Techplaza even more versatile and user-friendly, ensuring it remains a valuable resource for all users.
 
-## Components
+## Components in React
+
+- In a React project, every JavaScript file typically represents a component.
+- Components are the building blocks of a React application, allowing you to break down the UI into reusable, independent pieces. Each component encapsulates its own structure, logic, and styling, making it easier to manage and maintain the codebase.
+
+### Components
+
+- **DeleteAccount.js:** Provides functionality for users to delete their accounts. It includes a confirmation modal and communicates with the backend API to delete the account. The component also handles navigation and displays success or error messages using toast notifications.
+- **EditInformation.js:** Allows users to edit their profile information, specifically their full name. It includes form validation, communicates with the backend API to update the information, and displays success or error messages using toast notifications. The component also includes a modal for editing information.
+- **Header.js:** Renders the header section of the website, including a title and dynamically typed strings using the ReactTyped library. It provides a visually appealing introduction to the platform.
+- **Logout.js:** Manages the user logout process, including a confirmation modal and communication with the backend API to log out the user. It handles navigation and displays success or error messages using toast notifications.
+- **Footer.js:** Renders the footer section of the website, including the logo, social media links, and copyright information. It provides a consistent and visually appealing footer across the platform.
+- **MemberCard.js:** Renders individual member cards with details such as name, email, phone number, profession, description, and country. It includes options to edit or delete the card if the user is the owner.
+- **MembersCardsList.js:** Manages the list of member cards, allowing users to create, edit, and delete their own cards. It includes form validation and communicates with the backend API to fetch and manage member cards.
+- **NavBar.js:** Renders the navigation bar with various links based on the user’s authentication status. It includes links to Home, About, Services, Contact, Dashboard, Login, and Register pages. The component also handles the logout functionality through a modal.
+- **TabList.js:** Provides a button group to toggle between viewing done and undone tasks in the task manager application.
+- **TaskItem.js:** Renders individual task items with options to edit or delete the task. It displays the task title and description and applies styles based on the task’s status (done or undone).
+- **TaskList.js:** Manages the list of tasks, filtering them based on their status (done or undone) and rendering each task using the TaskItem component.
+- **TaskModal.js:** Provides a modal for creating and editing tasks. It includes form validation and handles the submission of task data.
+- **SnakeGameBoard.js:** Manages the Snake game board, including the snake’s movement, food generation, and score tracking. It handles user input for controlling the snake, adjusts the board size based on screen width, and communicates with the backend API to save high scores. The component also includes start and restart game functionality.
+- **SnakeGameHighScores.js:** Displays the high scores for the Snake game, highlighting the top players in the community. It renders a list of high scores, showing the user’s name or email and their score.
+
+### Pages
+
+- **Home.js:** Renders the home page of the Techplaza platform, including the navigation bar, header, and footer. It provides a welcoming introduction to the platform’s services and features.
+- **About.js:** Displays the “About Us” page, featuring a carousel with information about the community, innovative applications, and IT support services. It includes the navigation bar and footer for consistent site navigation.
+- **Services.js:** Renders the “Services” page, showcasing the various services offered by Techplaza, including community applications, IT support, and community chat. It uses an accordion layout to present detailed information and includes the navigation bar and footer.
+- **Contact.js:** Provides a contact form for users to reach out to the Techplaza team. It includes form validation, email sending functionality using EmailJS, and displays success or error messages using toast notifications. The page also includes the navigation bar and footer.
+- **NotFound.js:** Renders a custom 404 error page when a user navigates to a non-existent page. It includes a message indicating that the page doesn’t exist, along with the navigation bar and footer.
+- **Register.js:** Manages the user registration process, including form validation and submission. It handles user input, validates the data, and communicates with the backend API to register new users. The page also includes the navigation bar and footer.
+- **EmailVerifyForm.js:** Manages the email verification process, including form submission and validation. It handles user input, validates the data, and communicates with the backend API to verify the user’s email. The page also includes the navigation bar and footer.
+- **LoginForm.js:** Manages the user login process, including form validation and submission. It handles user input, validates the data, and communicates with the backend API to authenticate users. The page also includes the navigation bar and footer.
+- **ForgetPasswordForm.js:** Manages the password reset request process, including form submission and validation. It handles user input, validates the email, and communicates with the backend API to send a password reset link. The page also includes the navigation bar and footer.
+- **ResetPasswordForm.js:** Manages the password reset process, including form submission and validation. It handles user input, validates the new passwords, and communicates with the backend API to reset the user’s password. The page also includes the navigation bar and footer.
+- **Dashboard.js:** Manages the user dashboard, displaying a welcome message and providing access to various applications such as the weather app, tasks manager, snake game, and member cards. It includes options to edit user information and delete the account, along with the navigation bar and footer.
+- **WeatherApp.js:** Provides a weather application where users can search for weather information by city or country. It includes form validation, error handling, and displays weather details. The page also includes the navigation bar and footer.
+- **TasksApp.js:** Manages the task management application, allowing users to create, edit, and delete tasks. It includes form validation, task filtering, and displays tasks in a list format. The page also includes the navigation bar and footer.
+- **SnakeGame.js:** Provides the Snake game application, including gameplay instructions, high scores, and the game board. It fetches and displays high scores from the backend and adjusts the layout based on screen size. The page also includes the navigation bar and footer.
+- **CardsApp.js:** Manages the community members’ cards application, allowing users to view and manage member cards. It includes navigation to the dashboard and displays a list of member cards. The page also includes the navigation bar and footer.
+
+### Utils
+
+- **axiosInstance.js:** Facilitates communication with the backend API, including token management and automatic token refresh.
+
+### Main Application
+
+- **App.js:** The main application component that sets up the routing for the entire Techplaza platform. It includes routes for all the pages and applications, such as Home, About, Services, Contact, Login, Register, Email Verification, Password Reset, Dashboard, Weather App, Tasks App, Snake Game, and Cards App. It also integrates the ToastContainer for displaying notifications.
 
 # Testing
 
