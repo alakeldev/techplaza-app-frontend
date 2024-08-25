@@ -62,6 +62,7 @@ More information on the back-end of the site can be found in the back-end [READM
     - [Navigation Bar](<#Navigation-Bar>)
     - [Footer and Social Media Icons](<#Footer-and-Social-Media-Icons>)
     - [Password Reset Page (Forgot Password)](<#Password-Reset-Page-Forgot-Password>)
+    - [Verify Email Page](<#Verify-Email-Page>)
     - [Not Found Page](<#Not-Found-Page>)
   - [Additional Features](<#Additional-Features>)
     - [Dashboard CRUD Account Features](<#Dashboard-CRUD-Account-Features>)
@@ -70,9 +71,11 @@ More information on the back-end of the site can be found in the back-end [READM
     - [Snake Game MVP board Feature](<#Snake-Game-MVP-board-Feature>)
     - [Cards App CRUD Features](<#Cards-App-CRUD-Features>)
   - [**Future Features**](<#future-features>)
-- [**Components**](<#components>)
-  * [Footer](<#footer>)
-  * [Homepage Hero](<#homepage-hero>)
+- [**Components in React**](<#Components-in-React>)
+  - [Components](<#components>)
+  - [Pages](<#pages>)
+  - [Utils](<#utils>)
+  - [Main Application](<#Main-Application>)
 * [**Testing**](<#testing>)
   * [**Validator Tests**](<#validator-tests>)
     * [W3C (HTML)](<#w3c-html>)
@@ -399,15 +402,15 @@ You can navigate to the ‘Password Reset’ page by forgot password link locate
 
 ![Password reset confirm page](src/assets/readme/reset-your-password-confirm.png)
 
-### Not Found Page
-
-![404! page](src/assets/readme/404.png)
-
-### Verify Email OTP
+### Verify Email Page
 
 - On this page, you will be prompted to enter your email address and the One-Time Password (OTP) that you received via email. This verification step ensures the security of your account. Upon successful verification, you will be redirected to the login page, where you can enter your credentials to access your dashboard.
 
 ![Verify Page](src/assets/readme/verify.png)
+
+### Not Found Page
+
+![404! page](src/assets/readme/404.png)
 
 ## Additional Features
 
