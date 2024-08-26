@@ -556,499 +556,253 @@ These future features aim to make Techplaza even more versatile and user-friendl
 
 Here you will find a comprehensive list of all the manual tests that were carried out on the Techplaza front-end interface.
 
-| Status | **Home Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Hottest rigs displays four rigs
-| &check; | Hottest rigs displays rigs ordered by most liked
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | All links work correctly and navigate to the correct page
-
-
-| Status | **Navbar**
-|:-------:|:--------|
-| &check; | Content is responsive
-| &check; | Current page displays active class
-| &check; | Logged-in nav items are displayed correctly to logged-in users
-| &check; | Logged-out nav items are displayed correctly to logged-out users
-| &check; | Profile image and link is correct to current authenticated user
-| &check; | All links work correctly and navigate to the correct page
-| &check; | Mobile menu is displayed on small screens
-| &check; | Mobile nav menu opens and closes correctly
-| &check; | Mobile menu is closed when a user clicks away
-| &check; | Mobile menu is closed when a user clicks a nav link
-| &check; | Mobile menu nav toggle menu button opens and closes the mobile menu
-| &check; | Nav items change styling on hover
-
-
-| Status | **Footer**
-|:-------:|:--------|
-| &check; | Content is responsive
-| &check; | Current page displays active class
-| &check; | Logged-in nav items are displayed correctly to logged-in users
-| &check; | Logged-out nav items are displayed correctly to logged-out users
-| &check; | All links work correctly and navigate to the correct page
-| &check; | Nav items change styling on hover
-
-
-| Status | **Latest Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | All links work correctly and navigate to the correct page
-| &check; | Search functionality is working
-| &check; | Rigs are ordered from newest to oldest
-| &check; | Rigs list infinite scroll functionality is working
-| &check; | Correct content is displayed on rig cards
-| &check; | Like / unlike functionality is working
-| &check; | Save / unsave functionality is working
-| &check; | Rig links link to correct rigs
-| &check; | Profile links link to correct profiles
-| &check; | No results found is displayed when there are no rigs in the list
-
-
-| Status | **Feed Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Page is only visible to authenticated users
-| &check; | Non-authenticated users are redirected to the home page
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | All links work correctly and navigate to the correct page
-| &check; | Search functionality is working
-| &check; | Rigs list infinite scroll functionality is working
-| &check; | Correct content is displayed on rig cards
-| &check; | Like / unlike functionality is working
-| &check; | Save / unsave functionality is working
-| &check; | Rig links link to correct rigs
-| &check; | Profile links link to correct profiles
-| &check; | Becoming a fan of a user adds their rigs to the feed page
-| &check; | Unfanning a user removes their rigs from the feed page
-| &check; | No results found is displayed when there are no rigs in the list
-
-
-
-| Status | **Gear Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Page is only visible to authenticated users
-| &check; | Non-authenticated users are redirected to the home page
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Search functionality is working
-| &check; | Gear list infinite scroll functionality is working
-| &check; | Users can only see gear that is owned by them
-| &check; | Correct content is displayed on gear cards
-| &check; | Delete functionality is working
-| &check; | The edit button redirects the user to the correct edit gear page
-| &check; | Dropdown menu functionality is working
-| &check; | No results found is displayed when there is no gear in the list
-| &check; | Category badge displays correctly
-| &check; | Gear status badges display correctly
-
-
-
-| Status | **Rigs Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Page is only visible to authenticated users
-| &check; | Non-authenticated users are redirected to the home page
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Search functionality is working
-| &check; | Rig list infinite scroll functionality is working
-| &check; | Users can only see rigs that are owned by them
-| &check; | Correct content is displayed on rig cards
-| &check; | Like / Save buttons are not visible
-| &check; | No results found is displayed when there are no rigs in the list
-| &check; | Rig links link to correct rigs
-
-
-| Status | **Saved Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Page is only visible to authenticated users
-| &check; | Non-authenticated users are redirected to the home page
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Search functionality is working
-| &check; | Rigs list infinite scroll functionality is working
-| &check; | Correct content is displayed on rig cards
-| &check; | Like / unlike functionality is working
-| &check; | Save / unsave functionality is working
-| &check; | Saving a rig adds it to the list
-| &check; | Unsaving a rig removes it from the list
-| &check; | Users can only see their own saved rigs
-| &check; | Rig links link to correct rigs
-| &check; | Profile links link to correct profiles
-| &check; | No results found is displayed when there are no rigs in the list
-
-
-| Status | **Profile Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Page dropdown menu is only visible to authenticated users who own the profile
-| &check; | Profile edit button redirects the user to the profile edit page
-| &check; | Username edit button redirects the user to the username edit page
-| &check; | Password edit button redirects the user to the password edit page
-| &check; | User profile content is displaying correctly
-| &check; | Updated profile content is displaying correctly
-| &check; | Content is responsive
-| &check; | Search functionality is working
-| &check; | Rigs list infinite scroll functionality is working
-| &check; | Correct content is displayed on rig cards
-| &check; | Like / unlike functionality is working
-| &check; | Save / unsave functionality is working
-| &check; | Rig links link to correct rigs
-| &check; | Profile links like to correct profiles
-| &check; | Fan count is correct
-| &check; | Idol count is correct
-| &check; | Rig count is correct
-| &check; | Gear count is correct
-| &check; | Fan and idol counts increment correctly when becoming a fan and unfanning another user
-| &check; | Popular profiles is displaying correctly
-| &check; | Fan button is not displayed on the users own profile or on popular profiles
-| &check; | Fan button is working correctly
-| &check; | Unfan button is working correctly
-
-
-| Status | **Sign In Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Page is only visible to non-authenticated users
-| &check; | Authenticated users are redirected to the home page
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Form fields handle change correctly
-| &check; | Field input errors are displayed to the user
-| &check; | Successful submission signs the user in successfully and redirects the user back to their previous page
-| &check; | Sign up link redirects the user to the sign up page
-
-
-| Status | **Sign Up Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Page is only visible to non-authenticated users
-| &check; | Authenticated users are redirected to the home page
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Form fields handle change correctly
-| &check; | Field input errors are displayed to the user
-| &check; | Successful submission saves the users details and redirects the user to the sign in page
-| &check; | Sign in link redirects the user to the sign in page
-
-
-| Status | **Sign Out**
-|:-------:|:--------|
-| &check; | The sign-out button link is displayed on both site navs
-| &check; | The sign-out button is only displayed to authenticated users
-| &check; | Sign out functionality works correctly
-| &check; | On successful sign out the user is redirected to the home page
-
-
-| Status | **Add Gear Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Page is only visible to authenticated users
-| &check; | Non-authenticated users are redirected to the home page
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Form fields handle change correctly
-| &check; | Field input errors are displayed to the user
-| &check; | Successful submission creates a new instance of gear and redirects the user to the gear page
-| &check; | The cancel button redirects the user to the last page they were on
-| &check; | The submit button submits the form
-| &check; | All fields are successfully submitted
-| &check; | Blank fields are handled correctly
-
-
-| Status | **Add Rig Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Page is only visible to authenticated users
-| &check; | Non-authenticated users are redirected to the home page
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Form fields handle change correctly
-| &check; | Field input errors are displayed to the user
-| &check; | Successful submission creates a new instance of rig and redirects the user to the rig details page
-| &check; | The cancel button redirects the user to the last page they were on
-| &check; | The submit button submits the form
-| &check; | All fields are successfully submitted
-| &check; | Blank fields are handled correctly
-
-
-| Status | **Rig Detail Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Image gallery is working correctly
-| &check; | Dropdown menu is only displayed to authenticated users who own the rig
-| &check; | Edit rig button redirects user to correct edit rig page
-| &check; | Rig delete button deletes the rig and redirects the user to the last page they were on
-| &check; | Profile link links to correct profile
-| &check; | No comments yet message displays when there are no comments
-| &check; | Comment form only displays to authenticated users
-| &check; | A list of comments ordered from newest to oldest appears in a list on the correct rig
-| &check; | Comment is assigned to correct user
-| &check; | Comment form field handles change correctly
-| &check; | Comment field input errors are displayed to the user
-| &check; | Successful comment submission creates a new comment which appears at the top of the comment list
-| &check; | The post button submits the comment
-| &check; | The comment dropdown menu is only visible to users who are authenticated and own the comment
-| &check; | The comment edit button opens the edit comment form
-| &check; | The comment delete button deletes the comment and re-renders the comment list with the comment removed
-
-| Status | **Edit Gear Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Page is only visible to authenticated users who own the gear
-| &check; | Non-authenticated users are redirected to the home page
-| &check; | Form fields are pre-populated with the correct instance of gear
-| &check; | Form fields handle change correctly
-| &check; | Field input errors are displayed to the user
-| &check; | Successful submission updates the correct instance of gear and returns the user to the gear page
-| &check; | The cancel button redirects the user to the last page they were on
-| &check; | The submit button submits the form
-| &check; | All fields are successfully submitted
-| &check; | Blank fields are handled correctly
-| &check; | All fields that aren't changed remain the same
-| &check; | Updating the image field changes the image
-
-
-| Status | **Edit Rig Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Page is only visible to authenticated users who own the rig
-| &check; | Non-authenticated users are redirected to the home page
-| &check; | Form fields are pre-populated with the correct instance of rig
-| &check; | Form fields handle change correctly
-| &check; | Field input errors are displayed to the user
-| &check; | Successful submission updates the correct instance of rig and returns the user to the rig details page
-| &check; | The cancel button redirects the user to the last page they were on
-| &check; | The submit button submits the form
-| &check; | All fields are successfully submitted
-| &check; | Blank fields are handled correctly
-| &check; | All fields that aren't changed remain the same
-| &check; | Updating the image fields changes the images
-
-| Status | **Delete Gear**
-|:-------:|:--------|
-| &check; | The delete button is only visible in the gear dropdown menu to authenticated users who own the gear
-| &check; | Clicking the delete button deletes the correct instance of gear and re-renders the gear list with the gear removed
-
-
-| Status | **Delete Rig**
-|:-------:|:--------|
-| &check; | The delete button is only visible in the rig dropdown menu to authenticated users who own the rig
-| &check; | Clicking the delete button deletes the correct instance of rig and redirects the user to the last page they were on
-
-
-| Status | **Edit Profile Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Page is only visible to authenticated users who own the profile
-| &check; | Non-authenticated users are redirected to the home page
-| &check; | Form fields are pre-populated with the correct user profile
-| &check; | Form fields handle change correctly
-| &check; | Field input errors are displayed to the user
-| &check; | Successful submission updates the correct user profile and returns the user to the last page they were on
-| &check; | The cancel button redirects the user to the last page they were on
-| &check; | The submit button submits the form
-| &check; | All fields are successfully submitted
-| &check; | Blank fields are handled correctly
-| &check; | All fields that aren't changed remain the same
-| &check; | Updating the image fields changes the images
-| &check; | Updated profile details are immediately reflected on the user profile page
-
-
-| Status | **Edit Username Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Page is only visible to authenticated users who own the profile
-| &check; | Non-authenticated users are redirected to the home page
-| &check; | Form fields are pre-populated with the correct user profile username
-| &check; | Form fields handle change correctly
-| &check; | Field input errors are displayed to the user
-| &check; | Successful submission updates the correct user profile username and returns the user to the last page they were on
-| &check; | The cancel button redirects the user to the last page they were on
-| &check; | The submit button submits the form
-| &check; | All fields are successfully submitted
-| &check; | Blank fields are handled correctly
-| &check; | All fields that aren't changed remain the same
-| &check; | Updated profile usernames are immediately reflected on the user profile page
-
-
-| Status | **Edit Password Page**
-|:-------:|:--------|
-| &check; | Page has correct URL
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-| &check; | Page is only visible to authenticated users who own the profile
-| &check; | Non-authenticated users are redirected to the home page
-| &check; | Form fields handle change correctly
-| &check; | Field input errors are displayed to the user
-| &check; | Successful submission updates the correct user password and returns the user to the last page they were on
-| &check; | The cancel button redirects the user to the last page they were on
-| &check; | The submit button submits the form
-| &check; | All fields are successfully submitted
-| &check; | Blank fields are handled correctly
-
-
-| Status | **404 Page**
-|:-------:|:--------|
-| &check; | The 404 page is triggered by an incorrect site URL
-| &check; | Content is displaying correctly
-| &check; | Content is responsive
-
-
-| Status | **Search Functionality**
-|:-------:|:--------|
-| &check; | Rigs can be searched for usernames
-| &check; | Rigs can be searched for categories
-| &check; | Rigs can be searched for attributes
-| &check; | Rigs can be searched for genres
-| &check; | Rigs can be searched for rig names
-| &check; | Gear can be searched for gear names
-| &check; | Gear can be searched for categories
-| &check; | Gear can be searched for brands
-| &check; | Gear can be searched for models
-| &check; | Gear can be searched for descriptions
-
-
-| Status | **Like / Unlike**
-|:-------:|:--------|
-| &check; | When a rig is liked the like button is hidden and the unlike button appears
-| &check; | When a rig is unliked the unlike button is hidden and the like button appears
-| &check; | Liking a rig adds one to the rig like count
-| &check; | Unliking a rig subtracts one from the rig like count
-| &check; | Like and unlike buttons are only visible to authenticated users
-| &check; | Like and unlike buttons are hidden on rigs that are owned by the authenticated user
-
-
-| Status | **Save / Unsave**
-|:-------:|:--------|
-| &check; | When a rig is saved the save button is hidden and the unsave button appears
-| &check; | When a rig is unsaved the unsave button is hidden and the save button appears
-| &check; | Saving a rig adds one to the rig star count
-| &check; | Unsaving a rig subtracts one from the rig star count
-| &check; | Save and unsave buttons are only visible to authenticated users
-| &check; | Save and unsave buttons are hidden on rigs that are owned by the authenticated user
-| &check; | Saving a rig adds it to the users saved list
-| &check; | Unsaving a rig removes it from the users saved list
-
-
-### Input Validation Tests
-
-This section will detail the input validation tests carried out on the Gear Addict application.
-
-| Status | **Sign In Form**
-|:-------:|:--------|
-| &check; | Form cannot be submitted without a username
-| &check; | Form cannot be submitted without a password
-
-
-| Status | **Sign Up Form**
-|:-------:|:--------|
-| &check; | Form cannot be submitted without a username
-| &check; | Form cannot be submitted without a password
-| &check; | Form cannot be submitted without confirming password
-| &check; | Username cannot be over 30 characters in length
-| &check; | Form cannot be submitted without matching password fields
-
-
-| Status | **Add Rig Form**
-|:-------:|:--------|
-| &check; | Form cannot be submitted without a rig name
-| &check; | Rig name cannot be over 50 characters in length
-| &check; | Form cannot be submitted without a category
-| &check; | Form cannot be submitted without a budget
-| &check; | Form cannot be submitted without an attribute 1
-| &check; | Form cannot be submitted without a genre 1
-| &check; | Form cannot be submitted without a description
-
-
-| Status | **Edit Rig Form**
-|:-------:|:--------|
-| &check; | Form cannot be submitted without a rig name
-| &check; | Rig name cannot be over 50 characters in length
-| &check; | Form cannot be submitted without a category
-| &check; | Form cannot be submitted without a budget
-| &check; | Form cannot be submitted without an attribute 1
-| &check; | Form cannot be submitted without a genre 1
-| &check; | Form cannot be submitted without a description
-
-
-| Status | **Add Gear Form**
-|:-------:|:--------|
-| &check; | Form cannot be submitted without a gear name
-| &check; | Gear name cannot be over 50 characters in length
-| &check; | Form cannot be submitted without a category
-| &check; | Form cannot be submitted without a value
-| &check; | Value cannot be less than or equal to zero
-
-
-| Status | **Edit Gear Form**
-|:-------:|:--------|
-| &check; | Form cannot be submitted without a gear name
-| &check; | Gear name cannot be over 50 characters in length
-| &check; | Form cannot be submitted without a category
-| &check; | Form cannot be submitted without a value
-| &check; | Value cannot be less than or equal to zero
-
-
-| Status | **Edit Profile Form**
-|:-------:|:--------|
-| &check; | Name cannot be over 20 characters in length
-| &check; | Location cannot be over 30 characters in length
-
-
-| Status | **Edit Username Form**
-|:-------:|:--------|
-| &check; | Form cannot be submitted without a username
-| &check; | Username cannot be over 30 characters in length
-
-
-| Status | **Edit Password Form**
-|:-------:|:--------|
-| &check; | Form cannot be submitted without a password
-| &check; | Form cannot be submitted without confirming password
-| &check; | Form cannot be submitted without matching password fields
-
-
-| Status | **Add Comment Form**
-|:-------:|:--------|
-| &check; | Form cannot be submitted if the content field is empty
-
-
-| Status | **Edit Comment Form**
-|:-------:|:--------|
-| &check; | Form cannot be submitted if the content field is empty
-
-
-| Status | **Footer Tests**
-|:-------:|:--------|
-| &check; | Renders sign in link
-| &check; | Renders sign up link
-| &check; | Renders latest link
-| &check; | Renders home link
-| &check; | Renders link to gear page for logged in user
-| &check; | Renders link to rig page for logged in user
-| &check; | Renders link to feed page for logged in user
-| &check; | Renders link to saved page for logged in user
-| &check; | Renders sign in and sign up buttons again on user log out
-
+| Status | **Home Page**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Header is displaying correctly|
+| &check; | Title in the header is displaying correctly|
+| &check; | Typed strings in the header are displaying correctly|
+| &check; | Footer is displaying correctly|
+| &check; | Page is responsive|
+
+| Status | **Navbar**|
+|:-------:|:--------:|
+| &check; | Navbar is displaying correctly|
+| &check; | Logo is displaying correctly|
+| &check; | Home link is working and navigates to the correct page|
+| &check; | About link is working and navigates to the correct page|
+| &check; | Services link is working and navigates to the correct page|
+| &check; | Contact link is working and navigates to the correct page|
+| &check; | Dashboard link is displayed correctly for logged-in users|
+| &check; | Logout link is displayed correctly for logged-in users|
+| &check; | Login link is displayed correctly for logged-out users|
+| &check; | Register link is displayed correctly for logged-out users|
+| &check; | Navbar is responsive|
+| &check; | Navbar toggle button works correctly on small screens|
+| &check; | Logout modal is displayed correctly|
+
+| Status | **Footer**|
+|:-------:|:--------:|
+| &check; | Footer is displaying correctly|
+| &check; | Logo is displaying correctly|
+| &check; | IT Support & Innovative Applications text is displaying correctly|
+| &check; | Social media icons are displaying correctly|
+| &check; | Social media icons link to the correct sites|
+| &check; | Social media icons change styling on hover|
+| &check; | Current year is displaying correctly|
+| &check; | Footer is responsive|
+
+| Status | **About Page**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Carousel is displaying correctly|
+| &check; | Carousel items are responsive|
+| &check; | Carousel items are sliding correctly|
+| &check; | “Welcome to Our Community” section is displaying correctly|
+| &check; | “Innovative Applications” section is displaying correctly|
+| &check; | “IT Support” section is displaying correctly|
+| &check; | Footer is displaying correctly|
+
+| Status | **Services Page**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Services image is displaying correctly|
+| &check; | Services image is responsive|
+| &check; | Accordion is displaying correctly|
+| &check; | Accordion items are expandable and collapsible|
+| &check; | Community Applications section is displaying correctly|
+| &check; | IT Support Service section is displaying correctly|
+| &check; | Community Chat Service section is displaying correctly|
+| &check; | Footer is displaying correctly|
+
+| Status | **Contact Page**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Contact form is displaying correctly|
+| &check; | Form fields (name, email, message) are displaying correctly|
+| &check; | Form fields are responsive|
+| &check; | Form validation is working correctly (name validation)|
+| &check; | Form submission is working correctly|
+| &check; | Success message is displayed upon successful form submission|
+| &check; | Error message is displayed upon failed form submission|
+| &check; | Footer is displaying correctly|
+
+| Status | **Login Page**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Login form is displaying correctly|
+| &check; | Form fields (email, password) are displaying correctly|
+| &check; | Form fields are responsive|
+| &check; | Form validation is working correctly (email and password validation)|
+| &check; | Form submission is working correctly|
+| &check; | Success message is displayed upon successful login|
+| &check; | Error message is displayed upon failed login|
+| &check; | “Forgot Password?” link is working correctly|
+| &check; | Footer is displaying correctly|
+
+| Status | **Register Page**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Register form is displaying correctly|
+| &check; | Form fields (full name, email, password1, password2) are displaying correctly|
+| &check; | Form fields are responsive|
+| &check; | Form validation is working correctly (full name, email, password validation)|
+| &check; | Form submission is working correctly|
+| &check; | Success message is displayed upon successful registration|
+| &check; | Error message is displayed upon failed registration|
+| &check; | Footer is displaying correctly|
+
+| Status | **Verify Email (OTP) Page**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Email verification form is displaying correctly|
+| &check; | Form fields (email, OTP) are displaying correctly|
+| &check; | Form fields are responsive|
+| &check; | Form validation is working correctly (email and OTP validation)|
+| &check; | Form submission is working correctly|
+| &check; | Success message is displayed upon successful verification|
+| &check; | Error message is displayed upon failed verification|
+| &check; | Footer is displaying correctly|
+
+| Status | **Forgot Password Form**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Forget password form is displaying correctly|
+| &check; | Form fields (email) are displaying correctly|
+| &check; | Form fields are responsive|
+| &check; | Form validation is working correctly (email validation)|
+| &check; | Form submission is working correctly|
+| &check; | Success message is displayed upon successful form submission|
+| &check; | Error message is displayed upon failed form submission|
+| &check; | Footer is displaying correctly|
+
+| Status | **Reset Password Confirm**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Reset password form is displaying correctly|
+| &check; | Form fields (password, confirm password) are displaying correctly|
+| &check; | Form fields are responsive|
+| &check; | Form validation is working correctly (password validation)|
+| &check; | Form submission is working correctly|
+| &check; | Success message is displayed upon successful password reset|
+| &check; | Error message is displayed upon failed password reset|
+| &check; | Footer is displaying correctly|
+
+| Status | **404 Page**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | “Oops!! This Page Doesn’t Exist!” message is displaying correctly|
+| &check; | Message is responsive|
+| &check; | Footer is displaying correctly|
+
+| Status | **Dashboard Page**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Welcome message with username is displaying correctly|
+| &check; | Edit Information button is working correctly and opens the modal|
+| &check; | Delete Account button is working correctly and opens the modal|
+| &check; | World Weather Application card is displaying correctly and navigates to the correct page|
+| &check; | Tasks Manager Application card is displaying correctly and navigates to the correct page|
+| &check; | Snake Game card is displaying correctly and navigates to the correct page|
+| &check; | Member Cards Application card is displaying correctly and navigates to the correct page|
+| &check; | Community Chat card is displaying correctly with “Coming in December 2024” message|
+| &check; | Edit Information modal is displaying correctly|
+| &check; | Edit Information modal form validation is working correctly|
+| &check; | Edit Information modal form submission is working correctly|
+| &check; | Success message is displayed upon successful information update|
+| &check; | Error message is displayed upon failed information update|
+| &check; | Delete Account modal is displaying correctly|
+| &check; | Delete Account modal confirmation is working correctly|
+| &check; | Success message is displayed upon successful account deletion|
+| &check; | Error message is displayed upon failed account deletion|
+| &check; | Footer is displaying correctly|
+| &check; | Page is responsive|
+
+| Status | **Weather App**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Weather app input field is displaying correctly|
+| &check; | Weather app input field is responsive|
+| &check; | Weather app input field accepts valid city names|
+| &check; | Weather app displays error message for invalid city names|
+| &check; | Weather app fetches and displays weather data correctly|
+| &check; | Weather data (city, temperature, weather condition, wind speed) is displaying correctly|
+| &check; | Dashboard button is displaying correctly and navigates to the dashboard page|
+| &check; | Footer is displaying correctly|
+| &check; | Page is responsive|
+
+| Status | **Tasks Manager Page**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Task Manager title is displaying correctly|
+| &check; | Dashboard button is working correctly and navigates to the dashboard page|
+| &check; | Add task button is working correctly and opens the task modal|
+| &check; | TabList component is displaying correctly and toggles between Done and Undone tasks|
+| &check; | TaskList component is displaying tasks correctly based on the selected tab (Done/Undone)|
+| &check; | TaskItem component is displaying task title and description correctly|
+| &check; | Edit button in TaskItem component is working correctly and opens the task modal with the selected task details|
+| &check; | Delete button in TaskItem component is working correctly and deletes the selected task|
+| &check; | TaskModal component is displaying correctly with task details|
+| &check; | TaskModal form fields (title, description, completed) are displaying correctly and are responsive|
+| &check; | TaskModal form validation is working correctly (title and description validation)|
+| &check; | TaskModal form submission is working correctly and updates/creates the task|
+| &check; | Success message is displayed upon successful task creation/update|
+| &check; | Error message is displayed upon failed task creation/update|
+| &check; | Footer is displaying correctly|
+| &check; | Page is responsive|
+
+| Status | **Snake Game Page**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Snake Game title is displaying correctly|
+| &check; | Instructions for playing the game are displaying correctly on large screens|
+| &check; | High Scores section is displaying correctly with user names and scores|
+| &check; | Dashboard button is working correctly and navigates to the dashboard page|
+| &check; | SnakeGameBoard component is displaying correctly|
+| &check; | SnakeGameBoard component starts the game correctly when the Start button is clicked|
+| &check; | SnakeGameBoard component restarts the game correctly when the Restart button is clicked|
+| &check; | Snake moves correctly based on user input (W, A, S, D keys) *Please check the unresolved bugs section|
+| &check; | Food is generated correctly and snake grows when food is eaten|
+| &check; | Score is updated correctly when food is eaten|
+| &check; | Game over condition is handled correctly (snake runs into wall or itself)|
+| &check; | High score is saved correctly when game is over and score is higher than the lowest high score|
+| &check; | Small screen message with dashboard button is displaying correctly on small screens|
+| &check; | Footer is displaying correctly|
+| &check; | Page is responsive|
+
+| Status | **Community Cards Page**|
+|:-------:|:--------:|
+| &check; | Page has correct URL|
+| &check; | Navbar is displaying/working (its links) correctly|
+| &check; | Cards Members title is displaying correctly|
+| &check; | Dashboard button is working correctly and navigates to the dashboard page|
+| &check; | MembersCardsList component is displaying correctly|
+| &check; | MemberCard component is displaying member details correctly (name, email, phone number, profession, description, country)|
+| &check; | Edit button in MemberCard component is working correctly and opens the modal with the selected member details|
+| &check; | Delete button in MemberCard component is working correctly and deletes the selected member card|
+| &check; | Create Card button is working correctly and opens the modal|
+| &check; | Modal for creating/editing card is displaying correctly|
+| &check; | Modal form fields (email, name, phone number, profession, description, country) are displaying correctly and are responsive|
+| &check; | Modal form validation is working correctly (phone number, profession, description, country validation)|
+| &check; | Modal form submission is working correctly and updates/creates the member card|
+| &check; | Success message is displayed upon successful card creation/update|
+| &check; | Error message is displayed upon failed card creation/update|
+| &check; | Footer is displaying correctly|
+| &check; | Page is responsive|
 
 ### Responsive Tests
 
@@ -1140,10 +894,10 @@ For more information on the back-end technologies used, please view the [Techpla
 
 ## Software
 
-* [GitHub](https://github.com/) - An internet hosting service used for version control. Used to host the Gear Addict repositories and for the project board used for project management and user stories
+* [GitHub](https://github.com/) - An internet hosting service used for version control. Used to host the Techplaza repositories and for the project board used for project management and user stories
 * [VScode](https://www.gitpod.io/) - IDE to write code, create new files and folders for my project before pushing the project to Github.
 - [Git](https://git-scm.com/) - Provided the version control system for the site.
-* [Heroku](https://dashboard.heroku.com/) - A cloud platform used to host the Gear Addict application
+* [Heroku](https://dashboard.heroku.com/) - A cloud platform used to host the Techplaza application
 * [Draw.io](https://app.diagrams.net/) - An online diagram software used for the database schemas
 * [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - A set of web developer tools built directly into the chrome browser. Used for responsiveness tests and further testing.
 * [Google Fonts](https://fonts.google.com/) - A web based font service by Google used to supply the site typography
@@ -1151,7 +905,7 @@ For more information on the back-end technologies used, please view the [Techpla
 * [Responsive Design Checker](https://responsivedesignchecker.com/) - An online testing tool used for responsive site testing
 * [Am I Responsive](https://ui.dev/amiresponsive) - An online testing tool used for responsive site testing
 * [Colour Contrast Checker](https://colourcontrast.cc/) - An online tool used to test background and text colour contrast
-* [Font Awesome](https://fontawesome.com/) - A font and icon toolkit used for the Gear Addict icons
+* [Font Awesome](https://fontawesome.com/) - A font and icon toolkit used for the Techplaza platform icons
 * [NPM JS](https://www.npmjs.com/) - The npm registry website used for information on npm libraries
 * [Favicon.io](https://favicon.io/) - was used for making the site favicon.
 * [figma-wireframe-online](https://www.figma.com/templates/wireframe-kits/): was used to create wireframes.
@@ -1185,15 +939,15 @@ This section is a written guide on how to deploy a front-end React application t
 
 1. Go to [GitHub](https://github.com/)
 
-2. A new repository was created using 'Code-Instutute-Org/ci-full-template'.
+2. A new repository was created using 'Code-Instutute-Org/ci-full-template'
 
-3. A meaningful name was given to my new repository and I selected 'Create Repository'.
+3. A meaningful name was given to my new repository and I selected 'Create Repository'
 
-4. inside the created repo select the 'Code' button above the file list on the right hand side.
+4. inside the created repo select the 'Code' button above the file list on the right hand side
 
-5. Ensure HTTPS is selected and click the clipboard on the right of the URL to copy it.
+5. Ensure HTTPS is selected and click the clipboard on the right of the URL to copy it
 
-6. Open VS-code, creat new project folder, open the terminal, On the terminal type "git clone", then paste the copied url and press 'Enter'.
+6. Open VS-code, creat new project folder, open the terminal, On the terminal type "git clone", then paste the copied url and press 'Enter'
 
 7. One the repo cloned, run the terminal command `npx create-react-app . --use-npm` to install React
 
@@ -1207,9 +961,9 @@ This section is a written guide on how to deploy a front-end React application t
 
 12. Version control was used throughout the project using the following commands in the terminal:
 
-    - git add . OR git add "file name" - to stage the changes and get them ready for being committed to the local repo.
+    - git add . OR git add "file name" - to stage the changes and get them ready for being committed to the local repo
     - git commit -m "Description of the update" - to save the change and commit the change to the local repo
-    - git push origin main - to push all committed changes to the GitHub repo.
+    - git push origin main - to push all committed changes to the GitHub repo
 
 13. Log-in or sign-up to [Heroku](https://dashboard.heroku.com/) and open the dashboard
 
