@@ -508,11 +508,45 @@ These future features aim to make Techplaza even more versatile and user-friendl
 
 # Testing
 
+- In this section, I conduct comprehensive testing of the site and platform using various methods to ensure that all functionalities, elements, and features are working properly.
+
 ## Validator Tests
 
 ### W3C HTML
 
+| **TEST** | **ACTION** | **EXPECTATION** | **RESULT** |
+| ----------------------------- | ----------------------- | --------------------------- | ---------- |
+| public/index - html | [W3C - Direct Input](https://validator.w3.org/) | [No issues found](src/assets/readme/index-html.png) | ✅ |
+
 ### W3C CSS
+
+| **TEST** | **ACTION** | **EXPECTATION** | **RESULT** |
+| ----------------------------- | ----------------------- | --------------------------- | ---------- |
+| index.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/index-css.png) | ✅ |
+| About.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/About-module.png) | ✅ |
+| CardsApp.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/CardsApp-module.png) | ✅ |
+| Contact.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/Contact-module.png) | ✅ |
+| Dashboard.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/Dashboard-module.png) | ✅ |
+| DeleteAccount.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/DeleteAccount-module.png) | ✅ |
+| EditInfromation.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/EditInfromation-module.png) | ✅ |
+| EmailVerifyForm.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/EmailVerifyForm-module.png) | ✅ |
+| Footer.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/Footer-module.png) | ✅ |
+| ForgetPassword.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/ForgetPassword-module.png) | ✅ |
+| Header.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/Header-module.png) | ✅ |
+| Home.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/Home-module.png) | ✅ |
+| LoginForm.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/LoginForm-module.png) | ✅ |
+| MemberCard.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/MemberCard-module.png) | ✅ |
+| MembersCardsList.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/MembersCardsList-module.png) | ✅ |
+| NavBarLogout.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/NavBarLogout-module.png) | ✅ |
+| NotFound.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/NotFound-module.png) | ✅ |
+| Register.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/Register-module.png) | ✅ |
+| ResetPasswordForm.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/ResetPasswordForm-module.png) | ✅ |
+| Services.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/Services-module.png) | ✅ |
+| SnakeGame.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/SnakeGame-module.png) | ✅ |
+| SnakeGameBoard.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/SnakeGameBoard-module.png) | ✅ |
+| SnakeGameHighScores.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/SnakeGameHighScores-module.png) | ✅ |
+| TasksApp.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/TasksApp-module.png) | ✅ |
+| WeatherApp.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/WeatherApp-module.png) | ✅ |
 
 ### ESLint Javascript
 
@@ -531,7 +565,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Content is responsive
 | &check; | All links work correctly and navigate to the correct page
 
-[Back to top](<#contents>)
 
 | Status | **Navbar**
 |:-------:|:--------|
@@ -548,7 +581,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Mobile menu nav toggle menu button opens and closes the mobile menu
 | &check; | Nav items change styling on hover
 
-[Back to top](<#contents>)
 
 | Status | **Footer**
 |:-------:|:--------|
@@ -559,7 +591,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | All links work correctly and navigate to the correct page
 | &check; | Nav items change styling on hover
 
-[Back to top](<#contents>)
 
 | Status | **Latest Page**
 |:-------:|:--------|
@@ -577,7 +608,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Profile links link to correct profiles
 | &check; | No results found is displayed when there are no rigs in the list
 
-[Back to top](<#contents>)
 
 | Status | **Feed Page**
 |:-------:|:--------|
@@ -598,7 +628,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Unfanning a user removes their rigs from the feed page
 | &check; | No results found is displayed when there are no rigs in the list
 
-[Back to top](<#contents>)
+
 
 | Status | **Gear Page**
 |:-------:|:--------|
@@ -618,7 +648,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Category badge displays correctly
 | &check; | Gear status badges display correctly
 
-[Back to top](<#contents>)
+
 
 | Status | **Rigs Page**
 |:-------:|:--------|
@@ -635,7 +665,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | No results found is displayed when there are no rigs in the list
 | &check; | Rig links link to correct rigs
 
-[Back to top](<#contents>)
+
 
 | Status | **Saved Page**
 |:-------:|:--------|
@@ -656,7 +686,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Profile links link to correct profiles
 | &check; | No results found is displayed when there are no rigs in the list
 
-[Back to top](<#contents>)
+
 
 | Status | **Profile Page**
 |:-------:|:--------|
@@ -685,7 +715,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Fan button is working correctly
 | &check; | Unfan button is working correctly
 
-[Back to top](<#contents>)
+
 
 | Status | **Sign In Page**
 |:-------:|:--------|
@@ -699,7 +729,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Successful submission signs the user in successfully and redirects the user back to their previous page
 | &check; | Sign up link redirects the user to the sign up page
 
-[Back to top](<#contents>)
+
 
 | Status | **Sign Up Page**
 |:-------:|:--------|
@@ -713,7 +743,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Successful submission saves the users details and redirects the user to the sign in page
 | &check; | Sign in link redirects the user to the sign in page
 
-[Back to top](<#contents>)
+
 
 | Status | **Sign Out**
 |:-------:|:--------|
@@ -722,7 +752,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Sign out functionality works correctly
 | &check; | On successful sign out the user is redirected to the home page
 
-[Back to top](<#contents>)
+
 
 | Status | **Add Gear Page**
 |:-------:|:--------|
@@ -739,7 +769,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | All fields are successfully submitted
 | &check; | Blank fields are handled correctly
 
-[Back to top](<#contents>)
+
 
 | Status | **Add Rig Page**
 |:-------:|:--------|
@@ -821,14 +851,12 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | The delete button is only visible in the gear dropdown menu to authenticated users who own the gear
 | &check; | Clicking the delete button deletes the correct instance of gear and re-renders the gear list with the gear removed
 
-[Back to top](<#contents>)
 
 | Status | **Delete Rig**
 |:-------:|:--------|
 | &check; | The delete button is only visible in the rig dropdown menu to authenticated users who own the rig
 | &check; | Clicking the delete button deletes the correct instance of rig and redirects the user to the last page they were on
 
-[Back to top](<#contents>)
 
 | Status | **Edit Profile Page**
 |:-------:|:--------|
@@ -849,7 +877,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Updating the image fields changes the images
 | &check; | Updated profile details are immediately reflected on the user profile page
 
-[Back to top](<#contents>)
 
 | Status | **Edit Username Page**
 |:-------:|:--------|
@@ -869,7 +896,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | All fields that aren't changed remain the same
 | &check; | Updated profile usernames are immediately reflected on the user profile page
 
-[Back to top](<#contents>)
 
 | Status | **Edit Password Page**
 |:-------:|:--------|
@@ -886,7 +912,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | All fields are successfully submitted
 | &check; | Blank fields are handled correctly
 
-[Back to top](<#contents>)
 
 | Status | **404 Page**
 |:-------:|:--------|
@@ -894,7 +919,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Content is displaying correctly
 | &check; | Content is responsive
 
-[Back to top](<#contents>)
 
 | Status | **Search Functionality**
 |:-------:|:--------|
@@ -909,7 +933,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Gear can be searched for models
 | &check; | Gear can be searched for descriptions
 
-[Back to top](<#contents>)
 
 | Status | **Like / Unlike**
 |:-------:|:--------|
@@ -920,7 +943,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Like and unlike buttons are only visible to authenticated users
 | &check; | Like and unlike buttons are hidden on rigs that are owned by the authenticated user
 
-[Back to top](<#contents>)
 
 | Status | **Save / Unsave**
 |:-------:|:--------|
@@ -933,7 +955,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Saving a rig adds it to the users saved list
 | &check; | Unsaving a rig removes it from the users saved list
 
-[Back to top](<#contents>)
 
 ### Input Validation Tests
 
@@ -944,7 +965,6 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without a username
 | &check; | Form cannot be submitted without a password
 
-[Back to top](<#contents>)
 
 | Status | **Sign Up Form**
 |:-------:|:--------|
@@ -954,7 +974,6 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Username cannot be over 30 characters in length
 | &check; | Form cannot be submitted without matching password fields
 
-[Back to top](<#contents>)
 
 | Status | **Add Rig Form**
 |:-------:|:--------|
@@ -966,7 +985,6 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without a genre 1
 | &check; | Form cannot be submitted without a description
 
-[Back to top](<#contents>)
 
 | Status | **Edit Rig Form**
 |:-------:|:--------|
@@ -978,7 +996,6 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without a genre 1
 | &check; | Form cannot be submitted without a description
 
-[Back to top](<#contents>)
 
 | Status | **Add Gear Form**
 |:-------:|:--------|
@@ -988,7 +1005,6 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without a value
 | &check; | Value cannot be less than or equal to zero
 
-[Back to top](<#contents>)
 
 | Status | **Edit Gear Form**
 |:-------:|:--------|
@@ -998,21 +1014,18 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without a value
 | &check; | Value cannot be less than or equal to zero
 
-[Back to top](<#contents>)
 
 | Status | **Edit Profile Form**
 |:-------:|:--------|
 | &check; | Name cannot be over 20 characters in length
 | &check; | Location cannot be over 30 characters in length
 
-[Back to top](<#contents>)
 
 | Status | **Edit Username Form**
 |:-------:|:--------|
 | &check; | Form cannot be submitted without a username
 | &check; | Username cannot be over 30 characters in length
 
-[Back to top](<#contents>)
 
 | Status | **Edit Password Form**
 |:-------:|:--------|
@@ -1020,37 +1033,16 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without confirming password
 | &check; | Form cannot be submitted without matching password fields
 
-[Back to top](<#contents>)
 
 | Status | **Add Comment Form**
 |:-------:|:--------|
 | &check; | Form cannot be submitted if the content field is empty
 
-[Back to top](<#contents>)
 
 | Status | **Edit Comment Form**
 |:-------:|:--------|
 | &check; | Form cannot be submitted if the content field is empty
 
-[Back to top](<#contents>)
-
-### Automated Tests
-
-Automated tests were run on the Gear Addict project using the [Jest Dom Testing Library](https://testing-library.com/docs/ecosystem-jest-dom/). Both the nav bar and footer components were tested to check that they were rendering the correct elements for logged in and logged out users. Details of the tests and a link to the test directory can be found below.
-
-| Status | **Nav Bar Tests**
-|:-------:|:--------|
-| &check; | Renders sign in link
-| &check; | Renders sign up link
-| &check; | Renders latest link
-| &check; | Renders home link
-| &check; | Renders link to gear page for logged in user
-| &check; | Renders link to rig page for logged in user
-| &check; | Renders link to feed page for logged in user
-| &check; | Renders link to saved page for logged in user
-| &check; | Renders sign in and sign up buttons again on user log out
-
-[Back to top](<#contents>)
 
 | Status | **Footer Tests**
 |:-------:|:--------|
@@ -1064,69 +1056,53 @@ Automated tests were run on the Gear Addict project using the [Jest Dom Testing 
 | &check; | Renders link to saved page for logged in user
 | &check; | Renders sign in and sign up buttons again on user log out
 
-[Click this link to view the testing directory](https://github.com/Matthew-Hurrell/gear-addict/tree/main/src/components/__tests__)
-
-[Back to top](<#contents>)
-
 ### Responsive Tests
 
-Gear Addict has been tested on a diverse range of different devices and screen sizes to test for style and layout issues. Manual responsive tests were carried out using [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/), [Responsive Design Checker](https://responsivedesignchecker.com/) and [Am I Responsive](https://ui.dev/amiresponsive) as well as on a number of physical devices. All device screen sizes were tested on Chrome Dev Tools as well as Responsive Design Checker and no issues were found.
+| **TEST**                      | **ACTION**              | **EXPECTATION**             | **RESULT** |
+| ----------------------------- | ----------------------- | --------------------------- | ---------- |
+| Home page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅        |
+| Home page - responsiveness    | Size site up to 1920px  | all elements stay on screen | ✅         |
+| About page - responsiveness   | Size site down to 320px | all elements stay on screen | ✅         |
+| About page - responsiveness   | Size site up to 1920px  | all elements stay on screen | ✅         |
+| Services page - responsiveness  | Size site down to 320px | all elements stay on screen | ✅         |
+| Services page - responsiveness  | Size site up to 1920px  | all elements stay on screen | ✅         |
+| Contact page - responsiveness  | Size site down to 320px | all elements stay on screen | ✅         |
+| Contact page - responsiveness  | Size site up to 1920px  | all elements stay on screen | ✅         |
+| Login page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Login page - responsiveness    | Size site up to 1920px  | all elements stay on screen | ✅         |
+| Forgot Password page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Forgot Password page - responsiveness    | Size site up to 1920px  | all elements stay on screen | ✅         |
+| Password Confirm page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Password Confirm page - responsiveness    | Size site up to 1920px  | all elements stay on screen | ✅         |
+| Register page - responsiveness | Size site down to 320px | all elements stay on screen | ✅         |
+| Register page - responsiveness | Size site up to 1920px  | all elements stay on screen | ✅         |
+| Verify Email page - responsiveness | Size site down to 320px | all elements stay on screen | ✅         |
+| Verify Email page - responsiveness | Size site up to 1920px  | all elements stay on screen | ✅         |
+| Dashboard page - responsiveness | Size site down to 320px | all elements stay on screen | ✅         |
+| Dashboard page - responsiveness | Size site up to 1920px  | all elements stay on screen | ✅         |
+| Weather App page - responsiveness | Size site down to 320px | all elements stay on screen | ✅         |
+| Weather App page - responsiveness | Size site up to 1920px  | all elements stay on screen | ✅         |
+| Tasks Manager App page - responsiveness | Size site down to 320px | all elements stay on screen | ✅         |
+| Tasks Manager App page - responsiveness | Size site up to 1920px  | all elements stay on screen | ✅         |
+| Snake Game App page - responsiveness | Size site down to 320px | all elements stay on screen | ✅         |
+| Snake Game App page - responsiveness | Size site up to 1920px  | all elements stay on screen | ✅         |
+| Members Card page - responsiveness | Size site down to 320px | all elements stay on screen | ✅         |
+| Members Card page - responsiveness | Size site up to 1920px  | all elements stay on screen | ✅         |
 
-| Status | **Chrome Dev Tools**
-|:-------:|:--------|
-| &check; | iPhone SE
-| &check; | iPhone XR
-| &check; | iPhone 12 Pro
-| &check; | Pixel 5
-| &check; | Samsung Galaxy S8+
-| &check; | Samsung Galaxy S20 Ultra
-| &check; | iPad Air
-| &check; | iPad Mini
-| &check; | Surface Pro 7
-| &check; | Surface Duo
-| &check; | Galaxy Fold
-| &check; | Samsung Galaxy A51/71
-| &check; | Nest Hub
-| &check; | Nest Hub Max
-| &check; | iPhone 6/7/8
-| &check; | Responsive mode
+### Browsers Test
 
-[Back to top](<#contents>)
-
-| Status | **Responsive Design Checker**
-|:-------:|:--------|
-| &check; | 24" Desktop
-| &check; | 23" Desktop
-| &check; | 22" Desktop
-| &check; | 20" Desktop
-| &check; | 19" Desktop
-| &check; | 15" Desktop
-| &check; | 13" Notebook
-| &check; | 10" Notebook
-| &check; | Apple iPad Mini
-| &check; | Apple iPad Retina
-| &check; | Apple iPad Pro
-| &check; | Amazon Kindle Fire
-| &check; | Amazon Kindle Fire HD
-| &check; | Asus Eee 1000
-| &check; | Nexus 7
-| &check; | Nexus 9
-| &check; | Samsung Galaxy Tab 10
-| &check; | Apple iPhone 3/4/4s
-| &check; | Apple iPhone 5/5s
-| &check; | Apple iPhone 6/6s/7
-| &check; | Apple iPhone 6s Plus/7 Plus
-| &check; | Samsung Galaxy S5/S6/S7
-| &check; | Sony Xperia Z2/Z3
-| &check; | Google Pixel
-| &check; | Nexus 4
-| &check; | Nexus 5
-| &check; | Nexus 6
-
-### Browser Tests
-
+| **TEST** | **ACTION** | **EXPECTATION** | **RESULT** |
+| ----------------------------- | ----------------------- | --------------------------- | ---------- |
+| Chrome browser | Launch site | The site functions correctly upon opening | ✅ |
+| Firefox browser | Launch site | The site functions correctly upon opening | ✅ |
+| MS-Edge browser | Launch site | The site functions correctly upon opening, however the Snake Game/App does not operate properly (W,S,A,D) keys until the browser is refreshed. | ✅ |
 
 ### Lighthouse Tests
+
+- The Lighthouse test range is situated between the two range photos displayed on all site and platform pages, including applications
+
+![Techplaza lighthouse1](src/assets/readme/lighthouse1.png)
+![Techplaza lighthouse2](src/assets/readme/lighthouse2.png)
 
 ## Bugs
 
