@@ -560,7 +560,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 |:-------:|:--------:|
 | &check; | Page has correct URL|
 | &check; | Navbar is displaying/working (its links) correctly|
-| &check; | Header is displaying correctly|
+| &check; | Header Component is displaying correctly|
 | &check; | Title in the header is displaying correctly|
 | &check; | Typed strings in the header are displaying correctly|
 | &check; | Footer is displaying correctly|
@@ -671,7 +671,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Error message is displayed upon failed verification|
 | &check; | Footer is displaying correctly|
 
-| Status | **Forgot Password Form**|
+| Status | **Forgot Password Page**|
 |:-------:|:--------:|
 | &check; | Page has correct URL|
 | &check; | Navbar is displaying/working (its links) correctly|
@@ -684,7 +684,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Error message is displayed upon failed form submission|
 | &check; | Footer is displaying correctly|
 
-| Status | **Reset Password Confirm**|
+| Status | **Reset Password Confirm Page**|
 |:-------:|:--------:|
 | &check; | Page has correct URL|
 | &check; | Navbar is displaying/working (its links) correctly|
@@ -729,7 +729,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Footer is displaying correctly|
 | &check; | Page is responsive|
 
-| Status | **Weather App**|
+| Status | **World Weather Page**|
 |:-------:|:--------:|
 | &check; | Page has correct URL|
 | &check; | Navbar is displaying/working (its links) correctly|
