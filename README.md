@@ -84,10 +84,10 @@ More information on the back-end of the site can be found in the back-end [READM
   * [**Additional Tests**](<#additional-tests>)
     * [Manual Tests](<#manual-tests>)
     * [Input Validation Tests](<#input-validation-tests>)
-    * [Automated Tests](<#automated-tests>)
     * [Responsive Tests](<#responsive-tests>)
     * [Browser Tests](<#browser-tests>)
     * [Lighthouse Tests](<#lighthouse-tests>)
+    - [CRUD Tests](<#CRUD-Tests>)
   * [**Bugs**](<#bugs>)
     * [Resolved](<#resolved>)
     * [Unresolved](<#unresolved>)
@@ -554,7 +554,7 @@ These future features aim to make Techplaza even more versatile and user-friendl
 
 ### Manual Tests
 
-Here you will find a comprehensive list of all the manual tests that were carried out on the Gear Addict front-end interface.
+Here you will find a comprehensive list of all the manual tests that were carried out on the Techplaza front-end interface.
 
 | Status | **Home Page**
 |:-------:|:--------|
@@ -666,7 +666,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Rig links link to correct rigs
 
 
-
 | Status | **Saved Page**
 |:-------:|:--------|
 | &check; | Page has correct URL
@@ -685,7 +684,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Rig links link to correct rigs
 | &check; | Profile links link to correct profiles
 | &check; | No results found is displayed when there are no rigs in the list
-
 
 
 | Status | **Profile Page**
@@ -716,7 +714,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Unfan button is working correctly
 
 
-
 | Status | **Sign In Page**
 |:-------:|:--------|
 | &check; | Page has correct URL
@@ -728,7 +725,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Field input errors are displayed to the user
 | &check; | Successful submission signs the user in successfully and redirects the user back to their previous page
 | &check; | Sign up link redirects the user to the sign up page
-
 
 
 | Status | **Sign Up Page**
@@ -744,14 +740,12 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Sign in link redirects the user to the sign in page
 
 
-
 | Status | **Sign Out**
 |:-------:|:--------|
 | &check; | The sign-out button link is displayed on both site navs
 | &check; | The sign-out button is only displayed to authenticated users
 | &check; | Sign out functionality works correctly
 | &check; | On successful sign out the user is redirected to the home page
-
 
 
 | Status | **Add Gear Page**
@@ -768,7 +762,6 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | The submit button submits the form
 | &check; | All fields are successfully submitted
 | &check; | Blank fields are handled correctly
-
 
 
 | Status | **Add Rig Page**
@@ -1056,6 +1049,7 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Renders link to saved page for logged in user
 | &check; | Renders sign in and sign up buttons again on user log out
 
+
 ### Responsive Tests
 
 | **TEST**                      | **ACTION**              | **EXPECTATION**             | **RESULT** |
@@ -1089,7 +1083,7 @@ This section will detail the input validation tests carried out on the Gear Addi
 | Members Card page - responsiveness | Size site down to 320px | all elements stay on screen | ✅         |
 | Members Card page - responsiveness | Size site up to 1920px  | all elements stay on screen | ✅         |
 
-### Browsers Test
+### Browser Tests
 
 | **TEST** | **ACTION** | **EXPECTATION** | **RESULT** |
 | ----------------------------- | ----------------------- | --------------------------- | ---------- |
@@ -1103,6 +1097,16 @@ This section will detail the input validation tests carried out on the Gear Addi
 
 ![Techplaza lighthouse1](src/assets/readme/lighthouse1.png)
 ![Techplaza lighthouse2](src/assets/readme/lighthouse2.png)
+
+#### CRUD Tests
+
+| App | Create | Read | Update | Delete |
+|---|---|---|---|---|
+| Accounts | ✅ | ✅ | ✅ | ✅ |
+| Cards | ✅ | ✅ | ✅ | ✅ |
+| Tasks | ✅ | ✅ | ✅ | ✅ |
+| Snake | ✅ | ✅ | ✅ | --- |
+| Weather | ✅ | ✅ | ✅ | --- |
 
 ## Bugs
 
