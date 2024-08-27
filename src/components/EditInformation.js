@@ -1,4 +1,5 @@
-import  { useState, React } from 'react';
+import { useState, React } from 'react';
+import PropTypes from 'prop-types';
 import axiosInstance from '../utils/axiosInstance';
 import { toast } from 'react-toastify';
 import { Button, Modal, Form, FormGroup, FormControl, FormLabel, ModalHeader, ModalBody, ModalFooter } from "react-bootstrap";
@@ -32,7 +33,7 @@ const EditInformation = ({ show, handleClose, user, updateFullName }) => {
 
         handleClose();
       }
-    } catch (error) {
+    } catch {
       toast.error('Failed to update information');
     }
   };
@@ -60,7 +61,7 @@ const EditInformation = ({ show, handleClose, user, updateFullName }) => {
               value={user.email}
               disabled
             />
-            <small className={styles.note}>This email cannot be changed. It's your identity in the community.</small>
+            <small className={styles.note}>This email cannot be changed. It is your identity in the community.</small>
           </FormGroup>
           <ModalFooter className={styles.modalFooter}>
             <Button variant="secondary" onClick={handleClose} className={styles.btnSecondary}>
@@ -74,6 +75,16 @@ const EditInformation = ({ show, handleClose, user, updateFullName }) => {
       </ModalBody>
     </Modal>
   );
+};
+
+EditInformation.propTypes = {
+  show: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired,
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+  }).isRequired,
+  updateFullName: PropTypes.func.isRequired,
 };
 
 export default EditInformation;

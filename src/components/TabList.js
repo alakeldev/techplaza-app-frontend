@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ButtonGroup, Button } from 'react-bootstrap';
 import styles from '../styles/TasksApp.module.css';
 
@@ -19,6 +20,11 @@ const TabList = ({ viewDone, displayDone }) => {
             </Button>
         </ButtonGroup>
     );
+};
+
+TabList.propTypes = {
+    viewDone: PropTypes.bool.isRequired,
+    displayDone: PropTypes.func.isRequired,
 };
 
 export default TabList;

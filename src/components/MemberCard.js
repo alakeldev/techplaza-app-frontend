@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import styles from '../styles/MemberCard.module.css';
 
@@ -27,6 +28,20 @@ const MemberCard = ({ member, isOwner, onEdit, onDelete }) => {
       </Card.Body>
     </Card>
   );
+};
+
+MemberCard.propTypes = {
+  member: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phone_number: PropTypes.string.isRequired,
+    profession: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+  }).isRequired,
+  isOwner: PropTypes.bool.isRequired,
+  onEdit: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default MemberCard;

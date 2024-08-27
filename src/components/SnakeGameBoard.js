@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import axiosInstance from '../utils/axiosInstance';
 import { toast } from 'react-toastify';
 import styles from '../styles/SnakeGameBoard.module.css';
@@ -117,7 +118,7 @@ const SnakeGameBoard = ({ highScores, setHighScores }) => {
             const sortedScores = [...highScores, response.data].sort((a, b) => b.score - a.score);
             setHighScores(sortedScores.slice(0, 1));
           })
-          .catch(error => toast.error('Error saving score. Please try again later.'));
+          .catch(() => toast.error('Error saving score. Please try again later.'));
       }
     }
   }, [gameOver, score, highScores, setHighScores]);
@@ -155,6 +156,13 @@ const SnakeGameBoard = ({ highScores, setHighScores }) => {
       </div>
     </div>
   );
+};
+
+SnakeGameBoard.propTypes = {
+  highScores: PropTypes.arrayOf(PropTypes.shape({
+    score: PropTypes.number.isRequired,
+  })).isRequired,
+  setHighScores: PropTypes.func.isRequired,
 };
 
 export default SnakeGameBoard;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 import axiosInstance from '../utils/axiosInstance';
@@ -8,7 +9,7 @@ import styles from '../styles/DeleteAccount.module.css';
 
 const DeleteAccount = ({ show, handleClose }) => {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleDelete = async () => {
     try {
       const response = await axiosInstance.delete('/auth/delete-account/');
@@ -19,10 +20,11 @@ const DeleteAccount = ({ show, handleClose }) => {
         navigate("/");
         toast.success('Account deleted successfully');
       }
-    } catch (error) {
+    } catch {
       toast.error('Failed to delete account');
     }
   };
+
   return (
     <Modal show={show} onHide={handleClose} centered className={styles.modalDialog}>
       <Modal.Header closeButton className={styles.modalHeader}>
@@ -41,6 +43,11 @@ const DeleteAccount = ({ show, handleClose }) => {
       </Modal.Footer>
     </Modal>
   );
+};
+
+DeleteAccount.propTypes = {
+  show: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired,
 };
 
 export default DeleteAccount;

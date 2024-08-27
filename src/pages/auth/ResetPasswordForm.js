@@ -55,7 +55,7 @@ const ResetPasswordForm = () => {
                 navigate('/login');
                 toast.success(result.message);
             }
-        } catch (error) {
+        } catch {
             toast.error("Failed to reset password invalid link.");
         }
     };

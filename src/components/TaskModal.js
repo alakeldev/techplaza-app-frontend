@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, Modal, Form, FormGroup, FormControl, FormLabel, ModalHeader, ModalBody, ModalFooter } from "react-bootstrap";
 import { toast } from "react-toastify";
 
@@ -71,6 +72,18 @@ const TaskModal = ({ modal, toggle, activeItem, handleChange, handleSubmit }) =>
             </ModalFooter>
         </Modal>
     );
+};
+
+TaskModal.propTypes = {
+    modal: PropTypes.bool.isRequired,
+    toggle: PropTypes.func.isRequired,
+    activeItem: PropTypes.shape({
+        task_title: PropTypes.string.isRequired,
+        task_description: PropTypes.string.isRequired,
+        is_done: PropTypes.bool.isRequired,
+    }).isRequired,
+    handleChange: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
 };
 
 export default TaskModal;

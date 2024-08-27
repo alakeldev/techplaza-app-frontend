@@ -10,9 +10,9 @@ import { toast } from 'react-toastify';
 
 const EmailVerifyForm = () => {
 
-  const navigate = useNavigate()
-  const [otp, setOtp] = useState("")
-  const [email, setEmail] = useState("")
+  const navigate = useNavigate();
+  const [otp, setOtp] = useState("");
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -31,13 +31,13 @@ const EmailVerifyForm = () => {
           navigate("/login");
           toast.success(response.data.message);
         }
-      } catch (error) {
+      } catch {
         toast.error("Failed to verify OTP. Please try again.");
       }
     } else {
       toast.error("Please provide both OTP and email.");
     }
-  }
+  };
 
   return (
     <HelmetProvider>

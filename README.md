@@ -455,6 +455,7 @@ Techplaza aims to continuously evolve and enhance the user experience. Some of t
 5. Gamification Elements: Introducing badges, achievements, and leaderboards to make the platform more engaging and rewarding for users.
 6. Mobile App: Developing a mobile application to provide users with access to Techplaza’s features on the go.
 7. Integration with Third-Party Services: Enabling integration with popular third-party services and tools to enhance the platform’s functionality.
+8. Enhance Security by Storing Tokens in Cookies instead of local storage, This change will significantly enhance the security of the website by mitigating vulnerabilities to cyber attacks, such as Cross-Site Scripting (XSS) attacks.
 
 These future features aim to make Techplaza even more versatile and user-friendly, ensuring it remains a valuable resource for all users.
 
@@ -860,7 +861,7 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | Cards | ✅ | ✅ | ✅ | ✅ |
 | Tasks | ✅ | ✅ | ✅ | ✅ |
 | Snake | ✅ | ✅ | ✅ | --- |
-| Weather | ✅ | ✅ | ✅ | --- |
+| Weather | --- | ✅ | --- | --- |
 
 ## Bugs
 

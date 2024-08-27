@@ -13,7 +13,7 @@ const NotFound = () => {
                 </Helmet>
                 <NavBar />
                 <div className={styles.mainContainer}>
-                    <h1>Oops!! This Page Doesn't Exist!</h1>
+                    <h1>Oops!! This Page Does not Exist!</h1>
                 </div>
                 <Footer />
             </Fragment>

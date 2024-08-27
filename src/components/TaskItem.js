@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, ListGroupItem } from 'react-bootstrap';
 import styles from '../styles/TasksApp.module.css';
 
@@ -38,6 +39,17 @@ const TaskItem = ({ item, editItem, handleDelete, viewDone }) => {
             </div>
         </ListGroupItem>
     );
+};
+
+TaskItem.propTypes = {
+    item: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        task_title: PropTypes.string.isRequired,
+        task_description: PropTypes.string.isRequired,
+    }).isRequired,
+    editItem: PropTypes.func.isRequired,
+    handleDelete: PropTypes.func.isRequired,
+    viewDone: PropTypes.bool.isRequired,
 };
 
 export default TaskItem;

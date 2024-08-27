@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -47,6 +48,11 @@ const Logout = ({ show, handleClose }) => {
             </Modal.Footer>
         </Modal>
     );
+};
+
+Logout.propTypes = {
+    show: PropTypes.bool.isRequired,
+    handleClose: PropTypes.func.isRequired,
 };
 
 export default Logout;

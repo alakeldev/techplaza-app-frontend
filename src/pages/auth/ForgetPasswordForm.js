@@ -10,8 +10,8 @@ import { toast } from 'react-toastify';
 
 const ForgetPasswordForm = () => {
 
-  const [email, setEmail] = useState("")
-  const [error, setError] = useState("")
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,13 +31,13 @@ const ForgetPasswordForm = () => {
           toast.success("Check your Email please, reset link was sent to it");
           setEmail("");
         }
-      } catch (error) {
+      } catch {
         setError("Failed to send reset link. Please try again.");
       }
     } else {
       setError("Please enter your registered email.");
     }
-  }
+  };
 
   return (
     <HelmetProvider>

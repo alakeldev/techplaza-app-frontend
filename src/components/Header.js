@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ReactTyped } from "react-typed";
 import styles from "../styles/Header.module.css";
 
@@ -20,6 +21,11 @@ function Header({ title, typedStrings }) {
             </div>
         </header>
     );
+};
+
+Header.propTypes = {
+    title: PropTypes.string.isRequired,
+    typedStrings: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Header;

@@ -123,7 +123,7 @@ const MembersCardsList = () => {
         description: '',
         country: '',
       });
-    } catch (error) {
+    } catch {
       toast.error('Error deleting card. Please try again later.');
     }
   };

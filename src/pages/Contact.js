@@ -43,14 +43,14 @@ const Contact = () => {
             e.target,
             process.env.REACT_APP_EMAILJS_USER_ID
         )
-            .then((result) => {
+            .then(() => {
                 toast.success('Message sent successfully!');
                 setFormData({
                     name: '',
                     email: '',
                     message: ''
                 });
-            }, (error) => {
+            }, () => {
                 toast.error('Failed to send message. Please try again.');
             });
     };

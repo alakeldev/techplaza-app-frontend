@@ -29,7 +29,7 @@ const SnakeGame = () => {
           const sortedScores = response.data.sort((a, b) => b.score - a.score);
           setHighScores(sortedScores.slice(0, 1));
         })
-        .catch(error => {});
+        .catch(() => { });
     }
   }, [user]);
 
