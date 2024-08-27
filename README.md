@@ -83,7 +83,6 @@ More information on the back-end of the site can be found in the back-end [READM
     * [ESLint (JavaScript)](<#eslint-javascript>)
   * [**Additional Tests**](<#additional-tests>)
     * [Manual Tests](<#manual-tests>)
-    * [Input Validation Tests](<#input-validation-tests>)
     * [Responsive Tests](<#responsive-tests>)
     * [Browser Tests](<#browser-tests>)
     * [Lighthouse Tests](<#lighthouse-tests>)
@@ -551,6 +550,8 @@ These future features aim to make Techplaza even more versatile and user-friendl
 
 ### ESLint Javascript
 
+![ESLint JS](src/assets/readme/jslint.png)
+
 ## Additional Tests
 
 ### Manual Tests
@@ -995,7 +996,7 @@ This section is a written guide on how to deploy a front-end React application t
 3. There will now be a copy of the repository in your own GitHub account.
 4. Go to [the Back-end repository](https://github.com/alakeldev/backend-techplaza-pp5) and repeat the process.
 
-## Cloning-the-project-repositories
+## Cloning The Project Repositories
 
 1. Go to the following Front-end repository on GitHub: <https://github.com/alakeldev/frontend-techplaza-pp5>.
 2. At the top right of the screen, click the 'Code' button, and then click 'HTTPs'.
