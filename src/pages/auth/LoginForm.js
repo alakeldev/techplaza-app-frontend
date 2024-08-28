@@ -37,38 +37,38 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!loginData.email || !loginData.password) {
-      setError("To Login Email and Password fields are required!")
+      setError("To Login Email and Password fields are required!");
     } else if (!validatePassword(loginData.password)) {
-      setError("Password must be between 4 and 40 characters.")
+      setError("Password must be between 4 and 40 characters.");
     } else {
-      setIsLoading(true)
+      setIsLoading(true);
       try {
-        const res = await axiosInstance.post("/auth/login/", loginData)
-        const response = res.data
-        setIsLoading(false)
+        const res = await axiosInstance.post("/auth/login/", loginData);
+        const response = res.data;
+        setIsLoading(false);
         const user = {
           "email": response.email,
           "name": response.full_name
-        }
+        };
         if (res.status === 200) {
           localStorage.setItem("user", JSON.stringify(user))
           localStorage.setItem("access", JSON.stringify(response.token))
           localStorage.setItem("refresh", JSON.stringify(response.refresh_token))
-          navigate("/dashboard")
-          toast.success("Login successful")
+          navigate("/dashboard");
+          toast.success("Login successful");
         }
       } catch (error) {
-        setIsLoading(false)
+        setIsLoading(false);
         if (error.response && error.response.status === 401) {
-          setError("Invalid credentials. Please check your email and password and try again.")
+          setError("Invalid credentials. Please check your email and password and try again.");
         } else if (error.response && error.response.status === 400) {
-          setError("Validation error. Please check your input and try again.")
+          setError("Validation error. Please check your input and try again.");
         } else {
-          setError("Login failed. Please check your credentials and try again.")
+          setError("Login failed. Please check your credentials and try again.");
         }
       }
     }
-  }
+  };
 
   return (
     <HelmetProvider>
