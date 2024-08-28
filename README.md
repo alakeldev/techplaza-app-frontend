@@ -883,6 +883,14 @@ A number of bugs presented themselves during the Techplaza platform development 
 
 - There is an ongoing issue with the Snake Game application on Microsoft Edge. Users are unable to start and play the game directly using the keyboard keys (W, S, A, D). To resolve this, users need to refresh the browser page before pressing the “Start Game” button. Without refreshing, the game does not respond to these keys. This issue has been investigated, but a solution has not yet been found. Notably, this problem does not occur on Google Chrome or Mozilla Firefox, where users can access and play the game without needing to refresh the page. In these browsers, the game responds correctly to the (W, S, A, D) keys.
 
+- 401 Unauthorized Network Error: This error occurs when a user attempts to log in with invalid credentials. The server responds with a 401 Unauthorized status code, indicating that the provided authentication credentials are not valid. This error is logged in the browser’s console and appears in the network tab of the developer tools. The user is informed through a user-friendly message on the login form that their credentials are invalid and they need to verify their email and password.
+
+![401](src/assets/readme/bug7.png)
+
+- 400 Bad Request Error, This error occurs when a user attempts to register with an email that is already taken or provides invalid input data. The server responds with a 400 Bad Request status code, indicating that the request could not be processed due to client-side errors. This error is logged in the browser’s console and appears in the network tab of the developer tools. The user is informed through a user-friendly message on the registration form that the registration failed and to try again
+
+![400](src/assets/readme/bug8.png)
+
 # Technologies Used
 
 Here you will find a complete list of all the technologies used to help create and develop the Techplaza front-end application.
@@ -999,7 +1007,7 @@ This section is a written guide on how to deploy a front-end React application t
 
 ## Cloning The Project Repositories
 
-1. Go to the following Front-end repository on GitHub: <https://github.com/alakeldev/frontend-techplaza-pp5>.
+1. Go to [the Front-end repository](https://github.com/alakeldev/frontend-techplaza-pp5)..
 2. At the top right of the screen, click the 'Code' button, and then click 'HTTPs'.
 3. Copy the link in this field.
 4. Open VS-code, creat new project folder, open the terminal.
