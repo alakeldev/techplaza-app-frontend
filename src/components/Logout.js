@@ -24,8 +24,7 @@ const Logout = ({ show, handleClose }) => {
                 toast.success("Logout successful");
                 handleClose();
             }
-        } catch (error) {
-            console.error("Logout failed:", error);
+        } catch {
             toast.error("Logout failed");
         } finally {
             setLoading(false);
