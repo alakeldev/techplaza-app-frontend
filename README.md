@@ -96,7 +96,7 @@ More information on the back-end of the site can be found in the back-end [READM
   - [Libraries](<#libraries>)
 - [**Deployment**](<#deployment>)
   - [Project Deployment via Heroku](<#project-deployment-via-heroku>)
-  - [Forking](<#forking>)
+  - [Forking](<#forking-the-project-repositories>)
   - [Cloning the project repositories](<#cloning-the-project-repositories>)
 - [**Credits**](<#credits>)
   - [Content](<#content>)
@@ -998,7 +998,7 @@ This section is a written guide on how to deploy a front-end React application t
 
 23. If the build is successful, click the 'Open app' button to view the deployed app on Heroku
 
-## Forking
+## Forking The Project Repositories
 
 1. Go to [the Front-end repository](https://github.com/alakeldev/frontend-techplaza-pp5).
 2. In the right most top menu, click the "Fork" button.
