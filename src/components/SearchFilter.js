@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import styles from '../styles/SearchFilter.module.css';
 
-const SearchFilter = ({ searchTerm, onSearchChange }) => {
+const SearchFilter = ({ searchTerm, onSearchChange, onSearchClick }) => {
     return (
         <div className={styles.searchFilter}>
             <Form.Control
@@ -12,6 +12,7 @@ const SearchFilter = ({ searchTerm, onSearchChange }) => {
                 value={searchTerm}
                 onChange={(e) => onSearchChange(e.target.value)}
             />
+            <Button onClick={onSearchClick} className={styles.searchButton}>Search</Button>
         </div>
     );
 };
@@ -19,6 +20,7 @@ const SearchFilter = ({ searchTerm, onSearchChange }) => {
 SearchFilter.propTypes = {
     searchTerm: PropTypes.string.isRequired,
     onSearchChange: PropTypes.func.isRequired,
+    onSearchClick: PropTypes.func.isRequired,
 };
 
 export default SearchFilter;

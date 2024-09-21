@@ -14,6 +14,7 @@ const CardsApp = () => {
   const jwt_token = localStorage.getItem('access');
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     if (jwt_token === null || !user) {
@@ -23,6 +24,10 @@ const CardsApp = () => {
 
   const handleDashboardClick = () => {
     navigate("/dashboard");
+  };
+
+  const handleSearchClick = () => {
+    setSearchQuery(searchTerm);
   };
 
   if (!user) {
@@ -38,9 +43,9 @@ const CardsApp = () => {
         <NavBar />
         <div className={styles.mainContainer}>
           <h2>Community Members Cards</h2>
-          <SearchFilter searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+          <SearchFilter searchTerm={searchTerm} onSearchChange={setSearchTerm} onSearchClick={handleSearchClick} />
           <Button className={styles.dashboardButton} onClick={handleDashboardClick}>Dashboard</Button>
-          <MembersCardsList searchTerm={searchTerm} />
+          <MembersCardsList searchQuery={searchQuery} />
         </div>
         <Footer />
       </Fragment>

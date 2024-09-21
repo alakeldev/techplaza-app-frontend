@@ -5,7 +5,7 @@ import MemberCard from './MemberCard';
 import { toast } from 'react-toastify';
 import styles from '../styles/MembersCardsList.module.css';
 
-const MembersCardsList = ({ searchTerm }) => {
+const MembersCardsList = ({ searchQuery }) => {
   const user = JSON.parse(localStorage.getItem('user'));
   const [members, setMembers] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -23,6 +23,12 @@ const MembersCardsList = ({ searchTerm }) => {
   useEffect(() => {
     fetchMembers();
   }, []);
+
+  useEffect(() => {
+    if (searchQuery && filteredMembers.length === 0) {
+      toast.info('No results available.');
+    }
+  }, [searchQuery]);
 
   const fetchMembers = async () => {
     try {
@@ -131,7 +137,7 @@ const MembersCardsList = ({ searchTerm }) => {
   const userCard = members.find((member) => member.email === user.email);
 
   const filteredMembers = members.filter((member) =>
-    member.country.toLowerCase().includes(searchTerm.toLowerCase())
+    member.country.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (

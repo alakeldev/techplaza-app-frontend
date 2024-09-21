@@ -1,13 +1,28 @@
 .searchFilter {
+    display: flex;
     width: 100%;
     max-width: 400px;
     margin: 20px auto;
 }
 
 .searchFilter input {
-    width: 100%;
+    flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
     font-size: 16px;
+}
+
+.searchButton {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.searchButton:hover {
+    background-color: #0056b3;
 }
