@@ -5,7 +5,7 @@ import MemberCard from './MemberCard';
 import { toast } from 'react-toastify';
 import styles from '../styles/MembersCardsList.module.css';
 
-const MembersCardsList = () => {
+const MembersCardsList = ({ searchTerm }) => {
   const user = JSON.parse(localStorage.getItem('user'));
   const [members, setMembers] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -130,6 +130,10 @@ const MembersCardsList = () => {
 
   const userCard = members.find((member) => member.email === user.email);
 
+  const filteredMembers = members.filter((member) =>
+    member.country.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className={styles.membersCardsList}>
       {userCard ? (
@@ -144,7 +148,7 @@ const MembersCardsList = () => {
           <Button onClick={() => setShowModal(true)}>Create Card</Button>
         </div>
       )}
-      {members
+      {filteredMembers
         .filter((member) => member.email !== user.email)
         .map((member) => (
           <MemberCard key={member.id} member={member} isOwner={false} />
