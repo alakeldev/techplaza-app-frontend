@@ -1,13 +1,13 @@
 .searchFilter {
     display: flex;
-    width: 100%;
+    width: 80%;
     max-width: 400px;
     margin: 20px auto;
 }
 
 .searchFilter input {
     flex: 1;
-    padding: 10px;
+    padding: 7px;
     border: 1px solid #ccc;
     border-radius: 5px 0 0 5px;
     font-size: 16px;
