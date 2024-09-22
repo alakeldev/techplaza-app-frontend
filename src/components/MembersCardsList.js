@@ -135,6 +135,8 @@ const MembersCardsList = ({ searchQuery }) => {
     }
   };
 
+  const userCard = members.find((member) => member.email === user.email);
+
   const filteredMembers = members.filter((member) =>
     member.country.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -149,9 +151,18 @@ const MembersCardsList = ({ searchQuery }) => {
           <MemberCard key={member.id} member={member} isOwner={member.email === user.email} onEdit={() => handleEdit(member)} onDelete={() => handleDelete(member.id)} />
         ))
       ) : (
-        <div className={styles.createCardButton}>
-          <Button onClick={() => setShowModal(true)}>Create Card</Button>
-        </div>
+        <>
+          {!userCard && (
+            <div className={styles.createCardButton}>
+              <Button onClick={() => setShowModal(true)}>Create Card</Button>
+            </div>
+          )}
+          {members
+            .filter((member) => member.email !== user.email)
+            .map((member) => (
+              <MemberCard key={member.id} member={member} isOwner={false} />
+            ))}
+        </>
       )}
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
