@@ -30,6 +30,11 @@ const CardsApp = () => {
     setSearchQuery(searchTerm);
   };
 
+  const handleSearchFocus = () => {
+    setSearchTerm('');
+    setSearchQuery('');
+  };
+
   if (!user) {
     return null;
   }
@@ -43,7 +48,12 @@ const CardsApp = () => {
         <NavBar />
         <div className={styles.mainContainer}>
           <h2>Community Members Cards</h2>
-          <SearchFilter searchTerm={searchTerm} onSearchChange={setSearchTerm} onSearchClick={handleSearchClick} />
+          <SearchFilter
+            searchTerm={searchTerm}
+            onSearchChange={setSearchTerm}
+            onSearchClick={handleSearchClick}
+            onSearchFocus={handleSearchFocus}
+          />
           <Button className={styles.dashboardButton} onClick={handleDashboardClick}>Dashboard</Button>
           <MembersCardsList searchQuery={searchQuery} />
         </div>

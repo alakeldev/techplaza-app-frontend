@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Modal, Form } from 'react-bootstrap';
 import axiosInstance from '../utils/axiosInstance';
 import MemberCard from './MemberCard';
@@ -134,31 +135,18 @@ const MembersCardsList = ({ searchQuery }) => {
     }
   };
 
-  const userCard = members.find((member) => member.email === user.email);
-
   const filteredMembers = members.filter((member) =>
     member.country.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
     <div className={styles.membersCardsList}>
-      {userCard ? (
-        <MemberCard
-          member={userCard}
-          isOwner={true}
-          onEdit={() => handleEdit(userCard)}
-          onDelete={() => handleDelete(userCard.id)}
-        />
-      ) : (
-        <div className={styles.createCardButton}>
-          <Button onClick={() => setShowModal(true)}>Create Card</Button>
-        </div>
+      {filteredMembers.length === 0 && searchQuery && (
+        <div className={styles.noResults}>No results available.</div>
       )}
-      {filteredMembers
-        .filter((member) => member.email !== user.email)
-        .map((member) => (
-          <MemberCard key={member.id} member={member} isOwner={false} />
-        ))}
+      {filteredMembers.map((member) => (
+        <MemberCard key={member.id} member={member} isOwner={member.email === user.email} onEdit={() => handleEdit(member)} onDelete={() => handleDelete(member.id)} />
+      ))}
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
@@ -242,6 +230,10 @@ const MembersCardsList = ({ searchQuery }) => {
       </Modal>
     </div>
   );
+};
+
+MembersCardsList.propTypes = {
+  searchQuery: PropTypes.string.isRequired,
 };
 
 export default MembersCardsList;
