@@ -144,9 +144,15 @@ const MembersCardsList = ({ searchQuery }) => {
       {filteredMembers.length === 0 && searchQuery && (
         <div className={styles.noResults}>No results available.</div>
       )}
-      {filteredMembers.map((member) => (
-        <MemberCard key={member.id} member={member} isOwner={member.email === user.email} onEdit={() => handleEdit(member)} onDelete={() => handleDelete(member.id)} />
-      ))}
+      {filteredMembers.length > 0 ? (
+        filteredMembers.map((member) => (
+          <MemberCard key={member.id} member={member} isOwner={member.email === user.email} onEdit={() => handleEdit(member)} onDelete={() => handleDelete(member.id)} />
+        ))
+      ) : (
+        <div className={styles.createCardButton}>
+          <Button onClick={() => setShowModal(true)}>Create Card</Button>
+        </div>
+      )}
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
