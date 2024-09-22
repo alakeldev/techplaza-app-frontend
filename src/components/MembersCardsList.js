@@ -6,7 +6,7 @@ import MemberCard from './MemberCard';
 import { toast } from 'react-toastify';
 import styles from '../styles/MembersCardsList.module.css';
 
-const MembersCardsList = ({ searchQuery }) => {
+const MembersCardsList = ({ searchQuery, setSearchQuery }) => {
   const user = JSON.parse(localStorage.getItem('user'));
   const [members, setMembers] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -135,6 +135,10 @@ const MembersCardsList = ({ searchQuery }) => {
     }
   };
 
+  const handleLoadAllCards = () => {
+    setSearchQuery('');
+  };
+
   const userCard = members.find((member) => member.email === user.email);
 
   const filteredMembers = members.filter((member) =>
@@ -143,26 +147,20 @@ const MembersCardsList = ({ searchQuery }) => {
 
   return (
     <div className={styles.membersCardsList}>
-      {filteredMembers.length === 0 && searchQuery && (
-        <div className={styles.noResults}>No results available.</div>
+      {!userCard && (
+        <div className={styles.createCardButton}>
+          <Button onClick={() => setShowModal(true)}>Create Card</Button>
+        </div>
       )}
-      {filteredMembers.length > 0 ? (
+      {filteredMembers.length === 0 && searchQuery ? (
+        <>
+          <div className={styles.noResults}>No results available.</div>
+          <Button onClick={handleLoadAllCards} className={styles.loadAllButton}>Load All Cards</Button>
+        </>
+      ) : (
         filteredMembers.map((member) => (
           <MemberCard key={member.id} member={member} isOwner={member.email === user.email} onEdit={() => handleEdit(member)} onDelete={() => handleDelete(member.id)} />
         ))
-      ) : (
-        <>
-          {!userCard && (
-            <div className={styles.createCardButton}>
-              <Button onClick={() => setShowModal(true)}>Create Card</Button>
-            </div>
-          )}
-          {members
-            .filter((member) => member.email !== user.email)
-            .map((member) => (
-              <MemberCard key={member.id} member={member} isOwner={false} />
-            ))}
-        </>
       )}
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
@@ -251,6 +249,7 @@ const MembersCardsList = ({ searchQuery }) => {
 
 MembersCardsList.propTypes = {
   searchQuery: PropTypes.string.isRequired,
+  setSearchQuery: PropTypes.func.isRequired,
 };
 
 export default MembersCardsList;

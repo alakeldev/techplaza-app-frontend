@@ -55,7 +55,7 @@ const CardsApp = () => {
             onSearchFocus={handleSearchFocus}
           />
           <Button className={styles.dashboardButton} onClick={handleDashboardClick}>Dashboard</Button>
-          <MembersCardsList searchQuery={searchQuery} />
+          <MembersCardsList searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         </div>
         <Footer />
       </Fragment>
