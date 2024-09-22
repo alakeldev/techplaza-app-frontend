@@ -253,6 +253,7 @@ Not all stories have been implemented. Some have been left for future implementa
   - As a registered user, I want to access the card community application from the dashboard so that I can create, display my card and view the other community members cards.
   - As a registered user, I want to create a card with my name, email, number, profession, description, and country so that I can share my information with the community.
   - As a registered user, I want to edit and delete my card so that I can update or remove my information.
+  - As a registered user, I want to filter the cards by specific country so that I can find cards relevant to my residence country or specific country.
 
 ## Site Structure
 
@@ -435,13 +436,13 @@ You can navigate to the ‘Password Reset’ page by forgot password link locate
 
 ![Snake Game](src/assets/readme/snake-mvp.png)
 
-### Cards App CRUD Features
+### Cards App CRUD and Search/Filter Features
 
 ![Cards Feature 1](src/assets/readme/create-card.png)
 
-![Cards Feature 2](src/assets/readme/display-card.png)
+![Cards Update Feature 2](src/assets/readme/update-card.png)
 
-![Cards Update Feature 3](src/assets/readme/update-card.png)
+![Cards Feature 3](src/assets/readme/display-card.png)
 
 ## Future Features
 
@@ -479,6 +480,7 @@ These future features aim to make Techplaza even more versatile and user-friendl
 - **TaskModal.js:** Provides a modal for creating and editing tasks. It includes form validation and handles the submission of task data.
 - **SnakeGameBoard.js:** Manages the Snake game board, including the snake’s movement, food generation, and score tracking. It handles user input for controlling the snake, adjusts the board size based on screen width, and communicates with the backend API to save high scores. The component also includes start and restart game functionality.
 - **SnakeGameHighScores.js:** Displays the high scores for the Snake game, highlighting the top players in the community. It renders a list of high scores, showing the user’s name or email and their score.
+- **SearchFilter.js:** Provides a search input field and a search button for filtering member cards by country. The component handles user input, clearing the search field on focus, and triggering the search action on button click. It communicates with the parent component to update the search query and displays the search results accordingly.
 
 ### Pages
 
@@ -496,7 +498,7 @@ These future features aim to make Techplaza even more versatile and user-friendl
 - **WeatherApp.js:** Provides a weather application where users can search for weather information by city or country. It includes form validation, error handling, and displays weather details. The page also includes the navigation bar and footer.
 - **TasksApp.js:** Manages the task management application, allowing users to create, edit, and delete tasks. It includes form validation, task filtering, and displays tasks in a list format. The page also includes the navigation bar and footer.
 - **SnakeGame.js:** Provides the Snake game application, including gameplay instructions, high scores, and the game board. It fetches and displays high scores from the backend and adjusts the layout based on screen size. The page also includes the navigation bar and footer.
-- **CardsApp.js:** Manages the community members’ cards application, allowing users to view and manage member cards. It includes navigation to the dashboard and displays a list of member cards. The page also includes the navigation bar and footer.
+- **CardsApp.js:** Manages the community members’ cards application, allowing users to view and manage member cards. It includes navigation to the dashboard and displays a list of member cards, it has also Search/filter functionality. The page also includes the navigation bar and footer.
 
 ### Utils
 
@@ -547,6 +549,7 @@ These future features aim to make Techplaza even more versatile and user-friendl
 | SnakeGameHighScores.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/SnakeGameHighScores-module.png) | ✅ |
 | TasksApp.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/TasksApp-module.png) | ✅ |
 | WeatherApp.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/WeatherApp-module.png) | ✅ |
+| SearchFilter.module.css | [W3C - Jigsaw CSS](https://jigsaw.w3.org/css-validator/) | [No issues found](src/assets/readme/SearchFilter-module.png) | ✅ |
 
 ### ESLint Javascript
 
@@ -803,6 +806,12 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Modal form submission is working correctly and updates/creates the member card|
 | &check; | Success message is displayed upon successful card creation/update|
 | &check; | Error message is displayed upon failed card creation/update|
+| &check; | Search field is displaying correctly & Search field clears on focus|
+| &check; | Search button is displaying correctly|
+| &check; | Load All Cards is displaying correctly if not results available|
+| &check; | Clicking the Load All Cards button reloads all member cards|
+| &check; | Clicking the search button filters member cards by country|
+| &check; | No results message & toast message is displayed when no matching cards are found|
 | &check; | Footer is displaying correctly|
 | &check; | Page is responsive|
 
