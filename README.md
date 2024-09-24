@@ -70,6 +70,7 @@ More information on the back-end of the site can be found in the back-end [READM
     - [Tasks Manager App CRUD Features](<#Tasks-Manager-App-CRUD-Features>)
     - [Snake Game MVP board Feature](<#Snake-Game-MVP-board-Feature>)
     - [Cards App CRUD Features](<#Cards-App-CRUD-Features>)
+    - [Cards App Search and Fitler Feature](<#Cards-App-Search-and-Filter-Feature>)
   - [**Future Features**](<#future-features>)
 - [**Components in React**](<#Components-in-React>)
   - [Components](<#components>)
@@ -436,11 +437,15 @@ You can navigate to the ‘Password Reset’ page by forgot password link locate
 
 ![Snake Game](src/assets/readme/snake-mvp.png)
 
-### Cards App CRUD and Search/Filter Features
+### Cards App CRUD Features
 
 ![Cards Feature 1](src/assets/readme/create-card.png)
 
 ![Cards Update Feature 2](src/assets/readme/update-card.png)
+
+### Cards App Search and Filter Feature
+
+- The search feature in the Community Cards page application allows users to efficiently filter member cards by country. Users can enter a country name in the search field and click the search button to display only the member cards that match the search query. The search functionality is case-insensitive and ensures that the user’s card is included in the results if it matches the search query. If no matching cards are found, a “No results available” message is displayed & Toast Message along with a “Load All Cards” button, allowing users to reload all member cards. The search field clears on focus, providing a seamless and user-friendly experience.
 
 ![Cards Feature 3](src/assets/readme/display-card.png)
 
