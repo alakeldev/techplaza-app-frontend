@@ -3,8 +3,6 @@
 Welcome to Techplaza, the premier platform for a seamless and engaging online experience. Our website features a comprehensive array of pages, including Home, About, Services, Contact, and Register, all accessible to both registered and non-registered users.
 Upon registration, users gain access to a personalized dashboard, enabling profile management and exploration of our diverse suite of applications. Whether you are checking the weather, managing tasks, playing games, creating community cards, or soon engaging in community chat, Techplaza offers something for everyone.
 
-This project serves as the final portfolio submission for the [Code Institute](https://codeinstitute.net/) Higher National Diploma in Full Stack Software Development with a focus on advanced Frontend development in React.js.
-
 The project is divided into two parts:
 
 - the front-end, developed using [React.js](https://react.dev/)
@@ -14,9 +12,9 @@ Link to the live site - [Techplaza Live Site](https://frontend-techplaza-d0af91d
 
 Link to the live API - [Techplaza Live API](https://backend-techplaza-1b0c24eaa252.herokuapp.com/)
 
-Link to the back-end repository - [Techplaza Back-End Repo](https://github.com/alakeldev/backend-techplaza-pp5)
+Link to the back-end repository - [Techplaza Back-End Repo](https://github.com/alakeldev/techplaza-app-backend)
 
-More information on the back-end of the site can be found in the back-end [README](https://github.com/alakeldev/backend-techplaza-pp5/blob/main/README.md).
+More information on the back-end of the site can be found in the back-end [README](https://github.com/alakeldev/techplaza-app-backend/blob/main/README.md).
 
 ![Techplaza Responsive](src/assets/readme/amiresponsive.png)
 
@@ -102,7 +100,6 @@ More information on the back-end of the site can be found in the back-end [READM
 - [**Credits**](<#credits>)
   - [Content](<#content>)
   - [Media](<#media>)
-- [**Acknowledgements**](<#acknowledgements>)
 
 # Project
 
@@ -936,7 +933,6 @@ For more information on the back-end technologies used, please view the [Techpla
 * [Coloors](https://coolors.co/) - was used to create the color scheme.
 * [Miro-online](https://miro.com/) - was used to create the plan of the site navigation.
 * [Emailjs](https://www.emailjs.com/) - was configured and utilized to ensure the contact form functionality operates correctly
-* [Slack](https://slack.com/intl/en-gb/) - An online instant messaging program used for site feedback and guidance from the [Code Institute](https://codeinstitute.net/) community
 
 ## Libraries
 
@@ -964,7 +960,7 @@ This section is a written guide on how to deploy a front-end React application t
 
 1. Go to [GitHub](https://github.com/)
 
-2. A new repository was created using 'Code-Instutute-Org/ci-full-template'
+2. A new repository was created
 
 3. A meaningful name was given to my new repository and I selected 'Create Repository'
 
@@ -1014,26 +1010,25 @@ This section is a written guide on how to deploy a front-end React application t
 
 ## Forking The Project Repositories
 
-1. Go to [the Front-end repository](https://github.com/alakeldev/frontend-techplaza-pp5).
+1. Go to [the Front-end repository](https://github.com/alakeldev/techplaza-app-frontend).
 2. In the right most top menu, click the "Fork" button.
 3. There will now be a copy of the repository in your own GitHub account.
-4. Go to [the Back-end repository](https://github.com/alakeldev/backend-techplaza-pp5) and repeat the process.
+4. Go to [the Back-end repository](https://github.com/alakeldev/techplaza-app-backend) and repeat the process.
 
 ## Cloning The Project Repositories
 
-1. Go to [the Front-end repository](https://github.com/alakeldev/frontend-techplaza-pp5)..
+1. Go to [the Front-end repository](https://github.com/alakeldev/techplaza-app-frontend).
 2. At the top right of the screen, click the 'Code' button, and then click 'HTTPs'.
 3. Copy the link in this field.
 4. Open VS-code, creat new project folder, open the terminal.
 5. On the terminal type "git clone", then paste the copied url and press 'Enter'.
 6. The clone process should now begin.
-7. Go to [the Back-end repository](https://github.com/alakeldev/backend-techplaza-pp5) and repeat the process.
+7. Go to [the Back-end repository](https://github.com/alakeldev/techplaza-app-backend) and repeat the process.
 
 # Credits
 
 In this final section, I would like to credit the various sources that were used throughout the development of the Techplaza project.
 
-- [Code-Institute-Curriculum](https://codeinstitute.net/de/) - Full Stack Software Development Curriculum.
 - [React-Bootstrap5](https://react-bootstrap.github.io/docs/getting-started/introduction) - Was my main guide while building my frontend project.
 - [React-Bootstrap5-CheatSheet](https://dev.to/jsha/cheat-sheet-for-react-bootstrap-installation-and-components-4n43) - Was fast help full source.
 - [CSS-CheatSheet](https://htmlcheatsheet.com/css/) - Was a very help full source to know how target elements and set properties.
@@ -1047,22 +1042,9 @@ In this final section, I would like to credit the various sources that were used
 ## Content
 
 - The displayed text used in the Services and About pages was generated with the assistance of ChatGPT.
-- My mentor at Code Institute Martina provided much appreciated guidance on application features and content.
 
 ## Media
 
 - All images featured on our website, including those on the Home, About, Services, Dashboard, and Applications pages, have been sourced free from [Pexels](https://www.pexels.com/) platform.
-
-# Acknowledgements
-
-This application represents the culmination of my studies in the Code Institute’s Higher National Diploma in Software Development. Over the past year, I have undertaken five significant projects, each contributing to a comprehensive and rigorous learning experience. The journey has been both challenging and immensely rewarding, and I am deeply grateful to the Code Institute for facilitating my return to education. The knowledge and skills I have acquired have far exceeded my expectations, and I have developed a profound passion for my career and the technology sector.
-
-I would like to extend my heartfelt gratitude to everyone who has supported and encouraged me throughout this year. Despite the challenges, I would not change a thing. My sincere thanks go to the Code Institute for their unwavering support.
-I am especially grateful to my mentor Martina for her invaluable guidance and advice on my final project.
-Additionally, I appreciate the Slack community for their support and for providing a space where I could express my frustrations in a compassionate and understanding environment.
-
-Warm regards and happy coding,
-
-Abdullah Alakel
 
 [Back to top](<#contents>)
