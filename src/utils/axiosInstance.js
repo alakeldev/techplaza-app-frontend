@@ -2,7 +2,7 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import dayjs from "dayjs";
 
-const baseUrl = "https://backend-techplaza-1b0c24eaa252.herokuapp.com/api";
+const baseUrl = process.env.REACT_APP_API_BASE_URL || "https://backend-techplaza-1b0c24eaa252.herokuapp.com/api";
 
 const axiosInstance = axios.create({
     baseURL: baseUrl,

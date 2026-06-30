@@ -1,4 +1,4 @@
-import { React, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
