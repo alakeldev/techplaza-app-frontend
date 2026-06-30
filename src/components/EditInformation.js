@@ -27,10 +27,6 @@ const EditInformation = ({ show, handleClose, user, updateFullName }) => {
       if (response.status === 200) {
         toast.success('Information updated successfully');
         updateFullName(fullName);
-
-        const updatedUser = { ...user, name: fullName };
-        localStorage.setItem('user', JSON.stringify(updatedUser));
-
         handleClose();
       }
     } catch {

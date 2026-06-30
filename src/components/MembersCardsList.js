@@ -26,10 +26,15 @@ const MembersCardsList = ({ searchQuery, setSearchQuery }) => {
   }, []);
 
   useEffect(() => {
-    if (searchQuery && filteredMembers.length === 0) {
-      toast.info('No results available.');
+    if (searchQuery) {
+      const filteredCount = members.filter(member =>
+        member.country.toLowerCase().includes(searchQuery.toLowerCase())
+      ).length;
+      if (filteredCount === 0) {
+        toast.info('No results available.');
+      }
     }
-  }, [searchQuery]);
+  }, [searchQuery, members]);
 
   const fetchMembers = async () => {
     try {

@@ -19,7 +19,7 @@ const Dashboard = () => {
   const jwt_token = localStorage.getItem('access');
   const [showEdit, setShowEdit] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
-  const [fullName, setFullName] = useState(user ? user.full_name : '');
+  const [fullName, setFullName] = useState(user ? user.name : '');
 
   useEffect(() => {
     if (jwt_token === null || !user) {
@@ -41,7 +41,7 @@ const Dashboard = () => {
 
   const updateFullName = (newFullName) => {
     setFullName(newFullName);
-    const updatedUser = { ...user, full_name: newFullName };
+    const updatedUser = { ...user, name: newFullName };
     localStorage.setItem('user', JSON.stringify(updatedUser));
   };
 

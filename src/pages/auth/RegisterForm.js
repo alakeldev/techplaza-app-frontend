@@ -38,7 +38,7 @@ const RegisterForm = () => {
   }
 
   const validatePassword = (password) => {
-    return password.length >= 4 && password.length <= 40;
+    return password.length >= 5 && password.length <= 40;
   }
 
   const handleSubmit = async (e) => {

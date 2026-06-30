@@ -32,22 +32,25 @@ const SnakeGameBoard = ({ highScores, setHighScores }) => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      e.preventDefault();
-      switch (e.key) {
-        case 'w':
-          setDirection('UP');
-          break;
-        case 's':
-          setDirection('DOWN');
-          break;
-        case 'a':
-          setDirection('LEFT');
-          break;
-        case 'd':
-          setDirection('RIGHT');
-          break;
-        default:
-          break;
+      const wasdKeys = ['w', 's', 'a', 'd'];
+      if (wasdKeys.includes(e.key)) {
+        e.preventDefault();
+        switch (e.key) {
+          case 'w':
+            setDirection('UP');
+            break;
+          case 's':
+            setDirection('DOWN');
+            break;
+          case 'a':
+            setDirection('LEFT');
+            break;
+          case 'd':
+            setDirection('RIGHT');
+            break;
+          default:
+            break;
+        }
       }
     };
 
@@ -124,18 +127,20 @@ const SnakeGameBoard = ({ highScores, setHighScores }) => {
   }, [gameOver, score, highScores, setHighScores]);
 
   const startGame = () => {
+    const center = Math.floor(boardSize / 2);
     setGameStarted(true);
     setGameOver(false);
-    setSnake([{ x: 10, y: 10 }]);
+    setSnake([{ x: center, y: center }]);
     setFood(generateFood());
     setDirection('RIGHT');
     setScore(0);
   };
 
   const restartGame = () => {
+    const center = Math.floor(boardSize / 2);
     setGameStarted(false);
     setGameOver(false);
-    setSnake([{ x: 10, y: 10 }]);
+    setSnake([{ x: center, y: center }]);
     setFood(generateFood());
     setDirection('RIGHT');
     setScore(0);

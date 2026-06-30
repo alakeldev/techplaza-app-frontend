@@ -32,12 +32,16 @@ axiosInstance.interceptors.request.use(async req => {
                     localStorage.removeItem("user");
                     localStorage.removeItem("access");
                     localStorage.removeItem("refresh");
+                    window.location.href = '/login';
+                    return Promise.reject(new Error('Session expired. Please log in again.'));
                 }
             } catch (error) {
                 console.error("Token refresh failed:", error);
                 localStorage.removeItem("user");
                 localStorage.removeItem("access");
                 localStorage.removeItem("refresh");
+                window.location.href = '/login';
+                return Promise.reject(error);
             }
         }
     }
