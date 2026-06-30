@@ -97,6 +97,11 @@ More information on the back-end of the site can be found in the back-end [READM
   - [Project Deployment via Heroku](<#project-deployment-via-heroku>)
   - [Forking the Project Repositories](<#forking-the-project-repositories>)
   - [Cloning the Project Repositories](<#cloning-the-project-repositories>)
+- [**Running the Project Locally**](<#running-the-project-locally>)
+  - [Prerequisites](<#prerequisites>)
+  - [Environment Variables](<#environment-variables>)
+  - [Option A — Run with the Live Production API](<#option-a--run-with-the-live-production-api>)
+  - [Option B — Run with a Local Backend](<#option-b--run-with-a-local-backend>)
 - [**Credits**](<#credits>)
   - [Content](<#content>)
   - [Media](<#media>)
@@ -1024,6 +1029,161 @@ This section is a written guide on how to deploy a front-end React application t
 5. On the terminal type "git clone", then paste the copied url and press 'Enter'.
 6. The clone process should now begin.
 7. Go to [the Back-end repository](https://github.com/alakeldev/techplaza-app-backend) and repeat the process.
+
+# Running the Project Locally
+
+This section explains how to run the Techplaza frontend on your own machine, either connected to the live production API or a locally running backend.
+
+## Prerequisites
+
+| Tool | Version | Notes |
+|------|---------|-------|
+| [Node.js](https://nodejs.org/) | 16.x | Required by `package.json` engines field |
+| npm | 7.x | Bundled with Node 16 |
+| [Git](https://git-scm.com/) | Any | For cloning the repository |
+
+Check your installed versions:
+
+```bash
+node -v   # should print v16.x.x
+npm -v    # should print 7.x.x
+```
+
+---
+
+## Environment Variables
+
+The project uses environment variables for the backend API URL, weather API key, and EmailJS contact-form credentials. Create React App loads a `.env.local` file automatically during development — this file is already excluded from Git via `.gitignore`.
+
+Copy the provided example file and fill in your values:
+
+```bash
+cp .env.example .env.local
+```
+
+Then open `.env.local` and set the values:
+
+```env
+# Backend API — see the two options below
+REACT_APP_API_BASE_URL=
+
+# OpenWeatherMap — get a free key at https://openweathermap.org/api
+REACT_APP_WEATHER_API_KEY=your_openweathermap_api_key
+
+# EmailJS — sign up at https://www.emailjs.com/ and create a service + template
+REACT_APP_EMAILJS_SERVICE_ID=your_emailjs_service_id
+REACT_APP_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+REACT_APP_EMAILJS_USER_ID=your_emailjs_user_id
+```
+
+> **Note:** Any variable prefixed with `REACT_APP_` is embedded in the browser bundle at build time. Never put secret server-side keys here.
+
+---
+
+## Option A — Run with the Live Production API
+
+This is the quickest way to run the frontend locally. The app connects to the already deployed backend on Heroku — no backend setup needed.
+
+1. **Clone the frontend repository**
+
+   ```bash
+   git clone https://github.com/alakeldev/techplaza-app-frontend.git
+   cd techplaza-app-frontend
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Create your local environment file**
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Leave `REACT_APP_API_BASE_URL` empty (or remove the line entirely). The app will automatically fall back to the live production API at `https://backend-techplaza-1b0c24eaa252.herokuapp.com/api`.
+
+   Fill in the weather and EmailJS keys if you want those features to work.
+
+4. **Start the development server**
+
+   ```bash
+   npm start
+   ```
+
+   The app opens at [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Option B — Run with a Local Backend
+
+Use this option if you want to develop against a local Django REST Framework backend.
+
+### 1. Set up the backend
+
+Clone and run the backend following the instructions in the [Techplaza Back-End repository](https://github.com/alakeldev/techplaza-app-backend). By default the Django development server runs on port `8000`.
+
+> **CORS:** Make sure `http://localhost:3000` is listed in `CORS_ALLOWED_ORIGINS` (or `CORS_ALLOW_ALL_ORIGINS = True`) in the backend's Django settings. Without this, the browser will block all API requests from the frontend.
+
+### 2. Set up the frontend
+
+1. **Clone the frontend repository** (if not already done)
+
+   ```bash
+   git clone https://github.com/alakeldev/techplaza-app-frontend.git
+   cd techplaza-app-frontend
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Create your local environment file**
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Set the backend URL to point at your local Django server:
+
+   ```env
+   REACT_APP_API_BASE_URL=http://localhost:8000/api
+   REACT_APP_WEATHER_API_KEY=your_openweathermap_api_key
+   REACT_APP_EMAILJS_SERVICE_ID=your_emailjs_service_id
+   REACT_APP_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+   REACT_APP_EMAILJS_USER_ID=your_emailjs_user_id
+   ```
+
+4. **Start the Django backend** (in a separate terminal)
+
+   ```bash
+   # Inside the backend project directory
+   python manage.py runserver
+   ```
+
+5. **Start the React frontend**
+
+   ```bash
+   npm start
+   ```
+
+   The frontend opens at [http://localhost:3000](http://localhost:3000) and communicates with the local backend at [http://localhost:8000/api](http://localhost:8000/api).
+
+---
+
+### Summary: Frontend–Backend Connection
+
+| Scenario | `REACT_APP_API_BASE_URL` value | Backend |
+|----------|-------------------------------|---------|
+| Local frontend + production API | *(leave empty)* | Heroku (live) |
+| Local frontend + local backend | `http://localhost:8000/api` | Your machine |
+| Production (Heroku) | Set in Heroku Config Vars | Heroku (live) |
+
+---
 
 # Credits
 
