@@ -12,6 +12,7 @@ const RegisterForm = () => {
 
   const navigate = useNavigate()
   const [error, setError] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
   const [registerData, setRegisterData] = useState({
     full_name: "",
     email: "",
@@ -52,6 +53,7 @@ const RegisterForm = () => {
     } else if (registerData.password1 !== registerData.password2) {
       setError("The password fields do not match. Please try again.");
     } else {
+      setIsLoading(true);
       try {
         const re = await axiosInstance.post("/auth/register/", registerData);
         const response = re.data;
@@ -65,6 +67,8 @@ const RegisterForm = () => {
         } else {
           setError("Registration failed. Please try again.");
         }
+      } finally {
+        setIsLoading(false);
       }
     }
   };
@@ -126,8 +130,8 @@ const RegisterForm = () => {
                 value={registerData.password2}
                 onChange={handleOnChange} />
             </Form.Group>
-            <Button variant="primary" type="submit" className={styles.FormButton}>
-              Register
+            <Button variant="primary" type="submit" className={styles.FormButton} disabled={isLoading}>
+              {isLoading ? "Registering..." : "Register"}
             </Button>
           </Form>
         </Container>

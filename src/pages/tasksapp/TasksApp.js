@@ -28,7 +28,6 @@ const TasksApp = () => {
         task_title: "",
         task_description: "",
         is_done: false,
-        user: user ? user.id : null
     });
     const [taskList, setTaskList] = useState([]);
     const [modal, setModal] = useState(false);
@@ -62,7 +61,6 @@ const TasksApp = () => {
 
     const handleSubmit = item => {
         toggle();
-        item.user = user.id;
         if (item.id) {
             axiosInstance
                 .put(`/app2/tasks_manager/${item.id}/`, item)
@@ -84,7 +82,7 @@ const TasksApp = () => {
     };
 
     const createItem = () => {
-        const item = { task_title: "", task_description: "", is_done: false, user: user.id };
+        const item = { task_title: "", task_description: "", is_done: false };
         setActiveItem(item);
         setModal(!modal);
     };

@@ -1,4 +1,4 @@
-import { useState, React } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axiosInstance from '../utils/axiosInstance';
 import { toast } from 'react-toastify';

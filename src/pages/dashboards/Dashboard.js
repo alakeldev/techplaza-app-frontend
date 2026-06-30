@@ -27,16 +27,16 @@ const Dashboard = () => {
     }
   }, [jwt_token, user, navigate]);
 
+  const appRoutes = {
+    'World Weather Application': '/dashboard/weather_app',
+    'Tasks Manager Application': '/dashboard/tasks_app',
+    'Snake Game': '/dashboard/snake_game',
+    'Member Cards Application': '/dashboard/cards_app',
+  };
+
   const handleAppClick = (app) => {
-    if (app === 'World Weather Application') {
-      navigate('/dashboard/weather_app');
-    } else if (app === 'Tasks Manager Application') {
-      navigate('/dashboard/tasks_app');
-    } else if (app === 'Snake Game') {
-      navigate('/dashboard/snake_game');
-    } else if (app === 'Member Cards Application') {
-      navigate('/dashboard/cards_app');
-    }
+    const route = appRoutes[app];
+    if (route) navigate(route);
   };
 
   const updateFullName = (newFullName) => {
